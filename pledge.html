@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realm of Chaos - Membership Tiers</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/pledge.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/countdown-timer-js@1.0.0/dist/countdown-timer.min.js"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <a href="index.html" class="nav-logo">Realm of Chaos</a>
+            <div class="header-subtitle">
+                <span class="glitch-target">Unleash Your Desires</span>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="pledge.html" class="active">Membership</a></li>
+                <li><a href="index.html#chaos-cult">Cult</a></li>
+                <li><a href="index.html#fetish-delights">Fetishes</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="pricing-hero">
+            <div class="container">
+                <h1>Submit to Your Desires</h1>
+                <p class="highlight-text">This is no sanctuary for the timid. The Realm of Chaos is your altar of excess, where desire reigns and surrender is sweet.</p>
+                <div class="fomo-section">
+                    <h3>Join the Chosen</h3>
+                    <div class="fomo-counter" id="member-counter">0 devotees joined</div>
+                    <p class="highlight-text">Under 7 custom edit spots left this week—will you claim yours?</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="media-preview">
+            <div class="media-item">
+                <iframe src="https://www.youtube.com/embed/your-video-id" allowfullscreen></iframe>
+                <div class="media-overlay">
+                    <p>Preview of Forbidden Content</p>
+                </div>
+            </div>
+            <div class="media-item">
+                <video autoplay muted loop playsinline>
+                    <source src="assets/video/teaser.gif" type="video/gif">
+                    Your browser does not support the video tag.
+                </video>
+                <div class="media-overlay">
+                    <p>Sample of Exclusive Content</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="pricing-grid">
+            <div class="tier-card tier-card-devotee">
+                <div class="tier-icon"><i class="fas fa-user"></i></div>
+                <h2>Chaos Initiate</h2>
+                <div class="tier-price">$5<span class="month-text">/mo</span></div>
+                <ul class="tier-features">
+                    <li>Step into the Abyss</li>
+                    <li>Weekly Temptations</li>
+                    <li>Forbidden Content</li>
+                    <li>Guided Surrender</li>
+                </ul>
+                <a href="https://www.patreon.com/GoddessEris" target="_blank" rel="noopener noreferrer" class="tier-cta-button">Submit</a>
+            </div>
+
+            <div class="tier-card tier-card-patron popular">
+                <div class="tier-icon"><i class="fas fa-heart"></i></div>
+                <h2>Lust Devotee</h2>
+                <div class="tier-price">$15<span class="month-text">/mo</span></div>
+                <ul class="tier-features">
+                    <li>Everything in Initiate</li>
+                    <li>First Taste</li>
+                    <li>Custom Whispers</li>
+                    <li>Brotherhood of Sin</li>
+                    <li>Guided Pleasure</li>
+                </ul>
+                <a href="https://www.patreon.com/GoddessEris" target="_blank" rel="noopener noreferrer" class="tier-cta-button">Submit</a>
+                <div class="popular-badge">Most Desired</div>
+            </div>
+
+            <div class="tier-card tier-card-divine">
+                <div class="tier-icon"><i class="fas fa-crown"></i></div>
+                <h2>Chaos Elite</h2>
+                <div class="tier-price">$50<span class="month-text">/mo</span></div>
+                <ul class="tier-features">
+                    <li>Everything in Devotee</li>
+                    <li>Unleashed Content</li>
+                    <li>Weekly Whispers</li>
+                    <li>Direct Connection</li>
+                    <li>Exclusive Events</li>
+                </ul>
+                <a href="https://www.patreon.com/GoddessEris" target="_blank" rel="noopener noreferrer" class="tier-cta-button">Submit</a>
+            </div>
+
+            <div class="tier-card tier-card-pledge">
+                <div class="tier-icon"><i class="fas fa-magic"></i></div>
+                <h2>Custom Edit Pledge</h2>
+                <div class="tier-price">$15-$75<span class="month-text">/one-time</span></div>
+                <ul class="tier-features">
+                    <li><span class="glowing-text">Request Your Desire</span></li>
+                    <li><span class="glowing-text">Priority Processing</span></li>
+                    <li><span class="glowing-text">Exclusive Access</li>
+                    <li><span class="glowing-text">Direct Communication</li></li>
+                </ul>
+                <button class="tier-cta-button" onclick="window.location.href='https://www.patreon.com/GoddessEris'">Request Your Desire</button>
+            </div>
+
+            <!-- Donation Button -->
+            <div class="tier-card tier-card-donation">
+                <div class="tier-icon"><i class="fas fa-heart"></i></div>
+                <h2>Support Us</h2>
+                <div class="tier-price">Any Amount</div>
+                <ul class="tier-features">
+                    <li>Show Your Support</li>
+                    <li>Help Us Grow</li>
+                    <li>Exclusive Updates</li>
+                </ul>
+                <button class="tier-cta-button" onclick="alert('Coming soon!')">Donate</button>
+            </div>
+        </section>
+
+        <section class="join-section">
+            <div class="container">
+                <h2>Submit to Your Desires</h2>
+                <p class="highlight-text">We are the chosen, bound by the pulse of pleasure. Will you stand apart, or melt into us?</p>
+                <a href="https://www.patreon.com/GoddessEris" target="_blank" rel="noopener noreferrer" class="cta-button">Submit</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Realm of Chaos. All rights reserved.</p>
+            <div class="footer-social-links">
+                <a href="https://www.patreon.com/GoddessEris" target="_blank" rel="noopener noreferrer"><i class="fab fa-patreon"></i></a>
+                <a href="https://twitter.com/g0ddesseris" target="_blank" rel="noopener noreferrer"><i class="fab fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+<script>
+    // Member Counter Animation
+    function animateMemberCounter() {
+        const target = 215;
+        const counter = document.getElementById('member-counter');
+        let current = 0;
+        
+        function updateCounter() {
+            current++;
+            counter.textContent = `${current} devotees joined`;
+            if (current < target) {
+                setTimeout(updateCounter, 50);
+            }
+        }
+        
+        updateCounter();
+    }
+
+    // Initialize member counter when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    animateMemberCounter();
+});
+</script>
+</body>
+</html>

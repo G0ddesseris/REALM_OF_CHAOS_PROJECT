@@ -1,0 +1,327 @@
+.pricing-hero {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.1), rgba(191, 0, 255, 0.1));
+    padding: 100px 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.pricing-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: url('../assets/images/gradient-bg.png');
+    opacity: 0.1;
+    z-index: 0;
+}
+
+.pricing-hero h1 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    background: var(--gradient-text-sub);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 10px rgba(191, 0, 255, 0.7);
+}
+
+.pricing-hero p {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    background: var(--gradient-text-sub);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 0 6px rgba(191, 0, 255, 0.5);
+}
+
+.media-preview {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 40px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 20px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.media-item {
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%; /* 16:9 aspect ratio */
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+.media-item iframe,
+.media-item video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.media-overlay {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    font-size: 0.9em;
+    text-align: center;
+}
+
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    padding: 40px 0;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tier-card {
+    background: rgba(255, 255, 255, 0.04);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+}
+
+.tier-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.tier-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 30px rgba(191, 0, 255, 0.5);
+}
+
+.tier-card.popular {
+    border: 2px solid #BF00FF;
+    box-shadow: 0 0 20px rgba(191, 0, 255, 0.5);
+}
+
+.tier-icon {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #00D4FF;
+    text-shadow: 0 0 10px #00D4FF;
+}
+
+.tier-card h2 {
+    font-family: 'Frizon';
+    font-size: 1.8em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #BF00FF;
+}
+
+.tier-price {
+    font-family: 'OriginTech';
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #00D4FF;
+    margin-bottom: 30px;
+    text-shadow: 0 0 15px #00D4FF;
+}
+
+.month-text {
+    font-size: 0.5em;
+}
+
+.tier-features {
+    list-style: none;
+    margin: 20px 0;
+    padding: 0;
+}
+
+.tier-features li {
+    margin: 10px 0;
+    padding-left: 25px;
+    position: relative;
+    color: #e0e0e0;
+}
+
+.tier-features li:before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: #00D4FF;
+    font-size: 1.5em;
+}
+
+.tier-cta-button {
+    display: inline-block;
+    padding: 15px 40px;
+    background: linear-gradient(45deg, #00D4FF, #BF00FF);
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Frizon';
+    font-weight: bold;
+    letter-spacing: 2px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 10px rgba(191, 0, 255, 0.5);
+    margin-top: 20px;
+    text-decoration: none;
+}
+
+.tier-cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(191, 0, 255, 0.8);
+    background: linear-gradient(45deg, #BF00FF, #00D4FF);
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 20px 60px;
+    background: linear-gradient(45deg, #BF00FF, #00D4FF);
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Frizon';
+    font-weight: bold;
+    letter-spacing: 3px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 15px rgba(191, 0, 255, 0.8);
+    margin-top: 30px;
+    text-decoration: none;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(191, 0, 255, 1);
+    background: linear-gradient(45deg, #00D4FF, #BF00FF);
+}
+
+.tier-cta-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 0 20px rgba(191, 0, 255, 0.8);
+    background: linear-gradient(45deg, #BF00FF, #00D4FF);
+}
+
+.popular-badge {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: #BF00FF;
+    color: white;
+    padding: 5px 15px;
+    border-radius: 15px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    font-family: 'Frizon';
+    box-shadow: 0 0 10px rgba(191, 0, 255, 0.5);
+}
+
+.fomo-section {
+    margin-top: 40px;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 10px;
+}
+
+.fomo-counter {
+    font-size: 2em;
+    color: #00D4FF;
+    margin: 20px 0;
+    text-shadow: 0 0 10px #00D4FF;
+}
+
+.join-section {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 80px 0;
+    text-align: center;
+}
+
+.join-section h2 {
+    font-family: 'Frizon';
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    text-shadow: 0 0 15px #BF00FF;
+}
+
+.join-section .highlight-text {
+    font-family: 'Frizon';
+    font-size: 1.5em;
+    margin-bottom: 40px;
+    text-shadow: 0 0 10px #00D4FF;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 20px 60px;
+    background: linear-gradient(45deg, #BF00FF, #00D4FF);
+    color: white;
+    text-transform: uppercase;
+    font-family: 'Frizon';
+    font-weight: bold;
+    letter-spacing: 3px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-shadow: 0 0 15px rgba(191, 0, 255, 0.8);
+    margin-top: 30px;
+}
+
+.cta-button:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 30px rgba(191, 0, 255, 1);
+    background: linear-gradient(45deg, #00D4FF, #BF00FF);
+}
+
+.footer {
+    background: rgba(0, 0, 0, 0.8);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer-social-links {
+    margin-top: 20px;
+}
+
+.footer-social-links a {
+    color: #00D4FF;
+    font-size: 1.5em;
+    margin: 0 15px;
+    transition: color 0.3s ease;
+    text-shadow: 0 0 5px rgba(191, 0, 255, 0.5);
+}
+
+.footer-social-links a:hover {
+    color: #BF00FF;
+    text-shadow: 0 0 10px rgba(191, 0, 255, 0.8);
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.1); }
+    100% { transform: scale(1); }
+}

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about Realm of Chaos, a dark, edgy project exploring gooner, sissy, and fetish themes in a cyberpunk aesthetic.">
+    <meta name="keywords" content="about us, Realm of Chaos mission, project goals, cyberpunk, dark themes, adult content, fetish art, community">
+    <meta property="og:title" content="About | Realm of Chaos">
+    <meta property="og:description" content="Unleash your desires. Discover the mission and philosophy behind Realm of Chaos.">
+    <meta property="og:image" content="assets/images/chaos_logo.png">
+    <meta property="og:url" content="https://your-site.com/about.html">
+    <title>About | Realm of Chaos</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">REALM OF CHAOS</a>
+            <p class="header-subtitle">Submit to <span class="glitch-target">@G0ddessEris</span></p>
+            <button class="menu-toggle" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav>
+                <ul class="nav-menu">
+                    <li><a href="index.html#lust-gate">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="index.html#chaos-cult">Cult</a></li>
+                    <li><a href="index.html#fetish-delights">Fetishes</a></li>
+                    <li><a href="index.html#pledge-lust">Pledge</a></li>
+                    <li><a href="index.html#bespoke-fetish">Custom Fetish</a></li>
+                    <li><a href="index.html#chaos-whisper">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section-panel container">
+            <h2 class="text-center">ABOUT REALM OF CHAOS: WHERE DESIRE MEETS DECAY</h2>
+            <p class="text-center section-subtext">A Manifesto of Submission and Transgression</p>
+
+            <div class="about-content" style="flex-direction: column;">
+                <div class="about-text">
+                    <p>In the digital abyss, the Realm of Chaos emerged—a defiance of norms, a sanctuary for the unchained. We are not just a platform; we are an evolving experience, a conduit for your deepest, most electrifying gooner, sissy, and fetish desires. This project is a testament to the raw power of unbridled fantasy, crafted with a dark, cyberpunk aesthetic that mirrors the rebellion within.</p>
+                    <p>Our mission is to shatter inhibitions, offering a curated collection of mind-melting art, hypnotic narratives, and interactive content designed to push your boundaries. We believe in the transformative power of submission, the ecstasy found in relinquishing control, and the potent energy of collective chaos. Here, you are invited to explore the fringes of desire, to embrace the forbidden, and to become an integral part of a cult dedicated to ultimate pleasure.</p>
+                    <p>This is more than just content; it's a journey. A descent into the alluring madness of your own psyche, guided by the unseen hand of Goddess Eris. Join the ranks of those who dare to taste true ecstasy, or remain forever shackled by the mundane. The choice, as always, is yours.</p>
+                </div>
+                <div class="image-slots" style="display: flex; justify-content: center; gap: 20px; margin-top: 40px; flex-wrap: wrap;">
+                    <div class="image-with-action">
+                        <img src="assets/gifs/gif1.gif" alt="About Realm of Chaos 1" class="about-action-image digital-painting chaotic" role="img">
+                        <h3><span class="highlight-text">Embrace the Void</span></h3>
+                        <p>Where your forbidden desires manifest.</p>
+                    </div>
+                    <div class="image-with-action">
+                        <img src="assets/gifs/gif2.gif" alt="About Realm of Chaos 2" class="about-action-image digital-painting lustful" role="img">
+                        <h3><span class="highlight-text">Unleash Your True Self</span></h3>
+                        <p>Beyond convention, beyond limits.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>“Realm of Chaos shattered my limits!” — Anonymous Devotee</p>
+        <p>© 2025 Realm of Chaos. Claimed by Goddess Eris.</p>
+        <p>Join the fetish cult now—submit to chaos or crave forever.</p>
+        <p>Share This Chaos:</p>
+        <div class="footer-social-links">
+            <a href="https://twitter.com/intent/tweet?text=Join%20Realm%20of%20Chaos%20for%20gooner%20and%20sissy%20ecstasy!%20https://your-site.com" target="_blank" rel="noopener" class="twitter-icon" aria-label="Share on Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.patreon.com/GoddessEris?utm_source=website&utm_medium=footer" target="_blank" rel="nofollow" class="patreon-icon" aria-label="Patreon Page"><i class="fab fa-patreon"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            if (menuToggle && navMenu) {
+                menuToggle.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                });
+                navMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navMenu.classList.remove('active');
+                    });
+                });
+            }
+
+            const subtitleElement = document.querySelector('.header-subtitle .glitch-target');
+            if (subtitleElement) {
+                const phrases = ['@G0ddessEris', 'gooner', 'sissy', 'mind-melting', 'JOI'];
+                let phraseIndex = 0;
+                let charIndex = 0;
+                const typingSpeed = 100;
+                const erasingSpeed = 5_0;
+                const delayBeforeErase = 1500;
+                const delayBeforeType = 500;
+
+                function typePhrase() {
+                    const currentPhrase = phrases[phraseIndex];
+                    if (charIndex < currentPhrase.length) {
+                        subtitleElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                        charIndex++;
+                        setTimeout(typePhrase, typingSpeed);
+                    } else {
+                        setTimeout(erasePhrase, delayBeforeErase);
+                    }
+                }
+
+                function erasePhrase() {
+                    const currentPhrase = phrases[phraseIndex];
+                    if (charIndex > 0) {
+                        subtitleElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                        charIndex--;
+                        setTimeout(erasePhrase, erasingSpeed);
+                    } else {
+                        phraseIndex = (phraseIndex + 1) % phrases.length;
+                        setTimeout(typePhrase, delayBeforeType);
+                    }
+                }
+                typePhrase();
+            }
+        });
+    </script>
+</body>
+</html>

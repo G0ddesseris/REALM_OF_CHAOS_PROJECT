@@ -20,11 +20,9 @@ document.addEventListener('DOMContentLoaded', () => {
             airplayButton: false,
             chaptersButton: false
         },
-        plugins: {
-            fluidPlayerMega: {
-                url: 'https://mega.nz/embed/SsxT0bIb#XFUJTxZDg8vLUkcr3TYasOKVtyvWtf_gddavMqICyuI!1a'
-            }
-        },
+        src: 'https://mega.nz/embed/SsxT0bIb#XFUJTxZDg8vLUkcr3TYasOKVtyvWtf_gddavMqICyuI!1a',
+        allowFullscreen: true,
+        allowAutoplay: true,
         posterImage: 'assets/images/ace-of-spades.png'
     });
 

@@ -12,101 +12,12 @@
     <title>Member Archive | Realm of Chaos</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <style>
-        /* Archive Page Specific Styles */
-        .fomo-banner {
-            background-color: rgba(191, 0, 255, 0.15);
-            border: 2px solid #BF00FF;
-            border-radius: 10px;
-            padding: 25px;
-            margin: 20px 0;
-            text-align: center;
-        }
-        .fomo-text-large {
-            font-size: 2rem;
-            color: #BF00FF;
-            margin: 10px 0;
-        }
-        .fomo-subtext {
-            color: #00D4FF;
-            font-size: 1.2rem;
-        }
-        .content-tabs {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            margin: 40px 0;
-        }
-        .tab-button {
-            background-color: rgba(0, 0, 0, 0.6);
-            color: #00D4FF;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 10px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .tab-button:hover {
-            background-color: rgba(191, 0, 255, 0.6);
-        }
-        .tab-button.active {
-            background-color: #BF00FF;
-            color: white;
-        }
-        .tab-content {
-            display: none;
-            margin-top: 40px;
-        }
-        .tab-content.active {
-            display: block;
-        }
-        .content-grid-scroll {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 1rem;
-        }
-        .content-sample-card {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 12px;
-            border: 2px solid #BF00FF;
-            padding: 1rem;
-            transition: all 0.3s ease;
-        }
-        .content-sample-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(191, 0, 255, 0.3);
-        }
-        .content-sample-card video,
-        .content-sample-card img {
-            width: 100%;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 12px;
-            margin-bottom: 20px;
-        }
-        .content-sample-card h4 {
-            color: #BF00FF;
-            margin: 10px 0;
-        }
-        .content-sample-card p {
-            color: #00D4FF;
-            margin: 5px 0;
-        }
-        .glass-panel {
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-        }
-        .lust-card {
-            border: 2px solid #BF00FF;
-        }
-    </style>
 </head>
 <body>
     <header class="header">
         <div class="container nav-container">
             <a href="index.html" class="nav-logo">REALM OF CHAOS</a>
-            <p class="header-subtitle">Welcome, <span class="glitch-target">Chaos Elite</span></p>
+            <p class="header-subtitle">Welcome, <span class="glitch-target">Devotee</span></p>
             <button class="menu-toggle" aria-label="Toggle navigation menu">
                 <i class="fas fa-bars"></i>
             </button>
@@ -121,570 +32,6 @@
             </nav>
         </div>
     </header>
-    
-    <main>
-        <section class="section-panel container">
-            <h2 class="text-center">WELCOME, DEVOTEE. YOUR DOMINION AWAITS.</h2>
-            <p class="text-center section-subtext">This is your exclusive gateway to all content from Realm of Chaos. Dive deep into the archives of desire.</p>
-
-            <div class="fomo-banner new-release-countdown-container">
-                <p class="fomo-text-large">NEXT RELEASE IN: <span id="new-release-countdown">17h 33m 00s</span></p>
-                <p class="fomo-subtext">Prepare for new depths of chaos. Don't miss the drop!</p>
-            </div>
-
-            <div class="fomo-banner limited-time-access">
-                <p class="fomo-text-large"><i class="fas fa-hourglass-half"></i> Special Early Access: "Sissy's Surrender" video available for 48 hours only!</p>
-                <p class="fomo-subtext">Enjoy this exclusive preview before it moves to the main archive.</p>
-            </div>
-
-            <div class="content-tabs">
-                <button class="tab-button active" onclick="showContent('videos')">Videos</button>
-                <button class="tab-button" onclick="showContent('gifs')">GIFs</button>
-                <button class="tab-button" onclick="showContent('images')">Images</button>
-            </div>
-            
-            <style>
-                .countdown-container {
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    gap: 1rem;
-                    margin-top: 1rem;
-                }
-                .countdown-number {
-                    font-size: 3rem;
-                    color: #BF00FF;
-                    font-weight: bold;
-                    width: 60px;
-                    height: 60px;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-                    background: rgba(0, 0, 0, 0.3);
-                    border-radius: 10px;
-                    border: 2px solid #BF00FF;
-                }
-                .countdown-label {
-                    font-size: 1rem;
-                    color: #00D4FF;
-                }
-            </style>
-
-            <div class="search-filter-section">
-                <div class="search-container">
-                    <input type="text" id="searchInput" placeholder="Search by name, description, or tags..." class="search-input">
-                </div>
-                <div class="tag-filter-container">
-                    <button class="tag-filter-btn active" onclick="filterByTag('all')">Show All</button>
-                    <button class="tag-filter-btn" onclick="filterByTag('sissy')">Sissy</button>
-                    <button class="tag-filter-btn" onclick="filterByTag('gooner')">Gooner</button>
-                    <button class="tag-filter-btn" onclick="filterByTag('hypno')">Hypno</button>
-                    <button class="tag-filter-btn" onclick="filterByTag('bnwo')">BNWO</button>
-                    <button class="tag-filter-btn" onclick="filterByTag('feminization')">Feminization</button>
-                    <button class="tag-filter-btn" onclick="filterByTag('trance')">Trance</button>
-                    <button class="tag-filter-btn" onclick="filterByTag('humiliation')">Humiliation</button>
-                </div>
-            </div>
-
-            <div class="content-tabs">
-                <button class="tab-button active" onclick="showContent('videos')">Videos (50+)</button>
-                <button class="tab-button" onclick="showContent('gifs')">GIFs (50+)</button>
-                <button class="tab-button" onclick="showContent('images')">Images (50+)</button>
-            </div>
-
-            <div id="videos-content" class="tab-content active">
-                <div class="content-card-header">
-                    <h3>VIDEO ARCHIVE</h3>
-                    <span class="content-count">50+ Videos</span>
-                </div>
-                <div class="content-grid">
-                    <!-- Video Content -->
-                    <div class="content-sample-card glass-panel lust-card">
-                        <video controls muted playsinline poster="assets/images/video_placeholder1.jpg" aria-label="Gooner Feminization Protocol">
-                            <source src="assets/video/member_video1.mp4" type="video/mp4">
-                        </video>
-                        <h4>Gooner Feminization Protocol</h4>
-                        <p>Deep dive into gooner feminization techniques.</p>
-                        <div class="content-tags">
-                            <span class="tag purple" data-tag="sissy">sissy</span>
-                            <span class="tag pink" data-tag="gooner">gooner</span>
-                            <span class="tag blue" data-tag="fetish">fetish</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card">
-                        <video controls muted playsinline poster="assets/images/video_placeholder2.jpg" aria-label="Sissy Transformation">
-                            <source src="assets/video/member_video2.mp4" type="video/mp4">
-                        </video>
-                        <h4>Sissy Transformation</h4>
-                        <p>Hypnotic transformation sequence.</p>
-                        <div class="content-tags">
-                            <span class="tag purple" data-tag="sissy">sissy</span>
-                            <span class="tag pink" data-tag="hypno">hypno</span>
-                            <span class="tag blue" data-tag="trance">trance</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card">
-                        <video controls muted playsinline poster="assets/images/video_placeholder3.jpg" aria-label="Gooner Submission">
-                            <source src="assets/video/member_video3.mp4" type="video/mp4">
-                        </video>
-                        <h4>Gooner Submission</h4>
-                        <p>Submission training session.</p>
-                        <div class="content-tags">
-                            <span class="tag purple" data-tag="gooner">gooner</span>
-                            <span class="tag pink" data-tag="submission">submission</span>
-                            <span class="tag blue" data-tag="fetish">fetish</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card">
-                        <video controls muted playsinline poster="assets/images/video_placeholder4.jpg" aria-label="Feminization Ritual">
-                            <source src="assets/video/member_video4.mp4" type="video/mp4">
-                        </video>
-                        <h4>Feminization Ritual</h4>
-                        <p>Complete feminization ritual.</p>
-                        <div class="content-tags">
-                            <span class="tag purple" data-tag="sissy">sissy</span>
-                            <span class="tag pink" data-tag="feminization">feminization</span>
-                            <span class="tag blue" data-tag="ritual">ritual</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card">
-                        <video controls muted playsinline poster="assets/images/video_placeholder5.jpg" aria-label="Chaos Hypnosis">
-                            <source src="assets/video/member_video5.mp4" type="video/mp4">
-                        </video>
-                        <h4>Chaos Hypnosis</h4>
-                        <p>Hypnotic induction session.</p>
-                        <div class="content-tags">
-                            <span class="tag purple" data-tag="hypno">hypno</span>
-                            <span class="tag pink" data-tag="induction">induction</span>
-                            <span class="tag blue" data-tag="trance">trance</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card">
-                        <video controls muted playsinline poster="assets/images/video_placeholder6.jpg" aria-label="BNWO Training">
-                            <source src="assets/video/member_video6.mp4" type="video/mp4">
-                        </video>
-                        <h4>BNWO Training</h4>
-                        <p>BNWO training session.</p>
-                        <div class="content-tags">
-                            <span class="tag purple" data-tag="bnwo">bnwo</span>
-                            <span class="tag pink" data-tag="training">training</span>
-                            <span class="tag blue" data-tag="fetish">fetish</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card">
-                        <video controls muted playsinline poster="assets/images/video_placeholder7.jpg" aria-label="Sissy Makeup Tutorial">
-                            <source src="assets/video/member_video7.mp4" type="video/mp4">
-                        </video>
-                        <h4>Sissy Makeup Tutorial</h4>
-                        <p>Professional makeup application.</p>
-                        <div class="content-tags">
-                            <span class="tag purple" data-tag="sissy">sissy</span>
-                            <span class="tag pink" data-tag="makeup">makeup</span>
-                            <span class="tag blue" data-tag="tutorial">tutorial</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card">
-                        <video controls muted playsinline poster="assets/images/video_placeholder8.jpg" aria-label="Gooner Humiliation">
-                            <source src="assets/video/member_video8.mp4" type="video/mp4">
-                        </video>
-                        <h4>Gooner Humiliation</h4>
-                        <p>Humiliation training session.</p>
-                        <div class="content-tags">
-                            <span class="tag purple" data-tag="gooner">gooner</span>
-                            <span class="tag pink" data-tag="humiliation">humiliation</span>
-                            <span class="tag blue" data-tag="training">training</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card">
-                        <video controls muted playsinline poster="assets/images/video_placeholder9.jpg" aria-label="Chaos Ritual">
-                            <source src="assets/video/member_video9.mp4" type="video/mp4">
-                        </video>
-                        <h4>Chaos Ritual</h4>
-                        <p>Complete chaos ritual sequence.</p>
-                        <div class="content-tags">
-                            <span class="tag purple" data-tag="ritual">ritual</span>
-                            <span class="tag pink" data-tag="chaos">chaos</span>
-                            <span class="tag blue" data-tag="sequence">sequence</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card">
-                        <video controls muted playsinline poster="assets/images/video_placeholder10.jpg" aria-label="Sissy Training">
-                            <source src="assets/video/member_video10.mp4" type="video/mp4">
-                        </video>
-                        <h4>Sissy Training</h4>
-                        <p>Complete sissy training session.</p>
-                        <div class="content-tags">
-                            <span class="tag purple" data-tag="sissy">sissy</span>
-                            <span class="tag pink" data-tag="training">training</span>
-                            <span class="tag blue" data-tag="session">session</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="gifs-content" class="tab-content">
-                <div class="content-card-header">
-                    <h3>GIF ARCHIVE</h3>
-                    <span class="content-count">50+ GIFs</span>
-                </div>
-                <div class="content-grid">
-                    <!-- GIF Content -->
-                    <div class="content-sample-card glass-panel lust-card">
-                        <img src="assets/gifs/sissy_trance.gif" alt="Sissy Trance Loop" style="width: 100%; height: 200px; object-fit: contain;">
-                        <h4>Sissy Trance Loop</h4>
-                        <p>Hypnotic transformation sequence.</p>
-                        <div class="content-tags">
-                            <span class="tag purple" data-tag="sissy">sissy</span>
-                            <span class="tag pink" data-tag="hypno">hypno</span>
-                            <span class="tag blue" data-tag="trance">trance</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card">
-                        <img src="assets/gifs/gooner_humiliation.gif" alt="Gooner Humiliation" style="width: 100%; height: 200px; object-fit: contain;">
-                        <h4>Gooner Humiliation</h4>
-                        <p>Humiliation sequence.</p>
-                        <div class="content-tags">
-                            <span class="tag purple" data-tag="gooner">gooner</span>
-                            <span class="tag pink" data-tag="humiliation">humiliation</span>
-                            <span class="tag blue" data-tag="sequence">sequence</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card">
-                        <img src="assets/gifs/sissy_makeup.gif" alt="Sissy Makeup" style="width: 100%; height: 200px; object-fit: contain;">
-                        <h4>Sissy Makeup</h4>
-                        <p>Makeup transformation.</p>
-                        <div class="content-tags">
-                            <span class="tag purple" data-tag="sissy">sissy</span>
-                            <span class="tag pink" data-tag="makeup">makeup</span>
-                            <span class="tag blue" data-tag="transformation">transformation</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card">
-                        <img src="assets/gifs/chaos_ritual.gif" alt="Chaos Ritual" style="width: 100%; height: 200px; object-fit: contain;">
-                        <h4>Chaos Ritual</h4>
-                        <p>Ritual sequence.</p>
-                        <div class="content-tags">
-                            <span class="tag purple" data-tag="ritual">ritual</span>
-                            <span class="tag pink" data-tag="chaos">chaos</span>
-                            <span class="tag blue" data-tag="sequence">sequence</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card">
-                        <img src="assets/gifs/hypno_induction.gif" alt="Hypno Induction" style="width: 100%; height: 200px; object-fit: contain;">
-                        <h4>Hypno Induction</h4>
-                        <p>Hypnotic induction sequence.</p>
-                        <div class="content-tags">
-                            <span class="tag purple" data-tag="hypno">hypno</span>
-                            <span class="tag pink" data-tag="induction">induction</span>
-                            <span class="tag blue" data-tag="sequence">sequence</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card">
-                        <img src="assets/gifs/bnwo_training.gif" alt="BNWO Training" style="width: 100%; height: 200px; object-fit: contain;">
-                        <h4>BNWO Training</h4>
-                        <p>Training sequence.</p>
-                        <div class="content-tags">
-                            <span class="tag purple" data-tag="bnwo">bnwo</span>
-                            <span class="tag pink" data-tag="training">training</span>
-                            <span class="tag blue" data-tag="sequence">sequence</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card">
-                        <img src="assets/gifs/sissy_feminization.gif" alt="Sissy Feminization" style="width: 100%; height: 200px; object-fit: contain;">
-                        <h4>Sissy Feminization</h4>
-                        <p>Feminization sequence.</p>
-                        <div class="content-tags">
-                            <span class="tag purple" data-tag="sissy">sissy</span>
-                            <span class="tag pink" data-tag="feminization">feminization</span>
-                            <span class="tag blue" data-tag="sequence">sequence</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card">
-                        <img src="assets/gifs/gooner_fetish.gif" alt="Gooner Fetish" style="width: 100%; height: 200px; object-fit: contain;">
-                        <h4>Gooner Fetish</h4>
-                        <p>Fetish sequence.</p>
-                        <div class="content-tags">
-                            <span class="tag purple" data-tag="gooner">gooner</span>
-                            <span class="tag pink" data-tag="fetish">fetish</span>
-                            <span class="tag blue" data-tag="sequence">sequence</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card">
-                        <img src="assets/gifs/chaos_transformation.gif" alt="Chaos Transformation" style="width: 100%; height: 200px; object-fit: contain;">
-                        <h4>Chaos Transformation</h4>
-                        <p>Transformation sequence.</p>
-                        <div class="content-tags">
-                            <span class="tag purple" data-tag="chaos">chaos</span>
-                            <span class="tag pink" data-tag="transformation">transformation</span>
-                            <span class="tag blue" data-tag="sequence">sequence</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card">
-                        <img src="assets/gifs/sissy_training.gif" alt="Sissy Training" style="width: 100%; height: 200px; object-fit: contain;">
-                        <h4>Sissy Training</h4>
-                        <p>Training sequence.</p>
-                        <div class="content-tags">
-                            <span class="tag purple" data-tag="sissy">sissy</span>
-                            <span class="tag pink" data-tag="training">training</span>
-                            <span class="tag blue" data-tag="sequence">sequence</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div id="images-content" class="tab-content">
-                <div class="content-card-header">
-                    <h3>IMAGE ARCHIVE</h3>
-                    <span class="content-count">50+ Images</span>
-                </div>
-                <div class="content-grid">
-                    <!-- Image Content -->
-                    <div class="content-sample-card glass-panel lust-card">
-                        <img src="assets/images/chaos_cult.png" alt="Chaos Cult Artwork" style="width: 100%; height: 200px; object-fit: contain;">
-                        <h4>Chaos Cult Artwork</h4>
-                        <p>Iconic artwork of our dark cult.</p>
-                        <div class="content-tags">
-                            <span class="tag purple" data-tag="artwork">artwork</span>
-                            <span class="tag pink" data-tag="fetish">fetish</span>
-                            <span class="tag blue" data-tag="bnwo">bnwo</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card">
-                        <img src="assets/images/chaos_worshipers.png" alt="Chaos Worshipers" style="width: 100%; height: 200px; object-fit: contain;">
-                        <h4>Chaos Worshipers</h4>
-                        <p>Scene of devotees in ritual.</p>
-                        <div class="content-tags">
-                            <span class="tag purple" data-tag="artwork">artwork</span>
-                            <span class="tag pink" data-tag="ritual">ritual</span>
-                            <span class="tag blue" data-tag="bnwo">bnwo</span>
-                        </div>
-                    </div>
-                        <h4>Gooner Feminization Protocol</h4>
-                        <p>Deep dive into gooner feminization techniques.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">sissy</span>
-                            <span class="tag pink">gooner</span>
-                            <span class="tag blue">fetish</span>
-                        </div>
-                    </div>
-                    <!-- Add more video cards here -->
-                </div>
-            </div>
-
-            <div id="gifs-content" class="tab-content">
-                <div class="content-card-header">
-                    <h3>GIF ARCHIVE</h3>
-                    <span class="content-count">50+ GIFs</span>
-                </div>
-                <div class="content-grid">
-            <div id="images-content" class="tab-content">
-                <div class="content-card-header">
-                    <h3>IMAGE ARCHIVE</h3>
-                    <span class="content-count">50+ Images</span>
-                </div>
-                <div class="content-grid">
-                    <!-- Image Placeholders -->
-                    <div class="content-sample-card">
-                        <img src="https://via.placeholder.com/400x200/FF69B4/000000?text=Gooner+Image" alt="Gooner Image">
-                        <div class="content-tags">
-                            <span class="tag purple" data-tag="gooner">gooner</span>
-                            <span class="tag pink" data-tag="sissy">sissy</span>
-                            <span class="tag blue" data-tag="hypno">hypno</span>
-                            <span class="tag pink">fetish</span>
-                            <span class="tag blue">bnwo</span>
-                        </div>
-                    </div>
-                    <!-- Add more image cards here -->
-                </div>
-            </div>
-
-            <div id="request-desires" class="text-center">
-                <h3 class="text-center">REQUEST YOUR DESIRES</h3>
-                <p class="section-subtext">As a Chaos Elite member, shape future content. Submit your personal requests.</p>
-                <a href="https://www.patreon.com/GoddessEris" target="_blank" class="cta-button">Submit Your Request</a>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <p>"Realm of Chaos shattered my limits!" — Chaos Elite Member</p>
-        <p>© 2025 Realm of Chaos. Claimed by Goddess Eris.</p>
-        <p>Chaos Elite Member Portal</p>
-        <p>Share This Chaos:</p>
-        <div class="footer-social-links">
-            <a href="https://twitter.com/intent/tweet?text=Join%20Realm%20of%20Chaos%20for%20premium%20gooner%20and%20sissy%20content!%20https://your-site.com" target="_blank" rel="noopener" class="twitter-icon"><i class="fab fa-twitter"></i></a>
-            <a href="https://www.patreon.com/GoddessEris" target="_blank" rel="nofollow" class="patreon-icon"><i class="fab fa-patreon"></i></a>
-        </div>
-    </footer>
-
-    <script>
-        // Tab functionality for content sections
-        function showContent(contentType) {
-            // Hide all content sections
-            const allContents = document.querySelectorAll('.tab-content');
-            allContents.forEach(content => {
-                content.style.display = 'none';
-            });
-
-            // Show selected content section
-            const contentElement = document.getElementById(`${contentType}-content`);
-            if (contentElement) {
-                contentElement.style.display = 'block';
-            }
-
-            // Update active tab button
-            const allButtons = document.querySelectorAll('.tab-button');
-            allButtons.forEach(button => {
-                button.classList.remove('active');
-            });
-            const activeButton = document.querySelector(`.tab-button[onclick="showContent('${contentType}')"]`);
-            if (activeButton) {
-                activeButton.classList.add('active');
-            }
-        }
-
-        // Add click handlers to tab buttons
-        document.querySelectorAll('.tab-button').forEach(button => {
-            button.addEventListener('click', () => {
-                const contentType = button.getAttribute('onclick').match(/'([^']+)'/)[1];
-                showContent(contentType);
-            });
-        });
-
-        // Show videos tab by default
-        showContent('videos');
-
-        // Dynamic header subtitle for member page
-        const subtitleElement = document.querySelector('.header-subtitle .glitch-target');
-        if (subtitleElement) {
-            const phrases = ['Devotee', 'Master', 'Chaos', 'Submit'];
-            let currentPhraseIndex = 0;
-
-            function typePhrase() {
-                subtitleElement.textContent = '';
-                let i = 0;
-                const interval = setInterval(() => {
-                    if (i < phrases[currentPhraseIndex].length) {
-                        subtitleElement.textContent += phrases[currentPhraseIndex][i];
-                        i++;
-                    } else {
-                        clearInterval(interval);
-                        setTimeout(erasePhrase, 2000);
-                    }
-                }, 100);
-            }
-
-            function erasePhrase() {
-                let i = phrases[currentPhraseIndex].length;
-                const interval = setInterval(() => {
-                    if (i > 0) {
-                        subtitleElement.textContent = phrases[currentPhraseIndex].substring(0, i - 1);
-                        i--;
-                    } else {
-                        clearInterval(interval);
-                        currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
-                        setTimeout(typePhrase, 500);
-                    }
-                }, 50);
-            }
-
-            typePhrase();
-        }
-
-        // New Release Countdown Timer
-        const newReleaseCountdown = document.getElementById('new-release-countdown');
-        if (newReleaseCountdown) {
-            function updateNewReleaseCountdown() {
-                const now = new Date();
-                const targetDate = new Date(now.getTime() + (17 * 60 * 60 * 1000) + (33 * 60 * 1000));
-                const difference = targetDate - now;
-
-                if (difference <= 0) {
-                    newReleaseCountdown.textContent = 'NEW CONTENT JUST DROPPED!';
-                    return;
-                }
-
-                const hours = Math.floor(difference / (1000 * 60 * 60));
-                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-                newReleaseCountdown.textContent = 
-                    `${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
-            }
-
-            setInterval(updateNewReleaseCountdown, 1000);
-            updateNewReleaseCountdown();
-        }
-    </script>
-
-        // Countdown Timer
-        function updateCountdown() {
-            const now = new Date();
-            const targetDate = new Date(now.getTime() + (17 * 60 * 60 * 1000) + (33 * 60 * 1000));
-            const difference = targetDate - now;
-
-            if (difference <= 0) {
-                document.getElementById('hours').textContent = '00';
-                document.getElementById('minutes').textContent = '00';
-                document.getElementById('seconds').textContent = '00';
-                return;
-            }
-
-            const hours = Math.floor(difference / (1000 * 60 * 60));
-            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-            document.getElementById('hours').textContent = String(hours).padStart(2, '0');
-            document.getElementById('minutes').textContent = String(minutes).padStart(2, '0');
-            document.getElementById('seconds').textContent = String(seconds).padStart(2, '0');
-        }
-
-        // Update countdown every second
-        setInterval(updateCountdown, 1000);
-        // Initial update
-        updateCountdown();
-
-        // Add search functionality
-        document.getElementById('searchInput').addEventListener('input', (e) => {
-            const searchTerm = e.target.value.toLowerCase();
-            const currentTab = document.querySelector('.tab-button.active').dataset.tab;
-            const cards = document.querySelectorAll(`#${currentTab} .content-sample-card`);
-            
-            cards.forEach(card => {
-                const title = card.querySelector('h4').textContent.toLowerCase();
-                const description = card.querySelector('p').textContent.toLowerCase();
-                const tags = Array.from(card.querySelectorAll('.tag'))
-                    .map(tag => tag.textContent.toLowerCase())
-                    .join(' ');
-                
-                const matches = title.includes(searchTerm) || 
-                               description.includes(searchTerm) ||
-                               tags.includes(searchTerm);
-                
-                card.style.display = matches ? 'block' : 'none';
-            });
-        });
-
-            if (difference <= 0) {
-                document.getElementById('new-release-countdown').textContent = 'NEW CONTENT JUST DROPPED!';
-                return;
-            }
-
-            const hours = Math.floor(difference / (1000 * 60 * 60));
-            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-            document.getElementById('new-release-countdown').textContent = 
-                `${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
-        }
-
-        // Update countdown every second
-        setInterval(updateCountdown, 1000);
-        // Initial update
-        updateCountdown();
-    </script>
-</body>
-</html>
 
     <main>
         <section class="section-panel container">
@@ -701,23 +48,6 @@
                 <p class="fomo-subtext">Enjoy this exclusive preview before it moves to the main archive.</p>
             </div>
 
-            <!-- Search and Filter Section -->
-            <div class="search-filter-section" style="margin-top: 40px;">
-                <div class="search-container" style="margin-bottom: 20px;">
-                    <input type="text" id="searchInput" placeholder="Search by name or description..." class="search-input">
-                </div>
-                <div class="tag-filter-container" style="margin-bottom: 20px;">
-                    <button class="tag-filter-btn active" onclick="filterByTag('all')">Show All</button>
-                    <button class="tag-filter-btn" onclick="filterByTag('sissy')">Sissy</button>
-                    <button class="tag-filter-btn" onclick="filterByTag('feminization')">Feminization</button>
-                    <button class="tag-filter-btn" onclick="filterByTag('hypno')">Hypno</button>
-                    <button class="tag-filter-btn" onclick="filterByTag('trance')">Trance</button>
-                    <button class="tag-filter-btn" onclick="filterByTag('gooner')">Gooner</button>
-                    <button class="tag-filter-btn" onclick="filterByTag('humiliation')">Humiliation</button>
-                    <button class="tag-filter-btn" onclick="filterByTag('degradation')">Degradation</button>
-                    <button class="tag-filter-btn" onclick="filterByTag('bnwo')">BNWO</button>
-                </div>
-            </div>
 
             <div class="content-tabs" style="margin-top: 40px; text-align: center;">
                 <button class="tab-button active" onclick="showContent('videos')">Videos</button>
@@ -730,362 +60,12 @@
                 <p class="text-center section-subtext">Full-length PMVs, JOIs, and mind-melting sessions. Scroll for more.</p>
                 <div class="content-grid-scroll">
                     <div class="content-sample-card glass-panel lust-card">
-                        <video controls muted playsinline poster="assets/images/video_placeholder1.jpg" aria-label="Gooner Feminization Protocol" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; border: 2px solid #BF00FF;">
+                        <video controls muted playsinline poster="assets/images/video_placeholder1.jpg" aria-label="Submission Protocol Alpha" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; border: 2px solid #BF00FF;">
                             <source src="assets/video/member_video1.mp4" type="video/mp4">
                             Your browser does not support the video tag.
                         </video>
-                        <h4>Gooner Feminization Protocol</h4>
-                        <p>Deep dive into gooner feminization techniques.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">sissy</span>
-                            <span class="tag pink">gooner</span>
-                            <span class="tag blue">fetish</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card">
-                        <video controls muted playsinline poster="assets/images/video_placeholder2.jpg" aria-label="BNWO: Total Devotion" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; border: 2px solid #FF69B4;">
-                            <source src="assets/video/member_video2.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <h4>BNWO: Total Devotion</h4>
-                        <p>Intense degradation scene with racial elements.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">bnwo</span>
-                            <span class="tag pink">humiliation</span>
-                            <span class="tag blue">degradation</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card">
-                        <video controls muted playsinline poster="assets/images/video_placeholder3.jpg" aria-label="Sissy Training: Gaze & Obey" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; border: 2px solid #00D4FF;">
-                            <source src="assets/video/member_video3.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <h4>Sissy Training: Gaze & Obey</h4>
-                        <p>Advanced sissy training session with hypnosis elements.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">sissy</span>
-                            <span class="tag pink">hypno</span>
-                            <span class="tag blue">trance</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card">
-                        <video controls muted playsinline poster="assets/images/video_placeholder4.jpg" aria-label="Chaos Induction" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; border: 2px solid #BF00FF;">
-                            <source src="assets/video/member_video4.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <h4>Chaos Induction</h4>
-                        <p>Deep mind-melting session for new devotees.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">hypno</span>
-                            <span class="tag pink">trance</span>
-                            <span class="tag blue">feminization</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card">
-                        <video controls muted playsinline poster="assets/images/video_placeholder5.jpg" aria-label="Sissy's Surrender" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; border: 2px solid #FF69B4;">
-                            <source src="assets/video/member_video5.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <h4>Sissy's Surrender</h4>
-                        <p>Complete submission and transformation session.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">sissy</span>
-                            <span class="tag pink">submission</span>
-                            <span class="tag blue">transformation</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card">
-                        <video controls muted playsinline poster="assets/images/video_placeholder6.jpg" aria-label="Gooner's Edge" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; border: 2px solid #00D4FF;">
-                            <source src="assets/video/member_video6.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <h4>Gooner's Edge</h4>
-                        <p>Intense edging and denial session.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">gooner</span>
-                            <span class="tag pink">edging</span>
-                            <span class="tag blue">denial</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card">
-                        <video controls muted playsinline poster="assets/images/video_placeholder7.jpg" aria-label="Feminization Progression" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; border: 2px solid #BF00FF;">
-                            <source src="assets/video/member_video7.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <h4>Feminization Progression</h4>
-                        <p>Step-by-step feminization training.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">sissy</span>
-                            <span class="tag pink">feminization</span>
-                            <span class="tag blue">training</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card">
-                        <video controls muted playsinline poster="assets/images/video_placeholder8.jpg" aria-label="Chaos Ritual" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; border: 2px solid #FF69B4;">
-                            <source src="assets/video/member_video8.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <h4>Chaos Ritual</h4>
-                        <p>Deep mind-melting ritual session.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">hypno</span>
-                            <span class="tag pink">trance</span>
-                            <span class="tag blue">ritual</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card">
-                        <video controls muted playsinline poster="assets/images/video_placeholder9.jpg" aria-label="Sissy's Humiliation" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; border: 2px solid #00D4FF;">
-                            <source src="assets/video/member_video9.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <h4>Sissy's Humiliation</h4>
-                        <p>Intense sissy degradation session.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">sissy</span>
-                            <span class="tag pink">humiliation</span>
-                            <span class="tag blue">degradation</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card">
-                        <video controls muted playsinline poster="assets/images/video_placeholder10.jpg" aria-label="Chaos Induction" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; border: 2px solid #BF00FF;">
-                            <source src="assets/video/member_video10.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
-                        </video>
-                        <h4>Chaos Induction</h4>
-                        <p>Deep mind-melting session for new devotees.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">hypno</span>
-                            <span class="tag pink">trance</span>
-                            <span class="tag blue">feminization</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card" data-tags="sissy,gooner,fetish">
-                        <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-                            <iframe src="https://jumpshare.com/embed/uahny6FQhDbSyiOoDKKw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; border: 2px solid #BF00FF;"></iframe>
-                        </div>
-                        <h4>Chaos Protocol Beta</h4>
-                        <p>Advanced gooner transformation session.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">sissy</span>
-                            <span class="tag pink">gooner</span>
-                            <span class="tag blue">fetish</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card" data-tags="sissy,gooner,fetish">
-                        <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-                            <iframe src="https://jumpshare.com/embed/uahny6FQhDbSyiOoDKKw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; border: 2px solid #BF00FF;"></iframe>
-                        </div>
-                        <h4>Chaos Protocol Gamma</h4>
-                        <p>Intense sissy training session.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">sissy</span>
-                            <span class="tag pink">gooner</span>
-                            <span class="tag blue">fetish</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card" data-tags="sissy,gooner,fetish">
-                        <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-                            <iframe src="https://jumpshare.com/embed/uahny6FQhDbSyiOoDKKw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; border: 2px solid #BF00FF;"></iframe>
-                        </div>
-                        <h4>Chaos Protocol Delta</h4>
-                        <p>Mind-melting gooner session.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">sissy</span>
-                            <span class="tag pink">gooner</span>
-                            <span class="tag blue">fetish</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card" data-tags="sissy,gooner,fetish">
-                        <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-                            <iframe src="https://jumpshare.com/embed/uahny6FQhDbSyiOoDKKw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; border: 2px solid #BF00FF;"></iframe>
-                        </div>
-                        <h4>Chaos Protocol Epsilon</h4>
-                        <p>Deep feminization training.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">sissy</span>
-                            <span class="tag pink">gooner</span>
-                            <span class="tag blue">fetish</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card" data-tags="sissy,gooner,fetish">
-                        <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-                            <iframe src="https://jumpshare.com/embed/uahny6FQhDbSyiOoDKKw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; border: 2px solid #BF00FF;"></iframe>
-                        </div>
-                        <h4>Chaos Protocol Zeta</h4>
-                        <p>Ultimate gooner experience.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">sissy</span>
-                            <span class="tag pink">gooner</span>
-                            <span class="tag blue">fetish</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card" data-tags="sissy,gooner,fetish">
-                        <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-                            <iframe src="https://jumpshare.com/embed/uahny6FQhDbSyiOoDKKw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; border: 2px solid #BF00FF;"></iframe>
-                        </div>
-                        <h4>Chaos Protocol Eta</h4>
-                        <p>Intense sissy transformation.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">sissy</span>
-                            <span class="tag pink">gooner</span>
-                            <span class="tag blue">fetish</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card" data-tags="sissy,gooner,fetish">
-                        <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-                            <iframe src="https://jumpshare.com/embed/uahny6FQhDbSyiOoDKKw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; border: 2px solid #BF00FF;"></iframe>
-                        </div>
-                        <h4>Chaos Protocol Theta</h4>
-                        <p>Advanced gooner training.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">sissy</span>
-                            <span class="tag pink">gooner</span>
-                            <span class="tag blue">fetish</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card" data-tags="sissy,gooner,fetish">
-                        <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-                            <iframe src="https://jumpshare.com/embed/uahny6FQhDbSyiOoDKKw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; border: 2px solid #BF00FF;"></iframe>
-                        </div>
-                        <h4>Chaos Protocol Iota</h4>
-                        <p>Deep feminization session.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">sissy</span>
-                            <span class="tag pink">gooner</span>
-                            <span class="tag blue">fetish</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card" data-tags="sissy,gooner,fetish">
-                        <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-                            <iframe src="https://jumpshare.com/embed/uahny6FQhDbSyiOoDKKw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; border: 2px solid #BF00FF;"></iframe>
-                        </div>
-                        <h4>Chaos Protocol Kappa</h4>
-                        <p>Mind-bending gooner experience.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">sissy</span>
-                            <span class="tag pink">gooner</span>
-                            <span class="tag blue">fetish</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card" data-tags="sissy,gooner,fetish">
-                        <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-                            <iframe src="https://jumpshare.com/embed/uahny6FQhDbSyiOoDKKw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; border: 2px solid #BF00FF;"></iframe>
-                        </div>
-                        <h4>Chaos Protocol Lambda</h4>
-                        <p>Ultimate sissy transformation.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">sissy</span>
-                            <span class="tag pink">gooner</span>
-                            <span class="tag blue">fetish</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card" data-tags="sissy,gooner,fetish">
-                        <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-                            <iframe src="https://jumpshare.com/embed/uahny6FQhDbSyiOoDKKw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; border: 2px solid #BF00FF;"></iframe>
-                        </div>
-                        <h4>Chaos Protocol Mu</h4>
-                        <p>Intense gooner session.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">sissy</span>
-                            <span class="tag pink">gooner</span>
-                            <span class="tag blue">fetish</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card" data-tags="sissy,gooner,fetish">
-                        <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-                            <iframe src="https://jumpshare.com/embed/uahny6FQhDbSyiOoDKKw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; border: 2px solid #BF00FF;"></iframe>
-                        </div>
-                        <h4>Chaos Protocol Nu</h4>
-                        <p>Deep feminization training.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">sissy</span>
-                            <span class="tag pink">gooner</span>
-                            <span class="tag blue">fetish</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card" data-tags="sissy,gooner,fetish">
-                        <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-                            <iframe src="https://jumpshare.com/embed/uahny6FQhDbSyiOoDKKw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; border: 2px solid #BF00FF;"></iframe>
-                        </div>
-                        <h4>Chaos Protocol Xi</h4>
-                        <p>Advanced gooner experience.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">sissy</span>
-                            <span class="tag pink">gooner</span>
-                            <span class="tag blue">fetish</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card" data-tags="sissy,gooner,fetish">
-                        <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-                            <iframe src="https://jumpshare.com/embed/uahny6FQhDbSyiOoDKKw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; border: 2px solid #BF00FF;"></iframe>
-                        </div>
-                        <h4>Chaos Protocol Omicron</h4>
-                        <p>Intense sissy transformation.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">sissy</span>
-                            <span class="tag pink">gooner</span>
-                            <span class="tag blue">fetish</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card" data-tags="sissy,gooner,fetish">
-                        <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-                            <iframe src="https://jumpshare.com/embed/uahny6FQhDbSyiOoDKKw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; border: 2px solid #BF00FF;"></iframe>
-                        </div>
-                        <h4>Chaos Protocol Pi</h4>
-                        <p>Mind-bending gooner session.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">sissy</span>
-                            <span class="tag pink">gooner</span>
-                            <span class="tag blue">fetish</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card" data-tags="sissy,gooner,fetish">
-                        <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-                            <iframe src="https://jumpshare.com/embed/uahny6FQhDbSyiOoDKKw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; border: 2px solid #BF00FF;"></iframe>
-                        </div>
-                        <h4>Chaos Protocol Rho</h4>
-                        <p>Ultimate feminization training.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">sissy</span>
-                            <span class="tag pink">gooner</span>
-                            <span class="tag blue">fetish</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card" data-tags="sissy,gooner,fetish">
-                        <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-                            <iframe src="https://jumpshare.com/embed/uahny6FQhDbSyiOoDKKw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; border: 2px solid #BF00FF;"></iframe>
-                        </div>
-                        <h4>Chaos Protocol Sigma</h4>
-                        <p>Intense gooner experience.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">sissy</span>
-                            <span class="tag pink">gooner</span>
-                            <span class="tag blue">fetish</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card" data-tags="sissy,gooner,fetish">
-                        <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-                            <iframe src="https://jumpshare.com/embed/uahny6FQhDbSyiOoDKKw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; border: 2px solid #BF00FF;"></iframe>
-                        </div>
-                        <h4>Chaos Protocol Tau</h4>
-                        <p>Deep feminization session.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">sissy</span>
-                            <span class="tag pink">gooner</span>
-                            <span class="tag blue">fetish</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card" data-tags="sissy,gooner,fetish">
-                        <div style="position: relative; padding-bottom: 56.25%; height: 0;">
-                            <iframe src="https://jumpshare.com/embed/uahny6FQhDbSyiOoDKKw" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border-radius: 12px; border: 2px solid #BF00FF;"></iframe>
-                        </div>
-                        <h4>Chaos Protocol Upsilon</h4>
-                        <p>Advanced gooner training.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">sissy</span>
-                            <span class="tag pink">gooner</span>
-                            <span class="tag blue">fetish</span>
-                        </div>
+                        <h4>Submission Protocol Alpha</h4>
+                        <p>A deep dive into gooner feminization, perfect for unlocking new depths of submission.</p>
                     </div>
                     <div class="content-sample-card glass-panel lust-card">
                         <video controls muted playsinline poster="assets/images/video_placeholder2.jpg" aria-label="BNWO: Total Devotion" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; border: 2px solid #FF69B4;">
@@ -1223,105 +203,10 @@
                 <h3 class="text-center">IMAGE ARCHIVE: STATIC SEDUCTION</h3>
                 <p class="text-center section-subtext">High-resolution artwork, photo sets, and conceptual pieces. Scroll for more.</p>
                 <div class="content-grid-scroll">
-                    <div class="content-sample-card glass-panel lust-card" data-tags="fetish,artwork,bnwo">
-                        <img src="assets/images/chaos_cult.png" alt="Chaos Cult Artwork" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; border: 2px solid #BF00FF;">
-                        <h4>Chaos Cult Artwork</h4>
-                        <p>Iconic artwork of our dark cult.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">fetish</span>
-                            <span class="tag pink">artwork</span>
-                            <span class="tag blue">bnwo</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card" data-tags="gooner,hypno,degradation">
-                        <img src="assets/images/chaos logo.png" alt="Chaos Logo" style="width: 100%; height: 200px; object-fit: contain; border-radius: 12px; margin-bottom: 20px; border: 2px solid #BF00FF;">
-                        <h4>Chaos Symbol</h4>
-                        <p>Our iconic symbol of power and transformation.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">gooner</span>
-                            <span class="tag pink">hypno</span>
-                            <span class="tag blue">degradation</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card" data-tags="sissy,glitch-art,bnwo">
-                        <img src="assets/images/glilch-rune-right.png" alt="Glitch Rune" style="width: 100%; height: 200px; object-fit: contain; border-radius: 12px; margin-bottom: 20px; border: 2px solid #BF00FF;">
-                        <h4>Glitch Rune</h4>
-                        <p>Distorted symbol of chaos.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">sissy</span>
-                            <span class="tag pink">glitch-art</span>
-                            <span class="tag blue">bnwo</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card" data-tags="fetish,artwork,bnwo">
-                        <img src="assets/images/glitch-eye-left.png.png" alt="Glitch Eye" style="width: 100%; height: 200px; object-fit: contain; border-radius: 12px; margin-bottom: 20px; border: 2px solid #BF00FF;">
-                        <h4>Glitch Eye</h4>
-                        <p>Iconic artwork of our dark cult.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">fetish</span>
-                            <span class="tag pink">artwork</span>
-                            <span class="tag blue">bnwo</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card" data-tags="gooner,hypno,degradation">
-                        <img src="assets/images/chaos logo.png" alt="Chaos Logo" style="width: 100%; height: 200px; object-fit: contain; border-radius: 12px; margin-bottom: 20px; border: 2px solid #BF00FF;">
-                        <h4>Chaos Symbol</h4>
-                        <p>Our iconic symbol of power and transformation.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">gooner</span>
-                            <span class="tag pink">hypno</span>
-                            <span class="tag blue">degradation</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card" data-tags="sissy,glitch-art,bnwo">
-                        <img src="assets/images/glilch-rune-right.png" alt="Glitch Rune" style="width: 100%; height: 200px; object-fit: contain; border-radius: 12px; margin-bottom: 20px; border: 2px solid #BF00FF;">
-                        <h4>Glitch Rune</h4>
-                        <p>Distorted symbol of chaos.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">sissy</span>
-                            <span class="tag pink">glitch-art</span>
-                            <span class="tag blue">bnwo</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card" data-tags="fetish,artwork,bnwo">
-                        <img src="assets/images/glitch-eye-left.png.png" alt="Glitch Eye" style="width: 100%; height: 200px; object-fit: contain; border-radius: 12px; margin-bottom: 20px; border: 2px solid #BF00FF;">
-                        <h4>Glitch Eye</h4>
-                        <p>Iconic artwork of our dark cult.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">fetish</span>
-                            <span class="tag pink">artwork</span>
-                            <span class="tag blue">bnwo</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card" data-tags="gooner,hypno,degradation">
-                        <img src="assets/images/chaos logo.png" alt="Chaos Logo" style="width: 100%; height: 200px; object-fit: contain; border-radius: 12px; margin-bottom: 20px; border: 2px solid #BF00FF;">
-                        <h4>Chaos Symbol</h4>
-                        <p>Our iconic symbol of power and transformation.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">gooner</span>
-                            <span class="tag pink">hypno</span>
-                            <span class="tag blue">degradation</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card" data-tags="sissy,glitch-art,bnwo">
-                        <img src="assets/images/glilch-rune-right.png" alt="Glitch Rune" style="width: 100%; height: 200px; object-fit: contain; border-radius: 12px; margin-bottom: 20px; border: 2px solid #BF00FF;">
-                        <h4>Glitch Rune</h4>
-                        <p>Distorted symbol of chaos.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">sissy</span>
-                            <span class="tag pink">glitch-art</span>
-                            <span class="tag blue">bnwo</span>
-                        </div>
-                    </div>
-                    <div class="content-sample-card glass-panel lust-card" data-tags="fetish,artwork,bnwo">
-                        <img src="assets/images/glitch-eye-left.png.png" alt="Glitch Eye" style="width: 100%; height: 200px; object-fit: contain; border-radius: 12px; margin-bottom: 20px; border: 2px solid #BF00FF;">
-                        <h4>Glitch Eye</h4>
-                        <p>Iconic artwork of our dark cult.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">fetish</span>
-                            <span class="tag pink">artwork</span>
-                            <span class="tag blue">bnwo</span>
-                        </div>
+                    <div class="content-sample-card glass-panel lust-card">
+                        <img src="assets/images/member_image1.jpg" alt="Member Image 1 - Cyberpunk Goddess" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; border: 2px solid #BF00FF;">
+                        <h4>The Cyberpunk Goddess</h4>
+                        <p>Stunning artwork capturing the essence of our divine chaos.</p>
                     </div>
                     <div class="content-sample-card glass-panel lust-card">
                         <img src="assets/images/member_image2.jpg" alt="Member Image 2 - Sissy Transformation" style="width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 20px; border: 2px solid #FF69B4;">
@@ -1363,15 +248,10 @@
                         <h4>The Goddess's Gaze</h4>
                         <p>Direct eye contact that demands your obedience.</p>
                     </div>
-                    <div class="content-sample-card glass-panel lust-card" data-tags="gooner,hypno,degradation">
-                        <img src="assets/images/chaos logo.png" alt="Chaos Logo" style="width: 100%; height: 200px; object-fit: contain; border-radius: 12px; margin-bottom: 20px; border: 2px solid #BF00FF;">
-                        <h4>Chaos Symbol</h4>
-                        <p>Our iconic symbol of power and transformation.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">gooner</span>
-                            <span class="tag pink">hypno</span>
-                            <span class="tag blue">degradation</span>
-                        </div>
+                    <div class="content-sample-card glass-panel lust-card">
+                        <img src="assets/images/member_image10.jpg" alt="Member Image 10 - Realm of Chaos Scene" style="width: 100%; height: 200px; object-align: top; border-radius: 12px; margin-bottom: 20px; border: 2px solid #BF00FF;">
+                        <h4>A Glimpse into the Realm</h4>
+                        <p>Iconic art encapsulating the essence of chaos.</p>
                     </div>
                 </div>
             </div>
@@ -1387,7 +267,7 @@
 
     <footer class="footer">
         <p>“Realm of Chaos shattered my limits!” — Anonymous Devotee</p>
-        <p> 2025 Realm of Chaos. Claimed by Goddess Eris.</p>
+        <p>© 2025 Realm of Chaos. Claimed by Goddess Eris.</p>
         <p>Your journey into chaos continues.</p>
         <div class="footer-social-links">
             </div>
@@ -1409,82 +289,91 @@
             }
 
             // Tab functionality for content sections
-            function showContent(contentType) {
-                // Hide all content sections
-                document.querySelectorAll('.content-grid-scroll').forEach(function(section) {
-                    section.style.display = 'none';
+            window.showContent = function(contentType) {
+                const tabContents = document.querySelectorAll('.tab-content');
+                tabContents.forEach(content => {
+                    content.style.display = 'none';
                 });
-                
-                // Show selected content section
-                const contentSection = document.querySelector(`.content-grid-scroll[data-type="${contentType}"]`);
-                if (contentSection) {
-                    contentSection.style.display = 'grid';
+
+                const tabButtons = document.querySelectorAll('.tab-button');
+                tabButtons.forEach(button => {
+                    button.classList.remove('active');
+                });
+
+                document.getElementById(contentType + '-content').style.display = 'block';
+                document.querySelector(`.tab-button[onclick="showContent('${contentType}')"]`).classList.add('active');
+            };
+
+            // Dynamic header subtitle for member page
+            const subtitleElement = document.querySelector('.header-subtitle .glitch-target');
+            if (subtitleElement) {
+                const phrases = ['Devotee', 'Master', 'Chaos', 'Submit'];
+                let phraseIndex = 0;
+                let charIndex = 0;
+                const typingSpeed = 100;
+                const erasingSpeed = 50;
+                const delayBeforeErase = 1500;
+                const delayBeforeType = 500;
+
+                function typePhrase() {
+                    const currentPhrase = phrases[phraseIndex];
+                    if (charIndex < currentPhrase.length) {
+                        subtitleElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                        charIndex++;
+                        setTimeout(typePhrase, typingSpeed);
+                    } else {
+                        setTimeout(erasePhrase, delayBeforeErase);
+                    }
                 }
 
-                // Update active tab
-                document.querySelectorAll('.tab-button').forEach(function(button) {
-                    button.classList.remove('active');
-                    if (button.dataset.type === contentType) {
-                        button.classList.add('active');
-                    }
-                });
-            }
-
-            // Tab click handlers
-            document.querySelectorAll('.tab-button').forEach(function(button) {
-                button.addEventListener('click', function() {
-                    showContent(button.dataset.type);
-                });
-            });
-
-            // Search functionality
-            const searchInput = document.getElementById('searchInput');
-            if (searchInput) {
-                searchInput.addEventListener('input', function(e) {
-                    const searchTerm = e.target.value.toLowerCase();
-                    const contentCards = document.querySelectorAll('.content-sample-card');
-                    
-                    contentCards.forEach(function(card) {
-                        const text = card.textContent.toLowerCase();
-                        if (text.includes(searchTerm)) {
-                            card.style.display = 'block';
-                        } else {
-                            card.style.display = 'none';
-                        }
-                    });
-                });
-            }
-
-            // Tag filtering
-            const tagButtons = document.querySelectorAll('.tag-button');
-            let activeTags = new Set();
-
-            tagButtons.forEach(function(button) {
-                button.addEventListener('click', function() {
-                    const tag = button.dataset.tag;
-                    if (activeTags.has(tag)) {
-                        activeTags.delete(tag);
-                        button.classList.remove('active');
+                function erasePhrase() {
+                    const currentPhrase = phrases[phraseIndex];
+                    if (charIndex > 0) {
+                        subtitleElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                        charIndex--;
+                        setTimeout(erasePhrase, erasingSpeed);
                     } else {
-                        activeTags.add(tag);
-                        button.classList.add('active');
+                        phraseIndex = (phraseIndex + 1) % phrases.length;
+                        setTimeout(typePhrase, delayBeforeType);
                     }
-                    filterByTags();
-                });
-            });
-
-            function filterByTags() {
-                const contentCards = document.querySelectorAll('.content-sample-card');
-                contentCards.forEach(function(card) {
-                    const cardTags = (card.dataset.tags || '').split(',');
-                    const matches = activeTags.size === 0 || 
-                                   Array.from(activeTags).every(tag => cardTags.includes(tag));
-                    card.style.display = matches ? 'block' : 'none';
-                });
+                }
+                typePhrase();
             }
 
-            // Initially show all content
-            filterByTags();
+            // New Release Countdown Timer (Archive Page)
+            const newReleaseCountdown = document.getElementById('new-release-countdown');
+            if (newReleaseCountdown) {
+                // Set the target date and time for the next release (e.g., 2 days and 10 hours from now)
+                const targetDate = new Date();
+                targetDate.setDate(targetDate.getDate() + 2); // 2 days from now
+                targetDate.setHours(targetDate.getHours() + 10); // 10 hours from now
+                targetDate.setMinutes(0);
+                targetDate.setSeconds(0);
+                const releaseTime = targetDate.getTime();
+
+                const updateNewReleaseCountdown = () => {
+                    const now = new Date().getTime();
+                    const distance = releaseTime - now;
+
+                    if (distance < 0) {
+                        newReleaseCountdown.textContent = 'NEW CONTENT LIVE NOW!';
+                        return;
+                    }
+
+                    const hours = Math.floor(difference / (1000 * 60 * 60));
+                    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                    newReleaseCountdown.textContent = 
+                        `${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
+                }
+
+                // Update every second
+                setInterval(updateNewReleaseCountdown, 1000);
+                
+                // Initial call to set the countdown
+                updateNewReleaseCountdown();
+            }
 
             // Initially show the videos tab
             showContent('videos');
@@ -1675,130 +564,6 @@
                 width: calc(100% - 20px);
                 margin: 10px auto;
             }
-        }
-    </style>
-    <script>
-        // Tab Switching Functionality
-        function showContent(contentType) {
-            // Hide all content sections
-            document.querySelectorAll('.tab-content').forEach(content => {
-                content.style.display = 'none';
-            });
-
-            // Show selected content section
-            const contentElement = document.getElementById(`${contentType}-content`);
-            if (contentElement) {
-                contentElement.style.display = 'block';
-            }
-
-            // Update active tab button
-            document.querySelectorAll('.tab-button').forEach(button => {
-                button.classList.remove('active');
-            });
-            document.querySelector(`.tab-button[data-type="${contentType}"]`).classList.add('active');
-        }
-
-        // Add click handlers to tab buttons
-        document.querySelectorAll('.tab-button').forEach(button => {
-            button.addEventListener('click', () => {
-                showContent(button.dataset.type);
-            });
-        });
-
-        // Initially show the videos tab
-        showContent('videos');
-
-        // Filter by tags
-        function filterByTags() {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            const cards = document.querySelectorAll('.content-sample-card');
-            
-            cards.forEach(card => {
-                const title = card.querySelector('h4').textContent.toLowerCase();
-                const description = card.querySelector('p').textContent.toLowerCase();
-                const tags = card.getAttribute('data-tags') || '';
-                
-                const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
-                const matchesTags = !searchTerm || tags.includes(searchTerm);
-                
-                card.style.display = matchesSearch && matchesTags ? '' : 'none';
-            });
-        }
-
-        // Add search input event listener
-        document.getElementById('searchInput').addEventListener('input', filterByTags);
-
-        // Countdown Timer
-        function updateCountdown() {
-            const targetDate = new Date('2025-06-01T00:00:00-08:00'); // Next release date
-            const now = new Date();
-            const difference = targetDate - now;
-
-            if (difference <= 0) {
-                document.getElementById('new-release-countdown').textContent = 'NEW CONTENT JUST DROPPED!';
-                return;
-            }
-
-            const hours = Math.floor(difference / (1000 * 60 * 60));
-            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
-
-            document.getElementById('new-release-countdown').textContent = 
-                `${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
-        }
-
-        // Update countdown every second
-        setInterval(updateCountdown, 1000);
-        // Initial update
-        updateCountdown();
-    </script>
-    <style>
-        .content-tags {
-            display: flex;
-            gap: 8px;
-            margin-top: 10px;
-            padding: 10px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .tag {
-            padding: 4px 8px;
-            border-radius: 12px;
-            font-size: 0.8em;
-            font-weight: bold;
-            color: #020006;
-            text-transform: uppercase;
-            transition: all 0.3s ease;
-        }
-
-        .tag.purple {
-            background-color: #BF00FF;
-            border: 1px solid #00D4FF;
-        }
-
-        .tag.purple:hover {
-            background-color: #00D4FF;
-            border-color: #BF00FF;
-        }
-
-        .tag.pink {
-            background-color: #FF69B4;
-            border: 1px solid #BF00FF;
-        }
-
-        .tag.pink:hover {
-            background-color: #BF00FF;
-            border-color: #FF69B4;
-        }
-
-        .tag.blue {
-            background-color: #00D4FF;
-            border: 1px solid #FF69B4;
-        }
-
-        .tag.blue:hover {
-            background-color: #FF69B4;
-            border-color: #00D4FF;
         }
     </style>
 </body>

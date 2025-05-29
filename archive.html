@@ -3,21 +3,131 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Exclusive content archive for Realm of Chaos members: videos, GIFs, and images.">
-    <meta name="keywords" content="member content, exclusive access, gooner videos, sissy GIFs, fetish archive, Realm of Chaos members">
-    <meta property="og:title" content="Member Archive | Realm of Chaos">
-    <meta property="og:description" content="Access all exclusive gooner, sissy, and fetish content from Realm of Chaos.">
+    <meta name="description" content="Premium member archive for Realm of Chaos: 50+ exclusive videos, 50+ images, and 50+ GIFs.">
+    <meta name="keywords" content="premium content, gooner videos, sissy GIFs, fetish images, Realm of Chaos members, exclusive archive">
+    <meta property="og:title" content="Premium Member Archive | Realm of Chaos">
+    <meta property="og:description" content="Access 50+ exclusive videos, 50+ images, and 50+ GIFs from Realm of Chaos. Premium members only.">
     <meta property="og:image" content="assets/images/chaos_logo.png">
     <meta property="og:url" content="https://your-site.com/archive.html">
-    <title>Member Archive | Realm of Chaos</title>
+    <title>Premium Member Archive | Realm of Chaos</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Member Archive Specific Styles */
+        .member-banner {
+            background: linear-gradient(135deg, rgba(191, 0, 255, 0.1), rgba(0, 212, 255, 0.1));
+            padding: 2rem;
+            margin: 2rem 0;
+            border-radius: 15px;
+            border: 2px solid #BF00FF;
+            text-align: center;
+        }
+        .member-count {
+            font-size: 2.5rem;
+            color: #BF00FF;
+            font-weight: bold;
+        }
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
+        .content-sample-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+        }
+        .content-sample-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(191, 0, 255, 0.3);
+        }
+        .content-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 0.5rem;
+        }
+        .tag {
+            padding: 0.3rem 0.8rem;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            color: white;
+        }
+        .purple { background: #BF00FF; }
+        .pink { background: #FF69B4; }
+        .blue { background: #00D4FF; }
+        .yellow { background: #FFD700; }
+        .green { background: #00FF00; }
+        .red { background: #FF0000; }
+        .tab-button {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.5);
+            color: #00D4FF;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .tab-button.active {
+            background: #BF00FF;
+            color: white;
+            transform: scale(1.05);
+        }
+        .tab-content {
+            margin-top: 2rem;
+            padding: 2rem;
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 15px;
+            border: 2px solid #00D4FF;
+        }
+        .search-container {
+            max-width: 600px;
+            margin: 2rem auto;
+        }
+        .search-input {
+            width: 100%;
+            padding: 1rem;
+            border: 2px solid #BF00FF;
+            border-radius: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            color: white;
+        }
+        .tag-filter-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            justify-content: center;
+        }
+        .tag-filter-btn {
+            padding: 0.5rem 1rem;
+            border: 2px solid #BF00FF;
+            border-radius: 20px;
+            background: none;
+            color: #BF00FF;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        .tag-filter-btn.active {
+            background: #BF00FF;
+            color: white;
+        }
+        .content-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        .content-count {
+            color: #00D4FF;
+            font-weight: bold;
+        }
+    </style>
 </head>
 <body>
     <header class="header">
         <div class="container nav-container">
             <a href="index.html" class="nav-logo">REALM OF CHAOS</a>
-            <p class="header-subtitle">Welcome, <span class="glitch-target">Devotee</span></p>
+            <p class="header-subtitle">Welcome, <span class="glitch-target">Chaos Elite</span></p>
             <button class="menu-toggle" aria-label="Toggle navigation menu">
                 <i class="fas fa-bars"></i>
             </button>
@@ -32,6 +142,220 @@
             </nav>
         </div>
     </header>
+    
+    <main>
+        <section class="section-panel container">
+            <div class="member-banner">
+                <h2 class="text-center">PREMIUM MEMBER ARCHIVE</h2>
+                <div class="text-center">
+                    <span class="member-count">50+ Videos</span>
+                    <span class="member-count">50+ Images</span>
+                    <span class="member-count">50+ GIFs</span>
+                </div>
+                <p class="text-center">Exclusive content for Chaos Elite members only</p>
+            </div>
+
+            <div class="search-filter-section">
+                <div class="search-container">
+                    <input type="text" id="searchInput" placeholder="Search by name, description, or tags..." class="search-input">
+                </div>
+                <div class="tag-filter-container">
+                    <button class="tag-filter-btn active" onclick="filterByTag('all')">Show All</button>
+                    <button class="tag-filter-btn" onclick="filterByTag('sissy')">Sissy</button>
+                    <button class="tag-filter-btn" onclick="filterByTag('gooner')">Gooner</button>
+                    <button class="tag-filter-btn" onclick="filterByTag('hypno')">Hypno</button>
+                    <button class="tag-filter-btn" onclick="filterByTag('bnwo')">BNWO</button>
+                    <button class="tag-filter-btn" onclick="filterByTag('feminization')">Feminization</button>
+                    <button class="tag-filter-btn" onclick="filterByTag('trance')">Trance</button>
+                    <button class="tag-filter-btn" onclick="filterByTag('humiliation')">Humiliation</button>
+                </div>
+            </div>
+
+            <div class="content-tabs">
+                <button class="tab-button active" onclick="showContent('videos')">Videos (50+)</button>
+                <button class="tab-button" onclick="showContent('gifs')">GIFs (50+)</button>
+                <button class="tab-button" onclick="showContent('images')">Images (50+)</button>
+            </div>
+
+            <div id="videos-content" class="tab-content active">
+                <div class="content-card-header">
+                    <h3>VIDEO ARCHIVE</h3>
+                    <span class="content-count">50+ Videos</span>
+                </div>
+                <div class="content-grid">
+                    <!-- Video Content -->
+                    <div class="content-sample-card glass-panel lust-card">
+                        <video controls muted playsinline poster="assets/images/video_placeholder1.jpg" aria-label="Gooner Feminization Protocol">
+                            <source src="assets/video/member_video1.mp4" type="video/mp4">
+                            Your browser does not support the video tag.
+                        </video>
+                        <h4>Gooner Feminization Protocol</h4>
+                        <p>Deep dive into gooner feminization techniques.</p>
+                        <div class="content-tags">
+                            <span class="tag purple">sissy</span>
+                            <span class="tag pink">gooner</span>
+                            <span class="tag blue">fetish</span>
+                        </div>
+                    </div>
+                    <!-- Add more video cards here -->
+                </div>
+            </div>
+
+            <div id="gifs-content" class="tab-content">
+                <div class="content-card-header">
+                    <h3>GIF ARCHIVE</h3>
+                    <span class="content-count">50+ GIFs</span>
+                </div>
+                <div class="content-grid">
+                    <!-- GIF Content -->
+                    <div class="content-sample-card glass-panel lust-card">
+                        <img src="assets/gifs/member_gif1.gif" alt="Member GIF 1" style="width: 100%; height: 200px; object-fit: cover;">
+                        <h4>Chaos Loop</h4>
+                        <p>Hypnotic sissy transformation loop.</p>
+                        <div class="content-tags">
+                            <span class="tag purple">sissy</span>
+                            <span class="tag pink">hypno</span>
+                            <span class="tag blue">trance</span>
+                        </div>
+                    </div>
+                    <!-- Add more GIF cards here -->
+                </div>
+            </div>
+
+            <div id="images-content" class="tab-content">
+                <div class="content-card-header">
+                    <h3>IMAGE ARCHIVE</h3>
+                    <span class="content-count">50+ Images</span>
+                </div>
+                <div class="content-grid">
+                    <!-- Image Content -->
+                    <div class="content-sample-card glass-panel lust-card">
+                        <img src="assets/images/member_image1.jpg" alt="Member Image 1" style="width: 100%; height: 200px; object-fit: cover;">
+                        <h4>Chaos Cult Artwork</h4>
+                        <p>Iconic artwork of our dark cult.</p>
+                        <div class="content-tags">
+                            <span class="tag purple">artwork</span>
+                            <span class="tag pink">fetish</span>
+                            <span class="tag blue">bnwo</span>
+                        </div>
+                    </div>
+                    <!-- Add more image cards here -->
+                </div>
+            </div>
+
+            <div id="request-desires" class="text-center">
+                <h3 class="text-center">REQUEST YOUR DESIRES</h3>
+                <p class="section-subtext">As a Chaos Elite member, shape future content. Submit your personal requests.</p>
+                <a href="https://www.patreon.com/GoddessEris" target="_blank" class="cta-button">Submit Your Request</a>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>"Realm of Chaos shattered my limits!" — Chaos Elite Member</p>
+        <p>© 2025 Realm of Chaos. Claimed by Goddess Eris.</p>
+        <p>Chaos Elite Member Portal</p>
+        <p>Share This Chaos:</p>
+        <div class="footer-social-links">
+            <a href="https://twitter.com/intent/tweet?text=Join%20Realm%20of%20Chaos%20for%20premium%20gooner%20and%20sissy%20content!%20https://your-site.com" target="_blank" rel="noopener" class="twitter-icon"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.patreon.com/GoddessEris" target="_blank" rel="nofollow" class="patreon-icon"><i class="fab fa-patreon"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        // Tab Switching Functionality
+        function showContent(contentType) {
+            // Hide all content sections
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.style.display = 'none';
+            });
+
+            // Show selected content section
+            const contentElement = document.getElementById(`${contentType}-content`);
+            if (contentElement) {
+                contentElement.style.display = 'block';
+            }
+
+            // Update active tab button
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            document.querySelector(`.tab-button[data-type="${contentType}"]`).classList.add('active');
+        }
+
+        // Add click handlers to tab buttons
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', () => {
+                showContent(button.dataset.type);
+            });
+        });
+
+        // Initially show the videos tab
+        showContent('videos');
+
+        // Filter by tags
+        function filterByTags(tag) {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.content-sample-card');
+            
+            cards.forEach(card => {
+                const title = card.querySelector('h4').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+                const tags = card.getAttribute('data-tags') || '';
+                
+                const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
+                const matchesTags = !searchTerm || tags.includes(tag);
+                
+                card.style.display = matchesSearch && matchesTags ? '' : 'none';
+            });
+
+            // Update active tag filter button
+            document.querySelectorAll('.tag-filter-btn').forEach(button => {
+                button.classList.remove('active');
+            });
+            if (tag !== 'all') {
+                document.querySelector(`.tag-filter-btn[data-tag="${tag}"]`).classList.add('active');
+            }
+        }
+
+        // Add search input event listener
+        document.getElementById('searchInput').addEventListener('input', () => {
+            filterByTags(document.querySelector('.tag-filter-btn.active').dataset.tag);
+        });
+
+        // Add tag filter button click handlers
+        document.querySelectorAll('.tag-filter-btn').forEach(button => {
+            button.addEventListener('click', () => {
+                filterByTags(button.dataset.tag);
+            });
+        });
+
+        // Countdown Timer
+        function updateCountdown() {
+            const targetDate = new Date('2025-06-01T00:00:00-08:00'); // Next release date
+            const now = new Date();
+            const difference = targetDate - now;
+
+            if (difference <= 0) {
+                document.getElementById('new-release-countdown').textContent = 'NEW CONTENT JUST DROPPED!';
+                return;
+            }
+
+            const hours = Math.floor(difference / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('new-release-countdown').textContent = 
+                `${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        // Initial update
+        updateCountdown();
+    </script>
+</body>
+</html>
 
     <main>
         <section class="section-panel container">

@@ -3,80 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Premium member archive for Realm of Chaos: 50+ exclusive videos, 50+ images, and 50+ GIFs.">
-    <meta name="keywords" content="premium content, gooner videos, sissy GIFs, fetish images, Realm of Chaos members, exclusive archive">
-    <meta property="og:title" content="Premium Member Archive | Realm of Chaos">
-    <meta property="og:description" content="Access 50+ exclusive videos, 50+ images, and 50+ GIFs from Realm of Chaos. Premium members only.">
+    <meta name="description" content="Exclusive content archive for Realm of Chaos members: videos, GIFs, and images.">
+    <meta name="keywords" content="member content, exclusive access, gooner videos, sissy GIFs, fetish archive, Realm of Chaos members">
+    <meta property="og:title" content="Member Archive | Realm of Chaos">
+    <meta property="og:description" content="Access all exclusive gooner, sissy, and fetish content from Realm of Chaos.">
     <meta property="og:image" content="assets/images/chaos_logo.png">
     <meta property="og:url" content="https://your-site.com/archive.html">
-    <title>Premium Member Archive | Realm of Chaos</title>
+    <title>Member Archive | Realm of Chaos</title>
     <link rel="stylesheet" href="styles/main.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Member Archive Specific Styles */
-        .member-banner {
-            background: linear-gradient(135deg, rgba(191, 0, 255, 0.1), rgba(0, 212, 255, 0.1));
-            padding: 2rem;
-            margin: 2rem 0;
-            border-radius: 15px;
+        /* Archive Page Specific Styles */
+        .fomo-banner {
+            background-color: rgba(191, 0, 255, 0.15);
             border: 2px solid #BF00FF;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 20px 0;
             text-align: center;
         }
-        .member-count {
-            font-size: 2.5rem;
+        .fomo-text-large {
+            font-size: 2rem;
             color: #BF00FF;
-            font-weight: bold;
+            margin: 10px 0;
         }
-        .countdown-section {
-            margin: 2rem 0;
-            padding: 2rem;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 15px;
-            border: 2px solid #BF00FF;
+        .fomo-subtext {
+            color: #00D4FF;
+            font-size: 1.2rem;
         }
-        .countdown-container {
-            font-size: 2.5rem;
-            color: #BF00FF;
-            margin-top: 1rem;
-        }
-        .countdown-number {
-            font-size: 3rem;
-            font-weight: bold;
-            color: #BF00FF;
-            margin: 0 0.5rem;
-            display: inline-block;
-        }
-        .tab-buttons {
+        .content-tabs {
             display: flex;
             justify-content: center;
-            gap: 1rem;
-            margin: 2rem 0;
+            gap: 20px;
+            margin: 40px 0;
         }
         .tab-button {
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 10px;
-            background: rgba(0, 0, 0, 0.5);
+            background-color: rgba(0, 0, 0, 0.6);
             color: #00D4FF;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 10px;
             cursor: pointer;
             transition: all 0.3s ease;
         }
+        .tab-button:hover {
+            background-color: rgba(191, 0, 255, 0.6);
+        }
         .tab-button.active {
-            background: #BF00FF;
+            background-color: #BF00FF;
             color: white;
         }
         .tab-content {
             display: none;
-            margin-top: 2rem;
-            padding: 2rem;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 15px;
-            border: 2px solid #00D4FF;
+            margin-top: 40px;
         }
         .tab-content.active {
             display: block;
         }
-        .content-grid {
+        .content-grid-scroll {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
             gap: 2rem;
@@ -84,8 +68,8 @@
         }
         .content-sample-card {
             background: rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            border: 2px solid #00D4FF;
+            border-radius: 12px;
+            border: 2px solid #BF00FF;
             padding: 1rem;
             transition: all 0.3s ease;
         }
@@ -93,49 +77,28 @@
             transform: translateY(-5px);
             box-shadow: 0 10px 20px rgba(191, 0, 255, 0.3);
         }
-        .content-sample-card img,
-        .content-sample-card video {
+        .content-sample-card video,
+        .content-sample-card img {
             width: 100%;
             height: 200px;
             object-fit: cover;
-            border-radius: 10px;
+            border-radius: 12px;
+            margin-bottom: 20px;
         }
-        .content-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 0.5rem;
-        }
-        .tag {
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            color: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        .tag:hover {
-            transform: scale(1.1);
-        }
-        .purple { background: #BF00FF; }
-        .pink { background: #FF69B4; }
-        .blue { background: #00D4FF; }
-        .yellow { background: #FFD700; }
-        .green { background: #00FF00; }
-        .red { background: #FF0000; }
-        .section-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-        }
-        .section-title {
+        .content-sample-card h4 {
             color: #BF00FF;
-            font-size: 2rem;
+            margin: 10px 0;
         }
-        .section-count {
+        .content-sample-card p {
             color: #00D4FF;
-            font-weight: bold;
+            margin: 5px 0;
+        }
+        .glass-panel {
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+        }
+        .lust-card {
+            border: 2px solid #BF00FF;
         }
     </style>
 </head>
@@ -161,29 +124,23 @@
     
     <main>
         <section class="section-panel container">
-            <div class="member-banner">
-                <h2 class="text-center">PREMIUM MEMBER ARCHIVE</h2>
-                <div class="text-center">
-                    <span class="member-count">50+ Videos</span>
-                    <span class="member-count">50+ Images</span>
-                    <span class="member-count">50+ GIFs</span>
-                </div>
-                <p class="text-center">Exclusive content for Chaos Elite members only</p>
+            <h2 class="text-center">WELCOME, DEVOTEE. YOUR DOMINION AWAITS.</h2>
+            <p class="text-center section-subtext">This is your exclusive gateway to all content from Realm of Chaos. Dive deep into the archives of desire.</p>
+
+            <div class="fomo-banner new-release-countdown-container">
+                <p class="fomo-text-large">NEXT RELEASE IN: <span id="new-release-countdown">17h 33m 00s</span></p>
+                <p class="fomo-subtext">Prepare for new depths of chaos. Don't miss the drop!</p>
             </div>
-            
-            <!-- Countdown Timer Section -->
-            <div class="countdown-section">
-                <h3>NEW CONTENT DROPPING SOON</h3>
-                <div class="countdown-container">
-                    <div id="countdown-timer">
-                        <div class="countdown-number" id="hours">17</div>
-                        <div class="countdown-label">Hours</div>
-                    </div>
-                    <div class="countdown-number" id="minutes">33</div>
-                    <div class="countdown-label">Minutes</div>
-                    <div class="countdown-number" id="seconds">00</div>
-                    <div class="countdown-label">Seconds</div>
-                </div>
+
+            <div class="fomo-banner limited-time-access">
+                <p class="fomo-text-large"><i class="fas fa-hourglass-half"></i> Special Early Access: "Sissy's Surrender" video available for 48 hours only!</p>
+                <p class="fomo-subtext">Enjoy this exclusive preview before it moves to the main archive.</p>
+            </div>
+
+            <div class="content-tabs">
+                <button class="tab-button active" onclick="showContent('videos')">Videos</button>
+                <button class="tab-button" onclick="showContent('gifs')">GIFs</button>
+                <button class="tab-button" onclick="showContent('images')">Images</button>
             </div>
             
             <style>
@@ -561,77 +518,103 @@
     </footer>
 
     <script>
-        // Tab Switching Functionality
-        function switchTab(tabId) {
-            // Hide all tabs
-            document.querySelectorAll('.tab-content').forEach(tab => {
-                tab.style.display = 'none';
+        // Tab functionality for content sections
+        function showContent(contentType) {
+            // Hide all content sections
+            const allContents = document.querySelectorAll('.tab-content');
+            allContents.forEach(content => {
+                content.style.display = 'none';
             });
-            
-            // Show selected tab
-            const selectedTab = document.getElementById(tabId);
-            if (selectedTab) {
-                selectedTab.style.display = 'block';
+
+            // Show selected content section
+            const contentElement = document.getElementById(`${contentType}-content`);
+            if (contentElement) {
+                contentElement.style.display = 'block';
             }
-            
-            // Update active button
-            document.querySelectorAll('.tab-button').forEach(button => {
+
+            // Update active tab button
+            const allButtons = document.querySelectorAll('.tab-button');
+            allButtons.forEach(button => {
                 button.classList.remove('active');
             });
-            document.querySelector(`[data-tab="${tabId}"]`).classList.add('active');
+            const activeButton = document.querySelector(`.tab-button[onclick="showContent('${contentType}')"]`);
+            if (activeButton) {
+                activeButton.classList.add('active');
+            }
         }
 
         // Add click handlers to tab buttons
         document.querySelectorAll('.tab-button').forEach(button => {
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                const tabId = button.dataset.tab;
-                switchTab(tabId);
+            button.addEventListener('click', () => {
+                const contentType = button.getAttribute('onclick').match(/'([^']+)'/)[1];
+                showContent(contentType);
             });
         });
 
         // Show videos tab by default
-        switchTab('videos-content');
+        showContent('videos');
 
-        // Tag Filtering
-        function filterContentByTag(tag) {
-            const currentTab = document.querySelector('.tab-button.active').dataset.tab;
-            const cards = document.querySelectorAll(`#${currentTab} .content-sample-card`);
-            
-            cards.forEach(card => {
-                const tags = Array.from(card.querySelectorAll('.tag'));
-                const hasTag = tags.some(t => t.dataset.tag === tag);
-                card.style.display = tag === 'all' || hasTag ? 'block' : 'none';
-            });
+        // Dynamic header subtitle for member page
+        const subtitleElement = document.querySelector('.header-subtitle .glitch-target');
+        if (subtitleElement) {
+            const phrases = ['Devotee', 'Master', 'Chaos', 'Submit'];
+            let currentPhraseIndex = 0;
 
-            // Update active tag filter button
-            document.querySelectorAll('.tag-filter-btn').forEach(button => {
-                button.classList.remove('active');
-            });
-            if (tag !== 'all') {
-                document.querySelector(`.tag-filter-btn[data-tag="${tag}"]`).classList.add('active');
+            function typePhrase() {
+                subtitleElement.textContent = '';
+                let i = 0;
+                const interval = setInterval(() => {
+                    if (i < phrases[currentPhraseIndex].length) {
+                        subtitleElement.textContent += phrases[currentPhraseIndex][i];
+                        i++;
+                    } else {
+                        clearInterval(interval);
+                        setTimeout(erasePhrase, 2000);
+                    }
+                }, 100);
             }
+
+            function erasePhrase() {
+                let i = phrases[currentPhraseIndex].length;
+                const interval = setInterval(() => {
+                    if (i > 0) {
+                        subtitleElement.textContent = phrases[currentPhraseIndex].substring(0, i - 1);
+                        i--;
+                    } else {
+                        clearInterval(interval);
+                        currentPhraseIndex = (currentPhraseIndex + 1) % phrases.length;
+                        setTimeout(typePhrase, 500);
+                    }
+                }, 50);
+            }
+
+            typePhrase();
         }
 
-        // Add tag filter button click handlers
-        document.querySelectorAll('.tag-filter-btn').forEach(button => {
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                const tag = button.dataset.tag;
-                filterContentByTag(tag);
-            });
-        });
+        // New Release Countdown Timer
+        const newReleaseCountdown = document.getElementById('new-release-countdown');
+        if (newReleaseCountdown) {
+            function updateNewReleaseCountdown() {
+                const now = new Date();
+                const targetDate = new Date(now.getTime() + (17 * 60 * 60 * 1000) + (33 * 60 * 1000));
+                const difference = targetDate - now;
 
-        // Add tag click handlers
-        document.querySelectorAll('.tag').forEach(tag => {
-            tag.addEventListener('click', (e) => {
-                e.stopPropagation();
-                const tagFilterBtn = document.querySelector(`.tag-filter-btn[data-tag="${tag.dataset.tag}"]`);
-                if (tagFilterBtn) {
-                    tagFilterBtn.click();
+                if (difference <= 0) {
+                    newReleaseCountdown.textContent = 'NEW CONTENT JUST DROPPED!';
+                    return;
                 }
-            });
-        });
+
+                const hours = Math.floor(difference / (1000 * 60 * 60));
+                const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+                const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+                newReleaseCountdown.textContent = 
+                    `${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
+            }
+
+            setInterval(updateNewReleaseCountdown, 1000);
+            updateNewReleaseCountdown();
+        }
     </script>
 
         // Countdown Timer

@@ -65,6 +65,18 @@
     ],
     "gifs": [
         {
+            "id": "GIF002",
+            "type": "gif",
+            "upload_date": "2025-05-29",
+            "aspect_ratio": "16:9",
+            "name": "GIF1",
+            "description": "GIF1 GIF1 GIF1",
+            "fetish_tags": ["gif", "animation", "loop"],
+            "embed_code": "<img src=\"https://go.screenpal.com/watch/cThUi8n6k04\" alt=\"GIF1\" style=\"width:100%; height:auto;\">",
+            "thumbnail": "https://placehold.co/600x338/BF00FF/020006?text=GIF1",
+            "related_content": []
+        },
+        {
             "id": "GIF001",
             "type": "gif",
             "upload_date": "2025-05-26",

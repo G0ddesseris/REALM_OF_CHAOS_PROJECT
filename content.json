@@ -1,0 +1,41 @@
+{
+    "videos": [
+        {
+            "id": "1",
+            "type": "video",
+            "upload_date": "2025-05-28",
+            "aspect_ratio": "16:9",
+            "name": "Sissy Transformation Trance",
+            "description": "Mind-melting feminization hypnosis session",
+            "fetish_tags": ["sissy", "feminization", "hypno", "trance"],
+            "embed_code": "<iframe width=\"640\" height=\"360\" src=\"https://jumpshare.com/embed/uahny6FQhDbSyiOoDKKw\" frameborder=\"0\" allowfullscreen></iframe>",
+            "related_content": ["2", "5"]
+        }
+    ],
+    "images": [
+        {
+            "id": "2",
+            "type": "image",
+            "upload_date": "2025-05-27",
+            "aspect_ratio": "1:1",
+            "name": "Gooner Humiliation",
+            "description": "Intense degradation scene",
+            "fetish_tags": ["gooner", "humiliation", "degradation"],
+            "embed_code": "<img src=\"https://example.com/gooner-humiliation.jpg\" alt=\"Gooner Humiliation Scene\">",
+            "related_content": ["1", "3"]
+        }
+    ],
+    "gifs": [
+        {
+            "id": "3",
+            "type": "gif",
+            "upload_date": "2025-05-26",
+            "aspect_ratio": "16:9",
+            "name": "Sissy Hypno Loop",
+            "description": "Continuous feminization hypnosis animation",
+            "fetish_tags": ["sissy", "hypno", "loop"],
+            "embed_code": "<img src=\"https://example.com/sissy-hypno.gif\" alt=\"Sissy Hypno Loop\">",
+            "related_content": ["1", "2"]
+        }
+    ]
+}

@@ -1,20 +1,33 @@
 {
     "videos": [
         {
-            "id": "1",
+            "id": "VID001",
             "type": "video",
             "upload_date": "2025-05-28",
             "aspect_ratio": "16:9",
             "name": "Sissy Transformation Trance",
             "description": "Mind-melting feminization hypnosis session",
             "fetish_tags": ["sissy", "feminization", "hypno", "trance"],
-            "embed_code": "<iframe width=\"640\" height=\"360\" src=\"https://jumpshare.com/embed/uahny6FQhDbSyiOoDKKw\" frameborder=\"0\" allowfullscreen></iframe>",
-            "related_content": ["2", "5"]
+            "embed_code": "<iframe src=\"https://your-video-host.com/embed/VID001\" width=\"1920\" height=\"1080\" frameborder=\"0\" allowfullscreen></iframe>",
+            "thumbnail": "https://placehold.co/600x338/BF00FF/020006?text=Sissy+Transformation+Trance",
+            "related_content": []
+        },
+        {
+            "id": "VID002",
+            "type": "video",
+            "upload_date": "2025-05-29",
+            "aspect_ratio": "9:16",
+            "name": "Surrender to Ecstasy",
+            "description": "Captivating captions guide you into a world of ecstatic sissy surrender.",
+            "fetish_tags": ["sissy", "submission", "captions", "feminization", "ecstasy"],
+            "embed_code": "<iframe src=\"https://your-video-host.com/embed/VID002\" width=\"1920\" height=\"1080\" frameborder=\"0\" allowfullscreen></iframe>",
+            "thumbnail": "https://placehold.co/338x600/BF00FF/020006?text=Surrender+to+Ecstasy",
+            "related_content": []
         }
     ],
     "images": [
         {
-            "id": "2",
+            "id": "IMG001",
             "type": "image",
             "upload_date": "2025-05-27",
             "aspect_ratio": "1:1",
@@ -22,12 +35,13 @@
             "description": "Intense degradation scene",
             "fetish_tags": ["gooner", "humiliation", "degradation"],
             "embed_code": "<img src=\"https://example.com/gooner-humiliation.jpg\" alt=\"Gooner Humiliation Scene\">",
-            "related_content": ["1", "3"]
+            "thumbnail": "https://placehold.co/600x600/BF00FF/020006?text=Gooner+Humiliation",
+            "related_content": []
         }
     ],
     "gifs": [
         {
-            "id": "3",
+            "id": "GIF001",
             "type": "gif",
             "upload_date": "2025-05-26",
             "aspect_ratio": "16:9",
@@ -35,7 +49,8 @@
             "description": "Continuous feminization hypnosis animation",
             "fetish_tags": ["sissy", "hypno", "loop"],
             "embed_code": "<img src=\"https://example.com/sissy-hypno.gif\" alt=\"Sissy Hypno Loop\">",
-            "related_content": ["1", "2"]
+            "thumbnail": "https://placehold.co/600x338/BF00FF/020006?text=Sissy+Hypno+Loop",
+            "related_content": []
         }
     ]
 }

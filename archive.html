@@ -357,16 +357,25 @@
 
                     if (distance < 0) {
                         newReleaseCountdown.textContent = 'NEW CONTENT LIVE NOW!';
+                        // Reset timer after 5 minutes
+                        setTimeout(() => {
+                            const newTargetDate = new Date();
+                            newTargetDate.setDate(newTargetDate.getDate() + 2);
+                            newTargetDate.setHours(newTargetDate.getHours() + 10);
+                            newTargetDate.setMinutes(0);
+                            newTargetDate.setSeconds(0);
+                            releaseTime = newTargetDate.getTime();
+                            updateNewReleaseCountdown();
+                        }, 5 * 60 * 1000);
                         return;
                     }
 
-                    const hours = Math.floor(difference / (1000 * 60 * 60));
-                    const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
-                    const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-                    newReleaseCountdown.textContent = 
-                        `${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
-                }
+                    newReleaseCountdown.textContent = `${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
+                };
 
                 // Update every second
                 setInterval(updateNewReleaseCountdown, 1000);

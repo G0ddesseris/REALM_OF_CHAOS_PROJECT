@@ -187,14 +187,13 @@
                     <div class="content-sample-card glass-panel lust-card">
                         <video controls muted playsinline poster="assets/images/video_placeholder1.jpg" aria-label="Gooner Feminization Protocol">
                             <source src="assets/video/member_video1.mp4" type="video/mp4">
-                            Your browser does not support the video tag.
                         </video>
                         <h4>Gooner Feminization Protocol</h4>
                         <p>Deep dive into gooner feminization techniques.</p>
                         <div class="content-tags">
-                            <span class="tag purple">sissy</span>
-                            <span class="tag pink">gooner</span>
-                            <span class="tag blue">fetish</span>
+                            <span class="tag purple" data-tag="sissy">sissy</span>
+                            <span class="tag pink" data-tag="gooner">gooner</span>
+                            <span class="tag blue" data-tag="fetish">fetish</span>
                         </div>
                     </div>
                     <!-- Add more video cards here -->
@@ -332,7 +331,8 @@
         // Tab Switching Functionality
         function showContent(contentType) {
             // Hide all content sections
-            document.querySelectorAll('.tab-content').forEach(content => {
+            const allContents = document.querySelectorAll('.tab-content');
+            allContents.forEach(content => {
                 content.style.display = 'none';
             });
 
@@ -343,10 +343,26 @@
             }
 
             // Update active tab button
-            document.querySelectorAll('.tab-button').forEach(button => {
+            const allButtons = document.querySelectorAll('.tab-button');
+            allButtons.forEach(button => {
                 button.classList.remove('active');
             });
-            document.querySelector(`.tab-button[data-type="${contentType}"]`).classList.add('active');
+            const activeButton = document.querySelector(`.tab-button[data-type="${contentType}"]`);
+            if (activeButton) {
+                activeButton.classList.add('active');
+            }
+
+            // Reset tag filters when switching tabs
+            document.querySelectorAll('.tag-filter-btn').forEach(button => {
+                button.classList.remove('active');
+            });
+            document.querySelector('.tag-filter-btn[data-tag="all"]').classList.add('active');
+
+            // Reset search input
+            const searchInput = document.getElementById('searchInput');
+            if (searchInput) {
+                searchInput.value = '';
+            }
         }
 
         // Add click handlers to tab buttons
@@ -359,20 +375,15 @@
         // Initially show the videos tab
         showContent('videos');
 
-        // Filter by tags
-        function filterByTags(tag) {
-            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
-            const cards = document.querySelectorAll('.content-sample-card');
+        // Tag Filtering
+        function filterByTag(tag) {
+            const currentTab = document.querySelector('.tab-button.active').dataset.type;
+            const cards = document.querySelectorAll(`#${currentTab}-content .content-sample-card`);
             
             cards.forEach(card => {
-                const title = card.querySelector('h4').textContent.toLowerCase();
-                const description = card.querySelector('p').textContent.toLowerCase();
-                const tags = card.getAttribute('data-tags') || '';
-                
-                const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
-                const matchesTags = !searchTerm || tags.includes(tag);
-                
-                card.style.display = matchesSearch && matchesTags ? '' : 'none';
+                const tags = Array.from(card.querySelectorAll('.tag'));
+                const hasTag = tags.some(t => t.dataset.tag === tag);
+                card.style.display = tag === 'all' || hasTag ? 'block' : 'none';
             });
 
             // Update active tag filter button
@@ -384,23 +395,70 @@
             }
         }
 
-        // Add search input event listener
-        document.getElementById('searchInput').addEventListener('input', () => {
-            filterByTags(document.querySelector('.tag-filter-btn.active').dataset.tag);
-        });
-
         // Add tag filter button click handlers
         document.querySelectorAll('.tag-filter-btn').forEach(button => {
             button.addEventListener('click', () => {
-                filterByTags(button.dataset.tag);
+                const tag = button.dataset.tag;
+                filterByTag(tag);
+            });
+        });
+
+        // Add tag click handlers
+        document.querySelectorAll('.tag').forEach(tag => {
+            tag.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const tagFilterBtn = document.querySelector(`.tag-filter-btn[data-tag="${tag.dataset.tag}"]`);
+                if (tagFilterBtn) {
+                    tagFilterBtn.click();
+                }
             });
         });
 
         // Countdown Timer
         function updateCountdown() {
-            const targetDate = new Date('2025-06-01T00:00:00-08:00'); // Next release date
             const now = new Date();
+            // Set target time for 17 hours and 33 minutes from now
+            const targetDate = new Date(now.getTime() + (17 * 60 * 60 * 1000) + (33 * 60 * 1000));
             const difference = targetDate - now;
+
+            if (difference <= 0) {
+                document.getElementById('new-release-countdown').textContent = 'NEW CONTENT JUST DROPPED!';
+                return;
+            }
+
+            const hours = Math.floor(difference / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('new-release-countdown').textContent = 
+                `${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        // Initial update
+        updateCountdown();
+
+        // Add search functionality
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            const searchTerm = e.target.value.toLowerCase();
+            const currentTab = document.querySelector('.tab-button.active').dataset.type;
+            const cards = document.querySelectorAll(`#${currentTab}-content .content-sample-card`);
+            
+            cards.forEach(card => {
+                const title = card.querySelector('h4').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+                const tags = Array.from(card.querySelectorAll('.tag'))
+                    .map(tag => tag.textContent.toLowerCase())
+                    .join(' ');
+                
+                const matches = title.includes(searchTerm) || 
+                               description.includes(searchTerm) ||
+                               tags.includes(searchTerm);
+                
+                card.style.display = matches ? 'block' : 'none';
+            });
+        });
 
             if (difference <= 0) {
                 document.getElementById('new-release-countdown').textContent = 'NEW CONTENT JUST DROPPED!';

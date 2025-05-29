@@ -1,5 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // --- Testimonial Carousel Logic ---
+    // Initialize Fluid Player for Jumpshare video
+    fluidPlayer('fluidPlayerContainer', {
+        layoutControls: {
+            autoPlayButton: true,
+            autoPlayButtonVisible: true,
+            playButtonShowing: true,
+            colors: {
+                accentColor: '#FF69B4',
+                hoverColor: '#BF00FF'
+            },
+            pictureInPictureButton: true,
+            settingsButton: true,
+            captionsButton: true,
+            muteButton: true,
+            fullScreenButton: true,
+            playButton: true,
+            volumeBar: true,
+            seekBar: true,
+            airplayButton: false,
+            chaptersButton: false
+        },
+        src: 'https://jumpshare.com/embed/uahny6FQhDbSyiOoDKKw',
+        allowFullscreen: true,
+        allowAutoplay: true,
+        posterImage: 'assets/images/ace-of-spades.png'
+    });
+
     // --- Testimonial Carousel Logic ---
     const testimonialCarousel = document.querySelector('.testimonial-carousel');
     if (testimonialCarousel) {
@@ -20,22 +46,59 @@ document.addEventListener('DOMContentLoaded', () => {
                 testimonialCards[index].style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
                 testimonialCards[index].style.opacity = 1;
                 testimonialCards[index].style.transform = 'scale(1)';
-            }, 50); // Small delay to allow display change to register
+            }, 100); // Small delay to allow display change to register
 
         };
 
-        // Function to go to next card
-        const nextCard = () => {
+        // Function to update the counter
+        const updateCounter = () => {
+            const counter = document.querySelector('.testimonial-counter');
+            if (counter) {
+                counter.textContent = `${currentIndex + 1}/${testimonialCards.length}`;
+            }
+        };
+
+        // Initialize
+        showCard(currentIndex);
+        updateCounter();
+
+        // Add navigation buttons
+        const prevButton = document.createElement('button');
+        prevButton.className = 'testimonial-nav testimonial-prev';
+        prevButton.innerHTML = '<i class="fas fa-chevron-left"></i>';
+        prevButton.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + testimonialCards.length) % testimonialCards.length;
+            showCard(currentIndex);
+            updateCounter();
+        });
+
+        const nextButton = document.createElement('button');
+        nextButton.className = 'testimonial-nav testimonial-next';
+        nextButton.innerHTML = '<i class="fas fa-chevron-right"></i>';
+        nextButton.addEventListener('click', () => {
             currentIndex = (currentIndex + 1) % testimonialCards.length;
             showCard(currentIndex);
-        };
+            updateCounter();
+        });
 
-        // Initial display
-        if (testimonialCards.length > 0) {
+        testimonialCarousel.appendChild(prevButton);
+        testimonialCarousel.appendChild(nextButton);
+
+        // Auto-advance every 8 seconds
+        const autoAdvance = setInterval(() => {
+            currentIndex = (currentIndex + 1) % testimonialCards.length;
             showCard(currentIndex);
-            // Auto-advance every 7 seconds
-            setInterval(nextCard, 7000);
-        }
+            updateCounter();
+        }, 8000);
+
+        // Pause on hover
+        testimonialCarousel.addEventListener('mouseenter', () => {
+            clearInterval(autoAdvance);
+        });
+
+        testimonialCarousel.addEventListener('mouseleave', () => {
+            autoAdvance; // Restart auto-advance
+        });
     }
 
     // --- Smooth Scrolling for Anchor Links ---

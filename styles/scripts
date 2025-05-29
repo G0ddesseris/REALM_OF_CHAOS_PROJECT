@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', () => {
         },
         plugins: {
             fluidPlayerMega: {
-                url: 'https://mega.nz/folder/LqQkVDAa#bIBHsYCqWzXuQbrkmA_nnQ/file/nvwkiZxL'
+                url: 'https://mega.nz/embed/SsxT0bIb#XFUJTxZDg8vLUkcr3TYasOKVtyvWtf_gddavMqICyuI!1a'
             }
         },
         posterImage: 'assets/images/ace-of-spades.png'

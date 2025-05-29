@@ -1024,6 +1024,81 @@
             }
         }
     </style>
+    <script>
+        // Tab Switching Functionality
+        function showContent(contentType) {
+            // Hide all content sections
+            document.querySelectorAll('.tab-content').forEach(content => {
+                content.style.display = 'none';
+            });
+
+            // Show selected content section
+            const contentElement = document.getElementById(`${contentType}-content`);
+            if (contentElement) {
+                contentElement.style.display = 'block';
+            }
+
+            // Update active tab button
+            document.querySelectorAll('.tab-button').forEach(button => {
+                button.classList.remove('active');
+            });
+            document.querySelector(`.tab-button[data-type="${contentType}"]`).classList.add('active');
+        }
+
+        // Add click handlers to tab buttons
+        document.querySelectorAll('.tab-button').forEach(button => {
+            button.addEventListener('click', () => {
+                showContent(button.dataset.type);
+            });
+        });
+
+        // Initially show the videos tab
+        showContent('videos');
+
+        // Filter by tags
+        function filterByTags() {
+            const searchTerm = document.getElementById('searchInput').value.toLowerCase();
+            const cards = document.querySelectorAll('.content-sample-card');
+            
+            cards.forEach(card => {
+                const title = card.querySelector('h4').textContent.toLowerCase();
+                const description = card.querySelector('p').textContent.toLowerCase();
+                const tags = card.getAttribute('data-tags') || '';
+                
+                const matchesSearch = title.includes(searchTerm) || description.includes(searchTerm);
+                const matchesTags = !searchTerm || tags.includes(searchTerm);
+                
+                card.style.display = matchesSearch && matchesTags ? '' : 'none';
+            });
+        }
+
+        // Add search input event listener
+        document.getElementById('searchInput').addEventListener('input', filterByTags);
+
+        // Countdown Timer
+        function updateCountdown() {
+            const targetDate = new Date('2025-06-01T00:00:00-08:00'); // Next release date
+            const now = new Date();
+            const difference = targetDate - now;
+
+            if (difference <= 0) {
+                document.getElementById('new-release-countdown').textContent = 'NEW CONTENT JUST DROPPED!';
+                return;
+            }
+
+            const hours = Math.floor(difference / (1000 * 60 * 60));
+            const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((difference % (1000 * 60)) / 1000);
+
+            document.getElementById('new-release-countdown').textContent = 
+                `${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
+        }
+
+        // Update countdown every second
+        setInterval(updateCountdown, 1000);
+        // Initial update
+        updateCountdown();
+    </script>
     <style>
         .content-tags {
             display: flex;

@@ -37,57 +37,21 @@
         .countdown-container {
             font-size: 2.5rem;
             color: #BF00FF;
+            margin-top: 1rem;
         }
         .countdown-number {
             font-size: 3rem;
             font-weight: bold;
             color: #BF00FF;
             margin: 0 0.5rem;
+            display: inline-block;
         }
-        .content-sample-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 10px;
-            border: 2px solid #00D4FF;
-            padding: 1rem;
-        }
-        .content-sample-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(191, 0, 255, 0.3);
-        }
-        .content-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            padding: 1rem;
-        }
-        .content-sample-card {
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            cursor: pointer;
-        }
-        .content-sample-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(191, 0, 255, 0.3);
-        }
-        .content-tags {
+        .tab-buttons {
             display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 0.5rem;
+            justify-content: center;
+            gap: 1rem;
+            margin: 2rem 0;
         }
-        .tag {
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            font-size: 0.8rem;
-            color: white;
-        }
-        .purple { background: #BF00FF; }
-        .pink { background: #FF69B4; }
-        .blue { background: #00D4FF; }
-        .yellow { background: #FFD700; }
-        .green { background: #00FF00; }
-        .red { background: #FF0000; }
         .tab-button {
             padding: 1rem 2rem;
             border: none;
@@ -100,53 +64,76 @@
         .tab-button.active {
             background: #BF00FF;
             color: white;
-            transform: scale(1.05);
         }
         .tab-content {
+            display: none;
             margin-top: 2rem;
             padding: 2rem;
             background: rgba(0, 0, 0, 0.3);
             border-radius: 15px;
             border: 2px solid #00D4FF;
         }
-        .search-container {
-            max-width: 600px;
-            margin: 2rem auto;
+        .tab-content.active {
+            display: block;
         }
-        .search-input {
-            width: 100%;
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
             padding: 1rem;
-            border: 2px solid #BF00FF;
-            border-radius: 10px;
-            background: rgba(0, 0, 0, 0.3);
-            color: white;
         }
-        .tag-filter-container {
+        .content-sample-card {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            border: 2px solid #00D4FF;
+            padding: 1rem;
+            transition: all 0.3s ease;
+        }
+        .content-sample-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(191, 0, 255, 0.3);
+        }
+        .content-sample-card img,
+        .content-sample-card video {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        .content-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
-            justify-content: center;
+            margin-top: 0.5rem;
         }
-        .tag-filter-btn {
-            padding: 0.5rem 1rem;
-            border: 2px solid #BF00FF;
+        .tag {
+            padding: 0.3rem 0.8rem;
             border-radius: 20px;
-            background: none;
-            color: #BF00FF;
+            font-size: 0.8rem;
+            color: white;
             cursor: pointer;
             transition: all 0.3s ease;
         }
-        .tag-filter-btn.active {
-            background: #BF00FF;
-            color: white;
+        .tag:hover {
+            transform: scale(1.1);
         }
-        .content-card-header {
+        .purple { background: #BF00FF; }
+        .pink { background: #FF69B4; }
+        .blue { background: #00D4FF; }
+        .yellow { background: #FFD700; }
+        .green { background: #00FF00; }
+        .red { background: #FF0000; }
+        .section-header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 1rem;
+            margin-bottom: 2rem;
         }
-        .content-count {
+        .section-title {
+            color: #BF00FF;
+            font-size: 2rem;
+        }
+        .section-count {
             color: #00D4FF;
             font-weight: bold;
         }
@@ -185,16 +172,46 @@
             </div>
             
             <!-- Countdown Timer Section -->
-            <div class="countdown-section text-center">
+            <div class="countdown-section">
                 <h3>NEW CONTENT DROPPING SOON</h3>
                 <div class="countdown-container">
                     <div id="countdown-timer">
-                        <span class="countdown-number" id="hours">17</span>h 
-                        <span class="countdown-number" id="minutes">33</span>m 
-                        <span class="countdown-number" id="seconds">00</span>s
+                        <div class="countdown-number" id="hours">17</div>
+                        <div class="countdown-label">Hours</div>
                     </div>
+                    <div class="countdown-number" id="minutes">33</div>
+                    <div class="countdown-label">Minutes</div>
+                    <div class="countdown-number" id="seconds">00</div>
+                    <div class="countdown-label">Seconds</div>
                 </div>
             </div>
+            
+            <style>
+                .countdown-container {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 1rem;
+                    margin-top: 1rem;
+                }
+                .countdown-number {
+                    font-size: 3rem;
+                    color: #BF00FF;
+                    font-weight: bold;
+                    width: 60px;
+                    height: 60px;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    background: rgba(0, 0, 0, 0.3);
+                    border-radius: 10px;
+                    border: 2px solid #BF00FF;
+                }
+                .countdown-label {
+                    font-size: 1rem;
+                    color: #00D4FF;
+                }
+            </style>
 
             <div class="search-filter-section">
                 <div class="search-container">
@@ -503,34 +520,19 @@
                     <span class="content-count">50+ GIFs</span>
                 </div>
                 <div class="content-grid">
-                    <!-- GIF Content -->
-                    <div class="content-sample-card glass-panel lust-card">
-                        <img src="assets/gifs/member_gif1.gif" alt="Member GIF 1" style="width: 100%; height: 200px; object-fit: cover;">
-                        <h4>Chaos Loop</h4>
-                        <p>Hypnotic sissy transformation loop.</p>
-                        <div class="content-tags">
-                            <span class="tag purple">sissy</span>
-                            <span class="tag pink">hypno</span>
-                            <span class="tag blue">trance</span>
-                        </div>
-                    </div>
-                    <!-- Add more GIF cards here -->
-                </div>
-            </div>
-
             <div id="images-content" class="tab-content">
                 <div class="content-card-header">
                     <h3>IMAGE ARCHIVE</h3>
                     <span class="content-count">50+ Images</span>
                 </div>
                 <div class="content-grid">
-                    <!-- Image Content -->
-                    <div class="content-sample-card glass-panel lust-card">
-                        <img src="assets/images/member_image1.jpg" alt="Member Image 1" style="width: 100%; height: 200px; object-fit: cover;">
-                        <h4>Chaos Cult Artwork</h4>
-                        <p>Iconic artwork of our dark cult.</p>
+                    <!-- Image Placeholders -->
+                    <div class="content-sample-card">
+                        <img src="https://via.placeholder.com/400x200/FF69B4/000000?text=Gooner+Image" alt="Gooner Image">
                         <div class="content-tags">
-                            <span class="tag purple">artwork</span>
+                            <span class="tag purple" data-tag="gooner">gooner</span>
+                            <span class="tag pink" data-tag="sissy">sissy</span>
+                            <span class="tag blue" data-tag="hypno">hypno</span>
                             <span class="tag pink">fetish</span>
                             <span class="tag blue">bnwo</span>
                         </div>
@@ -560,56 +562,41 @@
 
     <script>
         // Tab Switching Functionality
-        function showContent(contentType) {
-            // Hide all content sections
-            const allContents = document.querySelectorAll('.tab-content');
-            allContents.forEach(content => {
-                content.style.display = 'none';
+        function switchTab(tabId) {
+            // Hide all tabs
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.style.display = 'none';
             });
-
-            // Show selected content section
-            const contentElement = document.getElementById(`${contentType}-content`);
-            if (contentElement) {
-                contentElement.style.display = 'block';
+            
+            // Show selected tab
+            const selectedTab = document.getElementById(tabId);
+            if (selectedTab) {
+                selectedTab.style.display = 'block';
             }
-
-            // Update active tab button
-            const allButtons = document.querySelectorAll('.tab-button');
-            allButtons.forEach(button => {
+            
+            // Update active button
+            document.querySelectorAll('.tab-button').forEach(button => {
                 button.classList.remove('active');
             });
-            const activeButton = document.querySelector(`.tab-button[data-type="${contentType}"]`);
-            if (activeButton) {
-                activeButton.classList.add('active');
-            }
-
-            // Reset tag filters when switching tabs
-            document.querySelectorAll('.tag-filter-btn').forEach(button => {
-                button.classList.remove('active');
-            });
-            document.querySelector('.tag-filter-btn[data-tag="all"]').classList.add('active');
-
-            // Reset search input
-            const searchInput = document.getElementById('searchInput');
-            if (searchInput) {
-                searchInput.value = '';
-            }
+            document.querySelector(`[data-tab="${tabId}"]`).classList.add('active');
         }
 
         // Add click handlers to tab buttons
         document.querySelectorAll('.tab-button').forEach(button => {
-            button.addEventListener('click', () => {
-                showContent(button.dataset.type);
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const tabId = button.dataset.tab;
+                switchTab(tabId);
             });
         });
 
-        // Initially show the videos tab
-        showContent('videos');
+        // Show videos tab by default
+        switchTab('videos-content');
 
         // Tag Filtering
-        function filterByTag(tag) {
-            const currentTab = document.querySelector('.tab-button.active').dataset.type;
-            const cards = document.querySelectorAll(`#${currentTab}-content .content-sample-card`);
+        function filterContentByTag(tag) {
+            const currentTab = document.querySelector('.tab-button.active').dataset.tab;
+            const cards = document.querySelectorAll(`#${currentTab} .content-sample-card`);
             
             cards.forEach(card => {
                 const tags = Array.from(card.querySelectorAll('.tag'));
@@ -628,9 +615,10 @@
 
         // Add tag filter button click handlers
         document.querySelectorAll('.tag-filter-btn').forEach(button => {
-            button.addEventListener('click', () => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
                 const tag = button.dataset.tag;
-                filterByTag(tag);
+                filterContentByTag(tag);
             });
         });
 
@@ -644,11 +632,11 @@
                 }
             });
         });
+    </script>
 
         // Countdown Timer
         function updateCountdown() {
             const now = new Date();
-            // Set target time for 17 hours and 33 minutes from now
             const targetDate = new Date(now.getTime() + (17 * 60 * 60 * 1000) + (33 * 60 * 1000));
             const difference = targetDate - now;
 
@@ -676,8 +664,8 @@
         // Add search functionality
         document.getElementById('searchInput').addEventListener('input', (e) => {
             const searchTerm = e.target.value.toLowerCase();
-            const currentTab = document.querySelector('.tab-button.active').dataset.type;
-            const cards = document.querySelectorAll(`#${currentTab}-content .content-sample-card`);
+            const currentTab = document.querySelector('.tab-button.active').dataset.tab;
+            const cards = document.querySelectorAll(`#${currentTab} .content-sample-card`);
             
             cards.forEach(card => {
                 const title = card.querySelector('h4').textContent.toLowerCase();

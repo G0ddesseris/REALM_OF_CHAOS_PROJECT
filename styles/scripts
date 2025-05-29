@@ -1,31 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Initialize Fluid Player for Mega.nz video
-    fluidPlayer('fluidPlayerContainer', {
-        layoutControls: {
-            autoPlayButton: true,
-            autoPlayButtonVisible: true,
-            playButtonShowing: true,
-            colors: {
-                accentColor: '#FF69B4',
-                hoverColor: '#BF00FF'
-            },
-            pictureInPictureButton: true,
-            settingsButton: true,
-            captionsButton: true,
-            muteButton: true,
-            fullScreenButton: true,
-            playButton: true,
-            volumeBar: true,
-            seekBar: true,
-            airplayButton: false,
-            chaptersButton: false
-        },
-        src: 'https://mega.nz/embed/SsxT0bIb#XFUJTxZDg8vLUkcr3TYasOKVtyvWtf_gddavMqICyuI!1a',
-        allowFullscreen: true,
-        allowAutoplay: true,
-        posterImage: 'assets/images/ace-of-spades.png'
-    });
-
     // --- Testimonial Carousel Logic ---
     // --- Testimonial Carousel Logic ---
     const testimonialCarousel = document.querySelector('.testimonial-carousel');

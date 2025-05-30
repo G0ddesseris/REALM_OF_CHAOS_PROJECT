@@ -197,6 +197,103 @@
     background: #BF00FF;
 }
 
+/* Gallery Grid Styles */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+.gallery-item {
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(8px);
+    border-radius: var(--border-radius-lg);
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    border: 1px solid var(--color-border-light);
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.gallery-video-container {
+    position: relative;
+    padding-top: 56.25%;
+    border-radius: var(--border-radius-lg) var(--border-radius-lg) 0 0;
+    overflow: hidden;
+}
+
+.gallery-video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.gallery-item-content {
+    padding: 1.5rem;
+    color: var(--color-text-primary);
+}
+
+.gallery-item-content h3 {
+    font-family: var(--font-primary);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--color-accent-blue);
+    text-shadow: 0 0 5px rgba(0, 212, 255, 0.5);
+}
+
+.gallery-description {
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.gallery-stats {
+    font-size: 0.8rem;
+    color: var(--color-text-secondary);
+}
+
+.gallery-stats i {
+    margin-right: 0.5rem;
+    color: var(--color-accent-purple);
+}
+
+.gallery-footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: var(--border-radius-lg);
+}
+
+.gallery-footer-text {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-text-secondary);
+}
+
+.gallery-cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background: linear-gradient(45deg, var(--color-accent-purple), var(--color-accent-blue));
+    color: white;
+    text-decoration: none;
+    border-radius: var(--border-radius-md);
+    font-weight: bold;
+    transition: transform 0.3s ease;
+}
+
+.gallery-cta-button:hover {
+    transform: translateY(-2px);
+}
+
 /* Base Styles */
 body {
     font-family: var(--font-primary);

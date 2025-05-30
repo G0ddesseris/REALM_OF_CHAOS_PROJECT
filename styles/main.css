@@ -81,6 +81,22 @@
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+/* Fullscreen styles */
+.video-container:-webkit-full-screen {
+    width: 100%;
+    height: 100%;
+}
+
+.video-container:-moz-full-screen {
+    width: 100%;
+    height: 100%;
+}
+
+.video-container:fullscreen {
+    width: 100%;
+    height: 100%;
+}
+
 .video-container:hover {
     transform: translateY(-2px);
     box-shadow: 0 6px 30px rgba(0, 0, 0, 0.4);
@@ -155,8 +171,8 @@
 /* Archive Video Grid */
 .content-grid-scroll {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 25px;
     margin-top: 30px;
     padding-bottom: 20px;
     max-height: 80vh;

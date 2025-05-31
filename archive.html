@@ -610,11 +610,13 @@
     <style>
         /* Center and style video grid */
         .video-grid {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
             gap: 20px;
             padding: 20px;
+            width: 100%;
+            max-width: 1000px;
+            margin: 0 auto;
         }
 
         .gallery-item {

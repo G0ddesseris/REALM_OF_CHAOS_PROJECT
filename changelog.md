@@ -1,21 +1,5 @@
 # Realm of Chaos Project Changelog
 
-## Version 1.2.0 - Archive Page Redesign (2025-07-28)
-
-### Archive Page Improvements
-- Completely redesigned archive page with modern grid layout
-- Added advanced filtering by tags and categories
-- Improved video loading performance with lazy loading
-- Added smooth animations and transitions
-- Made the page fully responsive on all devices
-- Added visual indicators for new and popular content
-- Implemented a more maintainable video data structure
-- Added search functionality for video titles and tags
-- Improved accessibility with better keyboard navigation
-- Added proper error handling for missing videos
-- Created documentation for adding new videos
-- Added backup of previous archive page as archive_old.html
-
 ## Version 1.1.0 - Major Improvements (2025-05-26)
 
 ### Performance Optimizations

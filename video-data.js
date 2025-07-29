@@ -1,13 +1,43 @@
 // Video data for the archive page
-// Automatically generated from archive.html on 2025-07-28
+// Automatically generated from archive.html on 2025-07-29
 const videoData = [
-    // New Releases (Last 30 days)
+    // Newest Releases (Added 2025-07-29)
+    {
+        id: 'cTiUqinIUgB',
+        title: 'Your Future',
+        isNew: true,
+        date: '2025-07-29',
+        tags: ['new', 'femdom', 'motivation']
+    },
+    {
+        id: 'cTiUqinIUgA',
+        title: 'Temptation Desire',
+        isNew: true,
+        date: '2025-07-29',
+        tags: ['new', 'temptation', 'desire']
+    },
+    {
+        id: 'cTiUqinIUgz',
+        title: 'Everyday',
+        isNew: true,
+        date: '2025-07-29',
+        tags: ['new', 'daily', 'motivation']
+    },
+    {
+        id: 'cTiUqinIUgg',
+        title: 'Give In',
+        isNew: true,
+        date: '2025-07-29',
+        tags: ['new', 'surrender', 'femdom']
+    },
+    
+    // Previous New Releases (Last 30 days)
     {
         id: 'cTiTlRnIqDv',
         title: 'The World of a Gooner',
-        isNew: true,
+        isNew: false,
         date: '2025-07-25',
-        tags: ['gooner', 'femdom', 'new']
+        tags: ['gooner', 'femdom']
     },
     {
         id: 'cTiTVPnIbx7',

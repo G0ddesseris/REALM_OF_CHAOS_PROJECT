@@ -1,5 +1,16 @@
 # Realm of Chaos Project Changelog
 
+## Version 1.2.0 - Video Archive Update (2025-07-29)
+
+### New Features
+- Added 4 new videos to the archive:
+  - "Your Future"
+  - "Temptation Desire"
+  - "Everyday"
+  - "Give In"
+- Enhanced video archive with improved filtering and search
+- Added lazy loading for better performance
+
 ## Version 1.1.0 - Major Improvements (2025-05-26)
 
 ### Performance Optimizations

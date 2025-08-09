@@ -1,4 +1,10 @@
-# Realm of Chaos - Web Development Project
+# Realm of Chaos
+
+A modern, responsive website for the Realm of Chaos project.
+
+## Test Change
+
+This is a small test change to verify GitHub integration.
 
 ## Project Overview
 This is the web interface for the Realm of Chaos project, featuring a video gallery with pagination, filtering, and search functionality.

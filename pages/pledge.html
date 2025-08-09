@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join the Realm of Chaos with our exclusive membership tiers. Access premium content and become part of our community.">
+    <meta name="keywords" content="membership, subscription, premium content, patreon, join, support, exclusive content">
+    <title>Realm of Chaos - Membership Tiers</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <link rel="stylesheet" href="../assets/css/pledge.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="../assets/images/chaos_logo_fav.png" sizes="16x16">
+    <style>
+        /* Account for fixed header on this page */
+        body { padding-top: 80px; }
+        /* Page specific styles */
+        .pricing-hero {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2a 100%);
+            color: #fff;
+            text-align: center;
+        }
+        
+        .pricing-hero h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #BF00FF;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .highlight-text {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            line-height: 1.6;
+        }
+        
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .tier-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            padding: 2rem;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .tier-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .tier-icon {
+            font-size: 2.5rem;
+            color: #BF00FF;
+            margin-bottom: 1rem;
+        }
+        
+        .tier-card h2 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #fff;
+        }
+        
+        .tier-price {
+            font-size: 2.5rem;
+            color: #BF00FF;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .month-text {
+            font-size: 1rem;
+            color: #aaa;
+        }
+        
+        .tier-features {
+            list-style: none;
+            padding: 0;
+            margin: 0 0 2rem 0;
+            text-align: left;
+        }
+        
+        .tier-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .tier-features li:last-child {
+            border-bottom: none;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #BF00FF;
+            color: white;
+            padding: 0.8rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button:hover {
+            background: #9d00d6;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(191, 0, 255, 0.3);
+        }
+        
+        .fomo-section {
+            background: rgba(191, 0, 255, 0.1);
+            padding: 1.5rem;
+            border-radius: 10px;
+            margin: 2rem auto;
+            max-width: 800px;
+        }
+        
+        .fomo-section h3 {
+            color: #BF00FF;
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                padding: 1rem;
+            }
+            
+            .pricing-hero h1 {
+                font-size: 2rem;
+            }
+            
+            .highlight-text {
+                font-size: 1rem;
+            }
+        }
+        
+        /* Center and layout media previews */
+        .media-preview {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            gap: 24px;
+            flex-wrap: wrap;
+            margin: 2rem auto 3rem auto; /* extra bottom space before tiers */
+            max-width: 1200px;
+            padding: 0 1rem;
+            position: relative;
+            z-index: 2;
+        }
+        .media-item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 12px;
+            padding: 12px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.35);
+        }
+        /* Unified responsive video wrapper */
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            max-width: 900px;
+            padding-top: 56.25%; /* 16:9 */
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(191, 0, 255, 0.25);
+            background: rgba(0,0,0,0.3);
+        }
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 0;
+        }
+        .media-item iframe {
+            display: block;
+            border: 0;
+            border-radius: 8px;
+        }
+        
+        /* Neon glow submit buttons */
+        .tier-cta-button, .cta-button {
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 0 15px rgba(191, 0, 255, 0.35);
+        }
+        .tier-cta-button:hover, .cta-button:hover {
+            box-shadow: 0 0 25px rgba(191, 0, 255, 0.6);
+        }
+        .pulse-glow {
+            animation: pulseGlow 0.9s ease-out 1;
+        }
+        @keyframes pulseGlow {
+            0% { box-shadow: 0 0 0 rgba(191,0,255,0.0); }
+            40% { box-shadow: 0 0 32px rgba(191,0,255,0.9); }
+            100% { box-shadow: 0 0 15px rgba(191,0,255,0.35); }
+        }
+
+        /* Ensure tiers sit below media in stacking and spacing */
+        .pricing-grid {
+            position: relative;
+            z-index: 1;
+            margin-top: 64px; /* carry tiers further down below videos */
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">REALM OF CHAOS</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="gallery-archive.html" class="nav-link">Gallery</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="pledge.html" class="nav-link active">Membership</a>
+                <a href="#" class="cta-button discord-placeholder">Member Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="pricing-hero">
+            <div class="container">
+                <h1>Submit to Your Desires</h1>
+                <p class="highlight-text">This is no sanctuary for the timid. The Realm of Chaos is your altar of excess, where desire reigns and surrender is sweet.</p>
+                <div class="fomo-section">
+                    <h3>Join the Chosen</h3>
+                    <div class="fomo-counter" id="member-counter">0 devotees joined</div>
+                    <p class="highlight-text">Under 7 custom edit spots left this week—will you claim yours?</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Enlarged, responsive previews positioned above tiers -->
+        <div class="media-preview">
+            <div class="media-item">
+                <div class="video-wrapper">
+                    <div class="sp-embed-player" data-id="cT1hjZn6SNA">
+                        <script src="https://go.screenpal.com/player/appearance/cT1hjZn6SNA"></script>
+                        <iframe 
+                            src="https://go.screenpal.com/player/cT1hjZn6SNA?ff=1&title=0" 
+                            allowfullscreen="true"
+                            loading="lazy"
+                        ></iframe>
+                    </div>
+                </div>
+            </div>
+            <div class="media-item">
+                <div class="video-wrapper">
+                    <div class="sp-embed-player" data-id="cT1hjZn6SNz">
+                        <script src="https://go.screenpal.com/player/appearance/cT1hjZn6SNz"></script>
+                        <iframe 
+                            src="https://go.screenpal.com/player/cT1hjZn6SNz?ff=1&title=0" 
+                            allowfullscreen="true"
+                            loading="lazy"
+                        ></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <section class="pricing-grid">
+            <div class="tier-card tier-card-devotee">
+                <div class="tier-icon"><i class="fas fa-user"></i></div>
+                <h2>Chaos Initiate</h2>
+                <div class="tier-price">$5<span class="month-text">/mo</span></div>
+                <ul class="tier-features">
+                    <li>Realm of Chaos Access</li>
+                    <li>Step into the Abyss</li>
+                    <li>Weekly Temptations</li>
+                    <li>Forbidden Content</li>
+                    <li>Guided Surrender</li>
+                </ul>
+                <a href="https://www.patreon.com/GoddessEris" target="_blank" rel="noopener noreferrer" class="tier-cta-button">Submit</a>
+            </div>
+
+            <div class="tier-card tier-card-patron popular">
+                <div class="tier-icon"><i class="fas fa-heart"></i></div>
+                <h2>Lust Devotee</h2>
+                <div class="tier-price">$15<span class="month-text">/mo</span></div>
+                <ul class="tier-features">
+                    <li>Everything in Initiate</li>
+                    <li>First Taste</li>
+                    <li>Custom Whispers</li>
+                    <li>Brotherhood of Sin</li>
+                    <li>Guided Pleasure</li>
+                </ul>
+                <a href="https://www.patreon.com/GoddessEris" target="_blank" rel="noopener noreferrer" class="tier-cta-button">Submit</a>
+                <div class="popular-badge">Most Desired</div>
+            </div>
+
+            <div class="tier-card tier-card-divine">
+                <div class="tier-icon"><i class="fas fa-crown"></i></div>
+                <h2>Chaos Elite</h2>
+                <div class="tier-price">$50<span class="month-text">/mo</span></div>
+                <ul class="tier-features">
+                    <li>Everything in Devotee</li>
+                    <li>Realm of Chaos Access</li>
+                    <li>Unleashed Content</li>
+                    <li>Weekly Whispers</li>
+                    <li>Direct Connection</li>
+                    <li>Exclusive Events</li>
+                </ul>
+                <a href="https://www.patreon.com/GoddessEris" target="_blank" rel="noopener noreferrer" class="tier-cta-button">Submit</a>
+            </div>
+
+            <div class="tier-card tier-card-pledge">
+                <div class="tier-icon"><i class="fas fa-magic"></i></div>
+                <h2>Custom Edit Pledge</h2>
+                <div class="tier-price">$15-$75<span class="month-text">/one-time</span></div>
+                <ul class="tier-features">
+                    <li><span class="glowing-text">Request Your Desire</span></li>
+                    <li><span class="glowing-text">Priority Processing</span></li>
+                    <li><span class="glowing-text">Exclusive Access</span></li>
+                    <li><span class="glowing-text">Direct Communication</span></li>
+                </ul>
+                <button class="tier-cta-button" onclick="window.location.href='https://www.patreon.com/GoddessEris'">Request Your Desire</button>
+            </div>
+
+            <!-- Donation Button -->
+            <div class="tier-card tier-card-donation">
+                <div class="tier-icon"><i class="fas fa-heart"></i></div>
+                <h2>Support Us</h2>
+                <div class="tier-price">Any Amount</div>
+                <ul class="tier-features">
+                    <li>Show Your Support</li>
+                    <li>Help Us Grow</li>
+                    <li>Exclusive Updates</li>
+                </ul>
+                <button class="tier-cta-button" onclick="alert('Coming soon!')">Donate</button>
+            </div>
+        </section>
+
+        <section class="join-section">
+            <div class="container">
+                <h2>Submit to Your Desires</h2>
+                <p class="highlight-text">We are the chosen, bound by the pulse of pleasure. Will you stand apart, or melt into us?</p>
+                <a href="https://www.patreon.com/GoddessEris" target="_blank" rel="noopener noreferrer" class="cta-button">Submit</a>
+            </div>
+        </section>
+
+        
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>“Realm of Chaos shattered my limits!” — Anonymous Devotee</p>
+            <p>© 2025 Realm of Chaos. Claimed by Goddess Eris.</p>
+            <p>Join the fetish cult now—submit to chaos or crave forever.</p>
+            <p>Share This Chaos:</p>
+            <div class="footer-social-links">
+                <a href="https://twitter.com/intent/tweet?text=Join%20Realm%20of%20Chaos%20for%20gooner%20and%20sissy%20ecstasy!%20https://your-site.com" target="_blank" rel="noopener" class="twitter-icon" aria-label="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.patreon.com/GoddessEris?utm_source=website&utm_medium=footer" target="_blank" rel="nofollow" class="patreon-icon" aria-label="Patreon Page"><i class="fab fa-patreon"></i></a>
+                <a href="#" class="discord-icon discord-placeholder" aria-label="Discord (coming soon)"><i class="fab fa-discord"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/mobile-menu.js"></script>
+    <script>
+    // Member Counter Animation
+    function animateMemberCounter() {
+        const target = 215;
+        const counter = document.getElementById('member-counter');
+        let current = 0;
+        
+        function updateCounter() {
+            current++;
+            counter.textContent = `${current} devotees joined`;
+            if (current < target) {
+                setTimeout(updateCounter, 50);
+            }
+        }
+        
+        updateCounter();
+    }
+
+    // Initialize member counter when page loads
+document.addEventListener('DOMContentLoaded', function() {
+    animateMemberCounter();
+    // Neon glow click animation on submit buttons
+    document.querySelectorAll('.tier-cta-button, .cta-button').forEach(function(btn){
+        btn.addEventListener('click', function(){
+            btn.classList.remove('pulse-glow');
+            // Force reflow to restart animation
+            void btn.offsetWidth;
+            btn.classList.add('pulse-glow');
+        });
+    });
+    // Discord placeholder click handler
+    document.querySelectorAll('.discord-placeholder').forEach(function(el){
+        el.addEventListener('click', function(e){
+            e.preventDefault();
+            alert('Discord server is being built. Coming soon!');
+        });
+    });
+});
+</script>
+</body>
+</html>

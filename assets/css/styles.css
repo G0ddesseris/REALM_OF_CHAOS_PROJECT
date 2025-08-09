@@ -1,0 +1,588 @@
+/* Main Styles for Realm of Chaos */
+
+/* Base Styles */
+:root {
+    /* Color Scheme */
+    --primary: #BF00FF;
+    --primary-dark: #8a00b3;
+    --secondary: #00D4FF;
+    --accent: #FF1493;
+    --dark: #0a0514;
+    --darker: #05020a;
+    --light: #f0e6ff;
+    --gray: #2a1a3d;
+    --glass: rgba(20, 10, 30, 0.8);
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    --gradient-nav: linear-gradient(90deg, var(--primary) 0%, var(--accent) 100%);
+    --gradient-card: linear-gradient(145deg, rgba(20, 10, 30, 0.8) 0%, rgba(40, 20, 60, 0.6) 100%);
+    
+    /* Shadows */
+    --shadow-glow: 0 0 15px rgba(191, 0, 255, 0.5);
+    --shadow-glow-hover: 0 0 25px rgba(191, 0, 255, 0.8);
+    
+    /* Transitions */
+    --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Typography */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+/* Local font faces for sitewide usage */
+@font-face {
+    font-family: 'Frizon';
+    src: url('../../assets/fonts/Frizon.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: 'OriginTech';
+    src: url("../../assets/fonts/OriginTechPersonalUse-d9xQ - Copy.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+body {
+    font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
+    background: var(--darker);
+    background-image: 
+        radial-gradient(circle at 10% 20%, rgba(191, 0, 255, 0.1) 0%, transparent 20%),
+        radial-gradient(circle at 90% 80%, rgba(0, 212, 255, 0.1) 0%, transparent 20%),
+        linear-gradient(to bottom, var(--darker) 0%, var(--dark) 100%);
+    color: var(--light);
+    line-height: 1.6;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Global heading style */
+h1, h2, h3 {
+    font-family: 'Frizon', 'OriginTech', sans-serif;
+    letter-spacing: 1px;
+    background: linear-gradient(45deg, var(--accent), #ff4fd1, #ff6be6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Brighter teal copy glow */
+p, li, small {
+    color: rgba(160, 245, 255, 0.95);
+    text-shadow: 0 0 16px rgba(0, 235, 255, 0.9), 0 0 36px rgba(0, 220, 255, 0.8), 0 0 72px rgba(0, 212, 255, 0.6);
+}
+
+/* Responsive video embed utilities (sitewide) */
+.video-embed {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 default */
+    overflow: hidden;
+}
+.video-embed.large {
+    max-width: 1200px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.video-embed.tall {
+    padding-bottom: 177.78%; /* 9:16 portrait */
+}
+.video-embed iframe,
+.video-embed embed,
+.video-embed object {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Ensure RedGIF players fill their container */
+iframe[src*="redgifs.com"],
+embed[src*="redgifs.com"] {
+    width: 100% !important;
+    height: 100% !important;
+    border: 0 !important;
+    display: block;
+}
+
+/* Layout */
+.container {
+    width: 100%;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Glass Morphism Effect */
+.glass-morphism {
+    background: rgba(20, 10, 30, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.36);
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-decoration: none;
+    transition: var(--transition);
+    border: none;
+    cursor: pointer;
+    font-family: 'Orbitron', sans-serif;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.btn-primary {
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: 0 4px 15px rgba(191, 0, 255, 0.4);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(191, 0, 255, 0.6);
+    color: white;
+}
+
+.btn-primary::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--secondary) 0%, var(--primary) 100%);
+    z-index: -1;
+    opacity: 0;
+    transition: var(--transition);
+}
+
+.btn-primary:hover::before {
+    opacity: 1;
+}
+
+/* Header & Navigation */
+header {
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 1rem 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(10px);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    color: var(--light);
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--light);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--primary);
+}
+
+/* Gallery Grid */
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.video-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.video-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+    height: 0;
+    overflow: hidden;
+    background: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-credit {
+    text-align: right;
+    padding: 10px 15px;
+    margin: 0;
+    font-size: 0.8rem;
+    color: rgba(255,255,255,0.6);
+}
+
+.video-credit a {
+    color: rgba(255,255,255,0.8);
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.video-credit a:hover {
+    color: var(--primary);
+}
+
+/* Global responsive embed wrapper for RedGIF/ScreenPal/etc. */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1200px;
+    padding-top: 56.25%; /* 16:9 */
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(191, 0, 255, 0.25);
+    background: rgba(0,0,0,0.3);
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+.video-info {
+    padding: 1rem;
+}
+
+.video-title {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: var(--light);
+}
+
+.video-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.5rem;
+}
+
+.tag {
+    background: rgba(157, 78, 221, 0.2);
+    color: var(--primary);
+    padding: 0.2rem 0.6rem;
+    border-radius: 20px;
+    font-size: 0.7rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 0;
+    gap: 0.5rem;
+}
+
+.pagination button {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: var(--light);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.pagination button:hover:not(:disabled) {
+    background: var(--primary);
+    color: white;
+}
+
+.pagination button:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.pagination button.active {
+    background: var(--primary);
+    color: white;
+}
+
+/* Search and Filter */
+.filter-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1rem 0 2rem;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 8px;
+}
+
+.search-box {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 0.7rem 1rem 0.7rem 2.5rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 4px;
+    color: white;
+    font-size: 0.9rem;
+}
+
+.search-box i {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.filter-buttons {
+    display: flex;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--light);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.filter-btn:hover,
+.filter-btn.active {
+    background: var(--primary);
+    border-color: var(--primary);
+    color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .nav-links {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+    
+    .filter-container {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .search-box {
+        width: 100%;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.video-card {
+    animation: fadeIn 0.5s ease-out forwards;
+    opacity: 0;
+}
+
+/* Add delay for each card */
+.video-card:nth-child(1) { animation-delay: 0.1s; }
+.video-card:nth-child(2) { animation-delay: 0.2s; }
+.video-card:nth-child(3) { animation-delay: 0.3s; }
+/* Continue for more cards if needed */
+
+/* ---- Membership Tiers (Reusable) ---- */
+.pricing-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tier-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 10px;
+    padding: 2rem;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tier-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.tier-icon {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+}
+
+.tier-card h2 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+    color: #fff;
+}
+
+.tier-price {
+    font-size: 2.3rem;
+    color: var(--primary);
+    margin-bottom: 1.2rem;
+    font-weight: bold;
+}
+
+.month-text {
+    font-size: 1rem;
+    color: #aaa;
+}
+
+.tier-features {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0 1.5rem 0;
+    text-align: left;
+}
+
+.tier-features li {
+    padding: 0.6rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.tier-features li:last-child {
+    border-bottom: none;
+}
+
+.tier-cta-button {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.tier-cta-button:hover {
+    background: #9d00d6;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(191, 0, 255, 0.3);
+}
+
+.popular {
+    position: relative;
+}
+
+.popular-badge {
+    position: absolute;
+    top: -12px;
+    right: -12px;
+    background: var(--primary);
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    box-shadow: 0 0 15px rgba(191, 0, 255, 0.35);
+}
+
+@media (max-width: 1024px) {
+    .pricing-grid { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 768px) {
+    .pricing-grid { grid-template-columns: 1fr; }
+}

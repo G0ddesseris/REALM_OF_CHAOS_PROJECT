@@ -6,6 +6,28 @@
     --font-cyberpunk: 'Cyberpunk', sans-serif;
 }
 
+/* Global typography + neon theme */
+html, body {
+    color: rgba(163, 243, 255, 0.92);
+    font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Headings across the site */
+h1, h2, h3 {
+    font-family: 'Frizon', 'OriginTech', sans-serif;
+    letter-spacing: 1px;
+    background: linear-gradient(45deg, var(--color-accent-pink), #ff4fd1, #ff6be6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* Brighter teal glow for general copy */
+p, li, small {
+    color: rgba(160, 245, 255, 0.95);
+    text-shadow: 0 0 16px rgba(0, 235, 255, 0.9), 0 0 36px rgba(0, 220, 255, 0.8), 0 0 72px rgba(0, 212, 255, 0.6);
+}
+
 /* Font Declarations */
 @font-face {
     font-family: 'Frizon';
@@ -16,7 +38,7 @@
 
 @font-face {
     font-family: 'OriginTech';
-    src: url('../assets/fonts/OriginTechPersonalUse-d9xQ.ttf') format('truetype');
+    src: url("../assets/fonts/OriginTechPersonalUse-d9xQ - Copy.ttf") format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -38,6 +60,14 @@
 @font-face {
     font-family: 'Cyberpunk';
     src: url('../assets/fonts/Cyberpunk.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Map legacy 'GodOfWar' usage to SuicideSquad font file */
+@font-face {
+    font-family: 'GodOfWar';
+    src: url('../assets/fonts/SuicideSquadFont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -719,8 +749,8 @@ a {
     font-family: 'GodOfWar', sans-serif;
     font-size: 2.5em;
     margin-bottom: 40px;
-    color: #00D4FF;
-    text-shadow: 0 0 6px #00D4FF, 0 0 12px #00D4FF;
+    color: #5FF4FF; /* brighter cyan */
+    text-shadow: 0 0 12px #22E7FF, 0 0 28px rgba(0, 212, 255, 0.95), 0 0 48px rgba(0, 212, 255, 0.7);
 }
 
 .section-subtext {

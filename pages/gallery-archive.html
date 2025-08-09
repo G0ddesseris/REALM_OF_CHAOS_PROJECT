@@ -1,0 +1,1172 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the exclusive video gallery of Realm of Chaos - Premium gooner, sissy, and fetish content">
+    <meta name="keywords" content="gooner, sissy, fetish, hypnosis, PMV, adult content, exclusive videos">
+    <title>Video Gallery Archive | Realm of Chaos</title>
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="../assets/images/chaos_logo_fav.png" sizes="16x16">
+    <style>
+        /* Page specific styles */
+        .page-title {
+            text-align: center;
+            margin: 2rem 0 1rem;
+            color: var(--primary);
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .page-subtitle {
+            text-align: center;
+            margin-bottom: 2rem;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            background: linear-gradient(135deg, #1a0a2e, #0f0519);
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--light);
+            text-decoration: none;
+            font-family: 'Arial Black', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        .filter-container {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .search-box {
+            position: relative;
+            width: 300px;
+        }
+        
+        .search-box input {
+            width: 100%;
+            padding: 0.6rem 1rem 0.6rem 2.5rem;
+            border: 2px solid rgba(191, 0, 255, 0.3);
+            border-radius: 50px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .search-box input:focus {
+            outline: none;
+            border-color: var(--primary);
+            box-shadow: 0 0 10px rgba(191, 0, 255, 0.5);
+        }
+        
+        .search-box i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .filter-buttons {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .filter-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 50px;
+            background: rgba(191, 0, 255, 0.1);
+            color: var(--light);
+            cursor: pointer;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary);
+            color: #000;
+        }
+        
+        main {
+            padding: 2rem 0;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .page-title {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #BF00FF, #00D4FF);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .page-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+            max-width: 700px;
+            margin: 0 auto 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .terabox-download {
+            margin: 1.5rem 0 2rem;
+            text-align: center;
+        }
+        
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            background: linear-gradient(135deg, #9d4edd, #7b2cbf);
+            gap: 0.5rem;
+            padding: 0.8rem 1.8rem;
+            background: linear-gradient(45deg, #BF00FF, #9D00FF);
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(191, 0, 255, 0.3);
+            border: 2px solid transparent;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(191, 0, 255, 0.4);
+            background: linear-gradient(45deg, #9D00FF, #BF00FF);
+            border-color: white;
+        }
+        
+        .download-btn i {
+            font-size: 1.1em;
+        }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        /* Pagination Styles */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin: 2rem 0;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .pagination button {
+            background: rgba(191, 0, 255, 0.1);
+            border: 1px solid var(--primary);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .pagination button:hover:not(:disabled) {
+            background: var(--primary);
+            transform: translateY(-2px);
+        }
+
+        .pagination button.active {
+            background: var(--primary);
+            font-weight: bold;
+        }
+
+        .pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+
+        .pagination-info {
+            text-align: center;
+            margin: 1rem 0;
+            color: #aaa;
+        }
+        
+        .pagination span {
+            padding: 0.5rem 1rem;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .video-card {
+            background: rgba(30, 15, 45, 0.9);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(191, 0, 255, 0.2);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .video-embed {
+            position: relative;
+            width: 100%;
+            padding-top: 62.5%; /* Slightly taller aspect ratio */
+            margin: 10px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            background: #000;
+        }
+        
+        .video-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .video-title {
+            color: #fff;
+            margin: 0 0 10px 0;
+            font-size: 1.2em;
+            text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .video-card.premium::after {
+            content: 'PREMIUM';
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(45deg, #FFD700, #FFA500);
+            color: #000;
+            font-size: 0.7rem;
+            font-weight: bold;
+            padding: 0.2rem 0.5rem;
+            border-radius: 3px;
+            z-index: 2;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 1.5rem;
+                padding: 0 15px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+                text-align: center;
+            }
+            
+            .filter-container {
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            .search-box {
+                margin: 0 auto 1rem;
+                max-width: 100%;
+            }
+            
+            .filter-buttons {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            .filter-btn {
+                padding: 0.5rem 1rem;
+                font-size: 0.9rem;
+                margin: 0.2rem;
+            }
+            
+            .page-title {
+                font-size: 1.8rem;
+            }
+            
+            .page-subtitle {
+                font-size: 1rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1.2rem;
+            }
+            
+            .video-card {
+                padding: 10px;
+                margin-bottom: 15px;
+            }
+            
+            .video-title {
+                font-size: 1rem;
+                padding: 0.8rem 0.5rem;
+            }
+            
+            .download-btn {
+                padding: 0.7rem 1.5rem;
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+                padding: 0 10px;
+            }
+            
+            .video-card {
+                border-radius: 8px;
+                margin-bottom: 10px;
+            }
+            
+            .filter-buttons {
+                display: grid;
+                grid-template-columns: repeat(3, 1fr);
+                gap: 0.5rem;
+            }
+            
+            .filter-btn {
+                width: 100%;
+                margin: 0;
+                padding: 0.5rem;
+                font-size: 0.8rem;
+            }
+            
+            .page-title {
+                font-size: 1.5rem;
+                margin-bottom: 0.5rem;
+            }
+            
+            .page-subtitle {
+                font-size: 0.9rem;
+                margin-bottom: 1rem;
+            }
+            
+            .download-btn {
+                width: 100%;
+                justify-content: center;
+                padding: 0.8rem 1rem;
+            }
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem 0;
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 3rem;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+                padding: 0 15px;
+            }
+            
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .search-box {
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            .filter-buttons {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">REALM OF CHAOS</a>
+            <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link">Home</a>
+                <a href="gallery-archive.html" class="nav-link active">Gallery</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="pledge.html" class="nav-link">Membership</a>
+                <a href="#" class="cta-button discord-placeholder">Member Login</a>
+            </nav>
+        </div>
+    </header>
+    
+    
+    
+    <main>
+        <div class="container">
+            <div class="page-header">
+                <h1 class="page-title">Video Gallery</h1>
+                <p class="page-subtitle">Browse our collection of premium content. Click on any video to watch in full screen.</p>
+                <div class="terabox-download">
+                    <a href="https://1024terabox.com/s/1EIFVknR57lBEo-nkkGhEXg" class="download-btn" target="_blank">
+                        <i class="fas fa-download"></i> Download Chaos Collection <span class="download-count">8</span>
+                    </a>
+                </div>
+            </div>
+            <div class="gallery-grid" id="videoGrid">
+            <!-- Video cards will be dynamically inserted here -->
+        </div>
+        <div class="pagination" id="pagination">
+            <button id="prevBtn" disabled>Previous</button>
+            <div id="pageNumbers"></div>
+            <button id="nextBtn">Next</button>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container">
+            <p>“Realm of Chaos shattered my limits!” — Anonymous Devotee</p>
+            <p>© 2025 Realm of Chaos. Claimed by Goddess Eris.</p>
+            <p>Join the fetish cult now—submit to chaos or crave forever.</p>
+            <p>Share This Chaos:</p>
+            <div class="footer-social-links">
+                <a href="https://twitter.com/intent/tweet?text=Join%20Realm%20of%20Chaos%20for%20gooner%20and%20sissy%20ecstasy!%20https://your-site.com" target="_blank" rel="noopener" class="twitter-icon" aria-label="Share on Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.patreon.com/GoddessEris?utm_source=website&utm_medium=footer" target="_blank" rel="nofollow" class="patreon-icon" aria-label="Patreon Page"><i class="fab fa-patreon"></i></a>
+                <a href="#" class="discord-icon discord-placeholder" aria-label="Discord (coming soon)"><i class="fab fa-discord"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Video data - Cleaned up with only titles and embed codes
+        const videoData = [
+            // Newest Releases (Added 2025-08-08)
+            {
+                id: 'cTiUqinIUgA',
+                title: 'Temptation Desire',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cTiUqinIUgA" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['new', 'temptation', 'desire', 'premium']
+            },
+            {
+                id: 'cTiUqinIUgB',
+                title: 'Your Future',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cTiUqinIUgB" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['new', 'femdom', 'motivation', 'premium']
+            },
+            {
+                id: 'cTiUqinIUgz',
+                title: 'Everyday',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cTiUqinIUgz" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['new', 'daily', 'motivation']
+            },
+            {
+                id: 'cTiZclnIIGs',
+                title: 'Good Slut: Locked & Gooning',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cTiZclnIIGs" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['chastity', 'sissy', 'gooning', 'premium']
+            },
+            {
+                id: 'cTi3c5nI1uT',
+                title: 'Someone Son',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cTi3c5nI1uT" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['sissy', 'submission', 'premium']
+            },
+            {
+                id: 'cT1hjgn6S93',
+                title: 'Blacked Take Over',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cT1hjgn6S93" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['sissy', 'bimbo', 'transformation', 'premium']
+            },
+            {
+                id: 'cTiTVPnIbx7',
+                title: 'Tempted Gloryhole Slut',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cTiTVPnIbx7" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['gloryhole', 'sissy', 'premium']
+            },
+            {
+                id: 'cTi0lKnIlhO',
+                title: 'Locked Slut Deserve Cock',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cTi0lKnIlhO" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['chastity', 'sissy', 'premium']
+            },
+            {
+                id: 'cTi0nznI6Yt',
+                title: 'BREED Her 2',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cTi0nznI6Yt" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['breeding', 'femdom', 'premium']
+            },
+            {
+                id: 'cTi0nDnI6F6',
+                title: 'BREED Her 1',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cTi0nDnI6F6" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['breeding', 'femdom', 'premium']
+            },
+            {
+                id: 'cTi3blnIQZP',
+                title: 'Goon Slut Stroke Forever',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cTi3blnIQZP" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['gooning', 'edging', 'stroke', 'premium']
+            },
+            {
+                id: 'cTi3IDnIjCf',
+                title: 'Loading into new Reality',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cTi3IDnIjCf" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['reality', 'hypno', 'premium']
+            },
+            {
+                id: 'cTi3c5nI1uZ',
+                title: 'Become Her',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cTi3c5nI1uZ" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['transformation', 'femdom', 'premium']
+            },
+            {
+                id: 'cTirqknIhRy',
+                title: 'Worship Cock Clean',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cTirqknIhRy" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['worship', 'sissy', 'premium']
+            },
+            {
+                id: 'cTirqknIhR4',
+                title: 'Cuck Dream',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cTirqknIhR4" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['cuckold', 'femdom', 'premium']
+            },
+            {
+                id: 'cTirqknIhRx',
+                title: 'BNWO Green Match Cut',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cTirqknIhRx" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['bnwo', 'raceplay', 'premium']
+            },
+            {
+                id: 'cTiXrTnlpKf',
+                title: 'Blacked Alina',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cTiXrTnlpKf" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['interracial', 'bnwo', 'premium']
+            },
+            {
+                id: 'cTi1Dsnl0UB',
+                title: 'Welcome Back Pornosexual',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cTi1Dsnl0UB" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['pornosexual', 'gooning', 'premium']
+            },
+            
+            // Classic Collection
+            {
+                id: 'cT1hjgn6S93',
+                title: 'Blacked Take Over',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cT1hjgn6S93" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['blacked', 'raceplay', 'classic', 'premium']
+            },
+            {
+                id: 'cT1hjgn6S90',
+                title: 'Girlcock',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cT1hjgn6S90" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['girlcock', 'shemale', 'premium']
+            },
+            {
+                id: 'cT1hjgn6S9Z',
+                title: 'Surrender Your Soul',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cT1hjgn6S9Z" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['submission', 'sissy', 'premium']
+            },
+            {
+                id: 'cT1hjZn6SNg',
+                title: 'Time to Shake It',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cT1hjZn6SNg" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['dance', 'fun', 'sissy']
+            },
+            {
+                id: 'cT1hjZn6SNA',
+                title: 'Time to!',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cT1hjZn6SNA" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['motivation', 'sissy', 'premium']
+            },
+            // Newest Releases (Added 2025-07-29)
+            {
+                id: 'cTiUqinIUgB',
+                title: 'Your Future',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cTiUqinIUgB" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['new', 'femdom', 'motivation', 'premium']
+            },
+            {
+                id: 'cTiUqinIUgA',
+                title: 'Temptation Desire',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cTiUqinIUgA" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['new', 'temptation', 'desire', 'premium']
+            },
+            {
+                id: 'cTiUqinIUgz',
+                title: 'Everyday',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cTiUqinIUgz" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                date: '2025-07-29',
+                tags: ['new', 'daily', 'motivation'],
+                isPremium: false
+            },
+            {
+                id: 'cTiUqinIUgg',
+                title: 'Give In',
+                description: 'Surrender to your true desires',
+                duration: '16:50',
+                date: '2025-07-29',
+                tags: ['new', 'surrender', 'femdom', 'premium'],
+                isPremium: true
+            },
+            
+            // Previous New Releases (Last 30 days)
+            {
+                id: 'cTiTlRnIqDv',
+                title: 'The World of a Gooner',
+                description: 'Immerse yourself in the gooner lifestyle',
+                duration: '22:15',
+                date: '2025-07-25',
+                tags: ['gooner', 'femdom', 'premium'],
+                isPremium: true
+            },
+            {
+                id: 'cTiTVPnIbx7',
+                title: 'Tempted Gloryhole Slut',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cTiTVPnIbx7" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['gloryhole', 'sissy', 'new', 'premium']
+            },
+            {
+                id: 'cTiZclnIIGs',
+                title: 'Good Slut: Locked & Gooning',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cTiZclnIIGs" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['chastity', 'gooning', 'new', 'premium']
+            },
+            {
+                id: 'cTi0lKnIlhO',
+                title: 'Locked Slut: Deserve Her Cock',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cTi0lKnIlhO" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['chastity', 'sissy', 'new', 'premium']
+            },
+            {
+                id: 'cTi0nznI6Yt',
+                title: 'BREED Her 2',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cTi0nznI6Yt" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['breeding', 'femdom', 'new', 'premium']
+            },
+            {
+                id: 'cTi0nDnI6F6',
+                title: 'BREED Her 1',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cTi0nDnI6F6" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['breeding', 'femdom', 'new', 'premium']
+            },
+            
+            // Recent Videos (Last 60 days)
+            {
+                id: 'cTi3blnIQZP',
+                title: 'Goon Slut: Stroke Forever',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cTi3blnIQZP" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['gooning', 'edging', 'stroke', 'premium']
+            },
+            {
+                id: 'cTi3c5nI1uT',
+                title: 'Sissy Training: First Steps',
+                description: 'Begin your sissy journey',
+                duration: '32:10',
+                title: 'Hypno Temptation',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cTi3c5nI1uT" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['hypno', 'gooning', 'temptation', 'premium']
+            },
+            {
+                id: 'cTi1Dsnl0UB',
+                title: 'Femdom Fantasy',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cTi1Dsnl0UB" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['femdom', 'bdsm', 'fantasy', 'premium']
+            },
+            {
+                id: 'cT1hjZn6SNx',
+                title: 'Sissy Maid Service',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cT1hjZn6SNx" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['sissy', 'maid', 'service', 'premium']
+            },
+            
+            // Popular Videos
+            {
+                id: 'cT1hjgn6S9Z',
+                title: 'Chastity Challenge',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cT1hjgn6S9Z" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['chastity', 'challenge', 'popular', 'premium']
+            },
+            {
+                id: 'cThUqxn6C4G',
+                title: 'Gooner Paradise',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cThUqxn6C4G" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['gooner', 'edging', 'paradise', 'popular', 'premium']
+            },
+            {
+                id: 'cThUqxn6C4B',
+                title: 'Sissy Slut Transformation',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cThUqxn6C4B" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['sissy', 'transformation', 'popular', 'premium']
+            },
+            {
+                id: 'cThUqxn6C4L',
+                title: 'Femdom Punishment',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cThUqxn6C4L" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['femdom', 'bdsm', 'punishment', 'popular', 'premium']
+            },
+            {
+                id: 'cThUqxn6C4t',
+                title: 'Sissy Training: Advanced',
+                description: 'Advanced sissy training techniques',
+                duration: '36:20',
+                date: '2025-05-30',
+                tags: ['sissy', 'training', 'advanced', 'popular', 'premium'],
+                isPremium: true
+            },
+            {
+                id: 'cThUqxn6C4Y',
+                title: 'Goon Session: Edge for Hours',
+                description: 'Extended edging session',
+                duration: '48:30',
+                date: '2025-05-25',
+                tags: ['gooning', 'edging', 'session', 'popular', 'premium'],
+                isPremium: true
+            },
+            {
+                id: 'cT1hjZn6SNA',
+                title: 'Sissy Maid Training',
+                description: 'Complete maid training program',
+                duration: '39:15',
+                date: '2025-05-20',
+                tags: ['sissy', 'maid', 'training', 'popular', 'premium'],
+                isPremium: true
+            },
+            
+            // Additional videos from the archive
+            {
+                id: 'cThUqxn6C4P',
+                title: 'Sissy Hypno Training',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cThUqxn6C4P" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['sissy', 'hypno', 'training', 'premium']
+            },
+            {
+                id: 'cThUqxn6C4Q',
+                title: 'Femdom Worship',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cThUqxn6C4Q" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['femdom', 'worship', 'bdsm', 'premium']
+            },
+            {
+                id: 'cThUqxn6C4R',
+                title: 'Gooner Mindset',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cThUqxn6C4R" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['gooner', 'mindset', 'training']
+            },
+            {
+                id: 'cThUqxn6C4S',
+                title: 'Sissy Slut Academy',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cThUqxn6C4S" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['sissy', 'training', 'academy', 'premium']
+            },
+            {
+                id: 'cThUqxn6C4T',
+                title: 'Femdom Control',
+                description: 'Experience total domination',
+                duration: '29:50',
+                date: '2025-04-25',
+                tags: ['femdom', 'control', 'bdsm', 'premium'],
+                isPremium: true
+            },
+            
+            // Additional premium content from previous archive
+            {
+                id: 'cT1hjZn6SNA',
+                title: 'Gooner Session: Mind Melt',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cT1hjZn6SNA" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['gooner', 'pmv', 'premium', 'hypno']
+            },
+            {
+                id: 'cT1hjZn6SNz',
+                title: 'Sissy Conditioning',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cT1hjZn6SNz" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['sissy', 'hypno', 'premium', 'conditioning']
+            },
+            {
+                id: 'cT1hjgn6S93',
+                title: 'Gooner Fundamentals',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cT1hjgn6S93" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['gooner', 'beginner', 'training']
+            },
+            {
+                id: 'cT1hjZn6SNy',
+                title: 'Feminization 101',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cT1hjZn6SNy" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['sissy', 'beginner', 'feminization']
+            },
+            {
+                id: 'cT1hjZn6SNx',
+                title: 'PMV: Ultimate Pleasure',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cT1hjZn6SNx" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['pmv', 'gooner', 'premium', 'edging']
+            },
+            {
+                id: 'cT1hjZn6SNw',
+                title: 'Sissy Hypnosis: Deep Trance',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cT1hjZn6SNw" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['sissy', 'hypno', 'premium', 'trance']
+            },
+            {
+                id: 'cT1hjZn6SNv',
+                title: 'Gooner Challenge',
+                description: 'Test your endurance with this challenge',
+                duration: '20:00',
+                date: '2023-05-10',
+                tags: ['gooner', 'challenge', 'edging'],
+                isPremium: false
+            },
+            {
+                id: 'cT1hjZn6SNu',
+                title: 'Sissy Maid Training',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cT1hjZn6SNu" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['sissy', 'training', 'maid', 'premium']
+            },
+            {
+                id: 'cT1hjZn6SNt',
+                title: 'PMV: Brainwash',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cT1hjZn6SNt" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['pmv', 'hypno', 'gooner', 'premium']
+            },
+            {
+                id: 'cT1hjZn6SNs',
+                title: 'Sissy Slumber Party',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cT1hjZn6SNs" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['sissy', 'fun', 'community']
+            },
+            {
+                id: 'cT1hjZn6SNr',
+                title: 'Gooner Marathon',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cT1hjZn6SNr" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['gooner', 'marathon', 'edging', 'premium']
+            },
+            {
+                id: 'cT1hjZn6SNq',
+                title: 'Sissy Voice Training',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cT1hjZn6SNq" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['sissy', 'training', 'voice']
+            },
+            {
+                id: 'cT1hjZn6SNp',
+                title: 'PMV: Overload',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cT1hjZn6SNp" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['pmv', 'gooner', 'intense', 'premium']
+            },
+            {
+                id: 'cT1hjZn6SNo',
+                title: 'Sissy Makeup Tutorial',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cT1hjZn6SNo" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['sissy', 'tutorial', 'makeup'],
+            },
+            {
+                id: 'cT1hjZn6SNn',
+                title: 'Gooner Meditation',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cT1hjZn6SNn" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['gooner', 'meditation', 'mindfulness']
+            },
+            {
+                id: 'cT1hjZn6SNm',
+                title: 'Sissy Wardrobe Guide',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cT1hjZn6SNm" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['sissy', 'fashion', 'wardrobe']
+            },
+            {
+                id: 'cT1hjZn6SNl',
+                title: 'PMV: Euphoria',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cT1hjZn6SNl" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['pmv', 'gooner', 'euphoric', 'premium']
+            },
+            {
+                id: 'cT1hjZn6SNk',
+                title: 'Sissy Fitness Routine',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cT1hjZn6SNk" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['sissy', 'fitness', 'workout']
+            },
+            {
+                id: 'cT1hjZn6SNj',
+                title: 'Gooner Fundamentals 2',
+                embedCode: '<div style="padding:56.25% 0 0 0;position:relative;"><iframe src="https://go.screenpal.com/player/cT1hjZn6SNj" frameborder="0" allowfullscreen style="position:absolute;top:0;left:0;width:100%;height:100%;"></iframe></div>',
+                tags: ['gooner', 'advanced', 'training']
+            }
+        ];
+
+        // Pagination settings
+        const VIDEOS_PER_PAGE = 20;
+        let currentPage = 1;
+        let filteredVideos = [];
+        
+        // DOM Elements
+        const videoGrid = document.getElementById('videoGrid');
+        const searchInput = document.getElementById('searchInput');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const mainElement = document.querySelector('main');
+        
+        // Create pagination elements
+        const paginationContainer = document.createElement('div');
+        paginationContainer.className = 'pagination';
+        const paginationInfo = document.createElement('div');
+        paginationInfo.className = 'pagination-info';
+        
+        // Add pagination elements to the DOM
+        mainElement.appendChild(paginationInfo);
+        mainElement.appendChild(paginationContainer);
+        
+        // State
+        let activeFilter = 'all';
+        let currentSearchTerm = '';
+        
+        // Initialize the page
+        function init() {
+            renderVideos(videoData);
+            setupEventListeners();
+        }
+        
+        // Render videos to the grid - Simplified to show only title and embed code
+        // Helper function to get paginated videos
+        function getPaginatedVideos(videos, page = 1) {
+            const start = (page - 1) * VIDEOS_PER_PAGE;
+            const end = start + VIDEOS_PER_PAGE;
+            return videos.slice(start, end);
+        }
+
+        // Update pagination controls
+        function updatePagination(totalVideos, currentPage) {
+            const totalPages = Math.ceil(totalVideos / VIDEOS_PER_PAGE);
+            paginationContainer.innerHTML = '';
+            
+            // Previous button
+            const prevButton = document.createElement('button');
+            prevButton.textContent = '« Previous';
+            prevButton.disabled = currentPage === 1;
+            prevButton.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    renderVideos(filteredVideos);
+                }
+            });
+            paginationContainer.appendChild(prevButton);
+            
+            // Page numbers
+            const maxPagesToShow = 5;
+            let startPage = Math.max(1, currentPage - Math.floor(maxPagesToShow / 2));
+            let endPage = Math.min(totalPages, startPage + maxPagesToShow - 1);
+            
+            if (endPage - startPage + 1 < maxPagesToShow) {
+                startPage = Math.max(1, endPage - maxPagesToShow + 1);
+            }
+            
+            if (startPage > 1) {
+                const firstPage = document.createElement('button');
+                firstPage.textContent = '1';
+                firstPage.addEventListener('click', () => {
+                    currentPage = 1;
+                    renderVideos(filteredVideos);
+                });
+                paginationContainer.appendChild(firstPage);
+                
+                if (startPage > 2) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.textContent = '...';
+                    paginationContainer.appendChild(ellipsis);
+                }
+            }
+            
+            for (let i = startPage; i <= endPage; i++) {
+                const pageButton = document.createElement('button');
+                pageButton.textContent = i;
+                if (i === currentPage) {
+                    pageButton.classList.add('active');
+                }
+                pageButton.addEventListener('click', () => {
+                    currentPage = i;
+                    renderVideos(filteredVideos);
+                });
+                paginationContainer.appendChild(pageButton);
+            }
+            
+            if (endPage < totalPages) {
+                if (endPage < totalPages - 1) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.textContent = '...';
+                    paginationContainer.appendChild(ellipsis);
+                }
+                
+                const lastPage = document.createElement('button');
+                lastPage.textContent = totalPages;
+                lastPage.addEventListener('click', () => {
+                    currentPage = totalPages;
+                    renderVideos(filteredVideos);
+                });
+                paginationContainer.appendChild(lastPage);
+            }
+            
+            // Next button
+            const nextButton = document.createElement('button');
+            nextButton.textContent = 'Next »';
+            nextButton.disabled = currentPage >= totalPages;
+            nextButton.addEventListener('click', () => {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    renderVideos(filteredVideos);
+                }
+            });
+            paginationContainer.appendChild(nextButton);
+            
+            // Update pagination info
+            const startVideo = (currentPage - 1) * VIDEOS_PER_PAGE + 1;
+            const endVideo = Math.min(startVideo + VIDEOS_PER_PAGE - 1, totalVideos);
+            paginationInfo.textContent = `Showing ${startVideo}-${endVideo} of ${totalVideos} videos`;
+        }
+
+        // Main function to render videos with pagination
+        function renderVideos(videos) {
+            // Store filtered videos for pagination
+            filteredVideos = [...videos];
+            const totalVideos = filteredVideos.length;
+            
+            // Get videos for current page
+            const paginatedVideos = getPaginatedVideos(filteredVideos, currentPage);
+            
+            // Clear the grid
+            videoGrid.innerHTML = '';
+            
+            // If no videos match the filter/search
+            if (paginatedVideos.length === 0) {
+                videoGrid.innerHTML = '<p class="no-results">No videos found matching your criteria.</p>';
+                paginationContainer.innerHTML = '';
+                paginationInfo.textContent = '';
+                return;
+            }
+            
+            // Create and append video elements (use global .video-wrapper for consistent embeds)
+            paginatedVideos.forEach(video => {
+                const videoElement = document.createElement('div');
+                videoElement.className = 'video-card';
+
+                // Build a unified ScreenPal embed using the global .video-wrapper
+                const iframeSrc = `https://go.screenpal.com/player/${video.id}?ff=1&title=0`;
+
+                videoElement.innerHTML = `
+                    <div class="video-wrapper">
+                        <iframe src="${iframeSrc}" allowfullscreen="true" loading="lazy"></iframe>
+                    </div>
+                    <h3>${video.title}</h3>
+                    <div class="video-tags">
+                        ${video.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                    </div>
+                `;
+
+                videoGrid.appendChild(videoElement);
+            });
+            
+            // Update pagination controls
+            updatePagination(totalVideos, currentPage);
+        }
+        
+        // Filter videos based on active filter and search query
+        function filterVideos() {
+            currentSearchTerm = searchInput.value.toLowerCase();
+            
+            const filtered = videoData.filter(video => {
+                // Check if video matches search term
+                const matchesSearch = video.title.toLowerCase().includes(currentSearchTerm) ||
+                                    video.tags.some(tag => tag.toLowerCase().includes(currentSearchTerm));
+                
+                // Check if video matches active filter
+                const matchesFilter = activeFilter === 'all' || 
+                                    video.tags.includes(activeFilter);
+                
+                return matchesSearch && matchesFilter;
+            });
+            
+            // Reset to first page when filters change
+            currentPage = 1;
+            renderVideos(filtered);
+        }
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Search input
+            searchInput.addEventListener('input', (e) => {
+                searchQuery = e.target.value.trim();
+                const filteredVideos = filterVideos();
+                renderVideos(filteredVideos);
+            });
+            
+            // Filter buttons
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    // Update active filter
+                    activeFilter = button.dataset.filter;
+                    // Filter and render videos
+                    const filteredVideos = filterVideos();
+                    renderVideos(filteredVideos);
+                });
+            });
+        }
+        
+        // Initialize the page when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            init();
+            // Discord placeholder click handler
+            document.querySelectorAll('.discord-placeholder').forEach(el => {
+                el.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    alert('Discord server is being built. Coming soon!');
+                });
+            });
+        });
+    </script>
+    <script src="../assets/js/mobile-menu.js"></script>
+</body>
+</html>

@@ -1,26 +1,5 @@
 # Realm of Chaos Project Changelog
 
-## [Unreleased]
-### Added
-- Pagination to gallery (20 videos per page)
-- Comprehensive README.md with project documentation
-- REORGANIZATION_PLAN.md for future reference
-- File organization script
-
-### Changed
-- Reorganized directory structure for better maintainability
-- Updated file references to match new structure
-- Improved code documentation
-
-## [2025-08-08] - Initial Reorganization
-### Added
-- Basic project structure
-- Initial set of HTML pages
-- Core styling and functionality
-
-## [Older Entries]
-- Initial project setup and development
-
 ## Version 1.2.0 - Video Archive Update (2025-07-29)
 
 ### New Features

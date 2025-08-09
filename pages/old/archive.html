@@ -1,0 +1,1406 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Exclusive content archive for Realm of Chaos members: premium gooner and sissy videos.">
+    <title>Member Archive | Realm of Chaos</title>
+    <link rel="stylesheet" href="../assets/css/../styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Member Login Section */
+        .member-login {
+            max-width: 500px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(20, 10, 30, 0.8);
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--primary);
+        }
+        
+        .member-login h2 {
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-size: 2rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .login-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .form-group {
+            text-align: left;
+        }
+        
+        .form-group input::placeholder {
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 12px 15px;
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid var(--gray);
+            border-radius: 6px;
+            color: var(--light);
+            font-size: 1rem;
+        }
+        
+        .login-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 14px 25px;
+            border-radius: 6px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        
+        .login-btn:hover {
+            background: #9a00d4;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(191, 0, 255, 0.4);
+        }
+        /* Performance Optimizations */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Video Archive Layout */
+        .video-archive {
+            padding: 20px;
+            max-width: 1400px;
+            margin: 0 auto;
+            display: none; /* Hidden by default, shown after login */
+        }
+        
+        .archive-header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid var(--gray);
+        }
+        
+        .archive-header h1 {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem auto;
+            max-width: 1600px;
+            padding: 0 2rem;
+            opacity: 1;
+            transform: none;
+            transition: opacity 0.5s ease, transform 0.5s ease;
+            min-height: 300px; /* Ensure grid has minimum height */
+        }
+        
+        /* Debug styles */
+        .debug .video-grid {
+            background-color: rgba(255, 0, 0, 0.1);
+            border: 1px dashed red;
+        }
+        
+        .debug .video-card {
+            background-color: rgba(0, 255, 0, 0.1);
+            border: 1px solid green;
+        }
+        
+        .video-grid.loaded {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .video-card {
+            background: rgba(30, 15, 45, 0.95);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(191, 0, 255, 0.3);
+            position: relative;
+            opacity: 1;
+            transform: none;
+            animation: none;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(191, 0, 255, 0.4);
+            border-color: #bf00ff;
+            z-index: 2;
+        }
+
+        .video-thumbnail {
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            overflow: hidden;
+            background: linear-gradient(135deg, #1a0a2e, #0f0519);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            flex-shrink: 0; /* Prevent thumbnail from shrinking */
+        }
+
+        .video-thumbnail img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+
+        .video-card:hover .video-thumbnail img {
+            transform: scale(1.05);
+        }
+
+        .video-info {
+            padding: 1.5rem;
+            position: relative;
+            background: linear-gradient(to bottom, rgba(30, 15, 45, 0.9), rgba(20, 10, 30, 0.95));
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .video-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            color: #fff;
+            font-weight: 600;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        
+        .play-btn {
+            width: 60px;
+            height: 60px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 2px solid white;
+            box-shadow: 0 0 0 4px rgba(191, 0, 255, 0.3);
+        }
+        
+        .play-btn:hover {
+            transform: scale(1.15);
+            background: #9a00d4;
+            box-shadow: 0 0 0 6px rgba(191, 0, 255, 0.4);
+        }
+        
+        .duration {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.75em;
+        }
+        
+        .gallery-item-content {
+            padding: 15px;
+            text-align: center;
+            background: rgba(10, 5, 20, 0.8);
+            min-height: 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .gallery-item-content h3 {
+            color: #fff;
+            margin: 0 0 5px 0;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            line-height: 1.3;
+        }
+        
+        .gallery-item-content p {
+            color: #bf80ff;
+            margin: 0;
+            font-size: 0.8rem;
+            text-transform: lowercase;
+            font-style: italic;
+        }
+        /* Filter Controls */
+        .filter-controls {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 30px 0 20px;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px 20px;
+            background: rgba(20, 20, 30, 0.6);
+            border-radius: 10px;
+            border: 1px solid #BF00FF;
+        }
+        
+        .tag-filters {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-left: 20px;
+        }
+        
+        .tag-filters span {
+            color: #BF00FF;
+            font-size: 0.9em;
+            font-weight: 500;
+        }
+        
+        .tag-select {
+            background: rgba(30, 30, 40, 0.8);
+            color: #fff;
+            border: 1px solid #BF00FF;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .tag-select:hover, .tag-select:focus {
+            outline: none;
+            border-color: #00D4FF;
+            box-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Search and Filter Bar */
+        .search-filter-bar {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+            align-items: center;
+        }
+        
+        .search-container {
+            flex: 1;
+            min-width: 250px;
+            position: relative;
+        }
+        
+        .search-container input {
+            width: 100%;
+            padding: 12px 15px 12px 45px;
+            background: rgba(20, 10, 30, 0.8);
+            border: 1px solid var(--gray);
+            border-radius: 6px;
+            color: var(--light);
+            font-size: 1rem;
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--light);
+            opacity: 0.7;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .filter-btn {
+            background: rgba(20, 10, 30, 0.8);
+            border: 1px solid var(--primary);
+            color: var(--light);
+            padding: 10px 20px;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            font-size: 0.85em;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background: #BF00FF;
+            color: white;
+        }
+
+        /* Header */
+        .archive-header {
+            text-align: center;
+            padding: 40px 20px;
+            background: linear-gradient(135deg, #1a0f2e 0%, #3a1e5a 100%);
+            margin-bottom: 30px;
+            border-bottom: 2px solid #BF00FF;
+        }
+
+        .archive-title {
+            font-size: 2.5em;
+            color: #fff;
+            margin-bottom: 10px;
+            text-shadow: 0 0 10px rgba(191, 0, 255, 0.5);
+        }
+
+        .archive-subtitle {
+            color: #bbb;
+            font-size: 1.1em;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .video-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            }
+            
+            .archive-title {
+                font-size: 2em;
+            }
+        }
+
+        /* Animation */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .video-card {
+            animation: fadeIn 0.5s ease-out forwards;
+            opacity: 0;
+        }
+
+        /* Add staggered animation */
+        .video-card:nth-child(1) { animation-delay: 0.1s; }
+        .video-card:nth-child(2) { animation-delay: 0.2s; }
+        .video-card:nth-child(3) { animation-delay: 0.3s; }
+        /* Continue as needed */
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            background: #000;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .video-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(30, 15, 45, 0.3), rgba(191, 0, 255, 0.1));
+            z-index: 1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .video-container.loading::before {
+            opacity: 1;
+            background: rgba(20, 10, 30, 0.9) url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" viewBox="0 0 100 100" fill="%23bf00ff"><path d="M73,50c0-12.7-10.3-23-23-23S27,37.3,27,50 M30.9,50c0-10.5,8.5-19.1,19.1-19.1S69.1,39.5,69.1,50"><animateTransform attributeName="transform" attributeType="XML" type="rotate" dur="1s" from="0 50 50" to="360 50 50" repeatCount="indefinite"/></svg>') no-repeat center center;
+            background-size: 80px 80px;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(30, 15, 45, 0.8);
+            color: #fff;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            font-size: 22px;
+            cursor: pointer;
+            z-index: 1001;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        
+        .close-btn:hover {
+            background: rgba(191, 0, 255, 0.8);
+            transform: rotate(90deg);
+            border-color: #bf00ff;
+        }
+
+        .modal-content {
+            width: 90%;
+            max-width: 1100px;
+            position: relative;
+            background: rgba(20, 10, 30, 0.95);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.5);
+            transform: scale(0.95);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(191, 0, 255, 0.3);
+        }
+        
+        .video-modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        /* Video Modal Styles */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.95);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-out;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .video-modal.active {
+            display: flex;
+            animation: modalFadeIn 0.3s ease-out forwards;
+        }
+        
+        .modal-content {
+            position: relative;
+            width: 90%;
+            max-width: 1200px;
+            max-height: 90vh;
+            background: #0f0a1a;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            transform: scale(0.95);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            border: 1px solid rgba(191, 0, 255, 0.3);
+        }
+        
+        .video-modal.active .modal-content {
+            transform: scale(1);
+        }
+        
+        .video-container {
+            position: relative;
+            width: 100%;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            background: #000;
+        }
+        
+        .video-container.loading {
+            background: rgba(15, 10, 30, 0.9);
+        }
+        
+        .video-loading {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #fff;
+            background: rgba(15, 10, 30, 0.9);
+            z-index: 2;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid rgba(191, 0, 255, 0.2);
+            border-radius: 50%;
+            border-top-color: #bf00ff;
+            animation: spin 1s ease-in-out infinite;
+            margin-bottom: 15px;
+        }
+        
+        .video-info {
+            padding: 1.5rem;
+            background: linear-gradient(to bottom, rgba(30, 15, 45, 0.9), rgba(20, 10, 30, 0.95));
+            border-top: 1px solid rgba(191, 0, 255, 0.2);
+        }
+        
+        .video-info h3 {
+            color: #fff;
+            margin: 0 0 10px 0;
+            font-size: 1.5rem;
+        }
+        
+        .video-meta {
+            display: flex;
+            gap: 15px;
+            color: #b3b3b3;
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+        }
+        
+        .video-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .tag {
+            background: rgba(191, 0, 255, 0.2);
+            color: #bf00ff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        @keyframes modalFadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Body lock when modal is open */
+        body.modal-open {
+            overflow: hidden;
+            padding-right: 15px; /* Prevent content shift from scrollbar */
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container nav-container">
+            <a href="../index.html" class="nav-logo">REALM OF CHAOS</a>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-filter="all">All Videos</button>
+                <button class="filter-btn" data-filter="sissy">Sissy Training</button>
+                <button class="filter-btn" data-filter="gooner">Gooner Sessions</button>
+                <button class="filter-btn premium-only" data-filter="premium">Premium Only</button>
+            </div>
+            <p class="header-subtitle">Welcome, <span class="glitch-target">Devotee</span></p>
+            <button class="menu-toggle" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <a href="../index.html" class="nav-link">Home</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="pledge.html" class="nav-link">Membership</a>
+                <a href="gallery-archive.html" class="cta-button active">Member Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="archive-header">
+        <h1 class="archive-title">Member Archive</h1>
+        <p class="archive-subtitle">Your exclusive collection of premium content. New videos added regularly for your viewing pleasure.</p>
+    </div>
+
+    <main>
+        <!-- Video Archive Section -->
+        <section class="video-archive" id="archiveSection">
+            <div class="archive-header">
+                <h1>Video Archive</h1>
+                <p>Browse our collection of exclusive content. <a href="pledge.html" class="premium-link">Become a member</a> to unlock premium videos.</p>
+            </div>
+            <div class="video-grid" id="videoGrid">
+                <!-- Videos will be loaded here by JavaScript -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Add debug class to body for development -->
+    <script>
+        // Add debug class to body for development
+        document.body.classList.add('debug');
+        
+        // ScreenPal video data - sorted by latest first
+        const videoData = [
+            // Latest Videos (Premium)
+            {
+                id: 'cT1hjZn6SNB',
+                title: 'Sissy Training: Advanced',
+                description: 'Advanced sissy training',
+                embedCode: '<div class="sp-embed-player" data-id="cT1hjZn6SNB"><script src="https://go.screenpal.com/player/appearance/cT1hjZn6SNB"><\/script><iframe src="https://go.screenpal.com/player/cT1hjZn6SNB?width=100%&height=100%&ff=1&title=0" allowfullscreen style="border: none; width: 100%; height: 100%;"></iframe></div>',
+                thumbnail: '../assets/images/thumbnails/thumb1.jpg',
+                duration: '18:30',
+                date: '2023-08-01',
+                tags: ['sissy', 'training', 'premium'],
+                isNew: true,
+                isPremium: true
+            },
+            {
+                id: 'cT1hjZn6SNA',
+                title: 'Gooner Session: Mind Melt',
+                description: 'Intense gooning',
+                embedCode: '<div class="sp-embed-player" data-id="cT1hjZn6SNA"><script src="https://go.screenpal.com/player/appearance/cT1hjZn6SNA"><\/script><iframe src="https://go.screenpal.com/player/cT1hjZn6SNA?width=100%&height=100%&ff=1&title=0" allowfullscreen style="border: none; width: 100%; height: 100%;"></iframe></div>',
+                thumbnail: '../assets/images/thumbnails/thumb2.jpg',
+                duration: '22:15',
+                date: '2023-07-25',
+                tags: ['gooner', 'pmv', 'premium'],
+                isNew: true,
+                isPremium: true
+            },
+            {
+                id: 'cT1hjZn6SNz',
+                title: 'Sissy Conditioning',
+                description: 'Deep programming',
+                embedCode: '<div class="sp-embed-player" data-id="cT1hjZn6SNz"><script src="https://go.screenpal.com/player/appearance/cT1hjZn6SNz"><\/script><iframe src="https://go.screenpal.com/player/cT1hjZn6SNz?width=100%&height=100%&ff=1&title=0" allowfullscreen style="border: none; width: 100%; height: 100%;"></iframe></div>',
+                thumbnail: '../assets/images/thumbnails/thumb3.jpg',
+                duration: '15:45',
+                date: '2023-07-18',
+                tags: ['sissy', 'hypno', 'premium'],
+                isNew: false,
+                isPremium: true
+            },
+            {
+                id: 'cT1hjgn6S93',
+                title: 'Gooner Fundamentals',
+                description: 'Basic training',
+                embedCode: '<div class="sp-embed-player" data-id="cT1hjgn6S93"><script src="https://go.screenpal.com/player/appearance/cT1hjgn6S93"><\/script><iframe src="https://go.screenpal.com/player/cT1hjgn6S93?width=100%&height=100%&ff=1&title=0" allowfullscreen style="border: none; width: 100%; height: 100%;"></iframe></div>',
+                thumbnail: '../assets/images/thumbnails/thumb4.jpg',
+                duration: '19:45',
+                date: '2023-06-28',
+                tags: ['gooner', 'beginner'],
+                isNew: false,
+                isPremium: false
+            }
+        ];
+
+        // DOM Elements
+        const loginSection = document.querySelector('.member-login');
+        const archiveSection = document.querySelector('.video-archive');
+        const loginForm = document.getElementById('loginForm');
+        const searchInput = document.getElementById('searchInput');
+        const videoGrid = document.getElementById('videoGrid');
+        const memberNameElement = document.getElementById('memberName');
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        
+        // Pagination
+        const videosPerPage = 12;
+        let currentPage = 1;
+        let activeFilter = 'all';
+        let searchQuery = '';
+        let currentUser = null;
+
+        // Initialize the video grid directly without login
+        function checkAuth() {
+            console.log('Checking authentication...');
+            // Always show the archive section
+            if (archiveSection) {
+                console.log('Archive section found, displaying...');
+                archiveSection.style.display = 'block';
+                initVideoGrid();
+            } else {
+                console.error('Archive section not found in the DOM');
+            }
+        }
+
+        // Login functionality removed - will be reimplemented later
+        function handleLogin(e) {
+            e?.preventDefault();
+            // Login functionality will be reimplemented later
+            console.log('Login functionality will be added in a future update');
+        }
+
+        // Initialize the video grid
+        function initVideoGrid() {
+            console.log('Initializing video grid...');
+            if (!videoGrid) {
+                console.error('Video grid element not found');
+                return;
+            }
+            
+            try {
+                const filteredVideos = filterVideos();
+                console.log(`Found ${filteredVideos.length} videos to display`);
+                renderVideos(filteredVideos);
+                renderPagination(filteredVideos.length);
+            } catch (error) {
+                console.error('Error initializing video grid:', error);
+                videoGrid.innerHTML = '<p class="error">Error loading videos. Please try again later.</p>';
+            }
+        }
+
+        // Filter videos based on active filter and search query
+        function filterVideos() {
+            return videoData.filter(video => {
+                const matchesSearch = video.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
+                                    video.description.toLowerCase().includes(searchQuery.toLowerCase());
+                
+                const matchesFilter = activeFilter === 'all' || 
+                                    video.tags.includes(activeFilter);
+                
+                return matchesSearch && matchesFilter;
+            });
+        }
+
+        // Render videos to the grid
+        function renderVideos(videos) {
+            console.log('Rendering videos...', videos);
+            if (!videoGrid) {
+                console.error('Video grid element not found');
+                // Try to find the video grid again
+                videoGrid = document.getElementById('videoGrid');
+                if (!videoGrid) {
+                    console.error('Could not find video grid element');
+                    return;
+                }
+            }
+            
+            videoGrid.innerHTML = '';
+            
+            if (!videos || videos.length === 0) {
+                console.log('No videos to display');
+                videoGrid.innerHTML = `
+                    <div class="no-results">
+                        <i class="fas fa-video-slash"></i>
+                        <p>No videos found matching your criteria.</p>
+                        <button class="reset-filters">Reset Filters</button>
+                    </div>`;
+                
+                // Add event listener to reset button if it exists
+                const resetBtn = videoGrid.querySelector('.reset-filters');
+                if (resetBtn) {
+                    resetBtn.addEventListener('click', () => {
+                        activeFilter = 'all';
+                        searchQuery = '';
+                        currentPage = 1;
+                        if (searchInput) searchInput.value = '';
+                        initVideoGrid();
+                    });
+                }
+                return;
+            }
+            
+            const startIndex = (currentPage - 1) * videosPerPage;
+            const paginatedVideos = videos.slice(startIndex, startIndex + videosPerPage);
+            
+            paginatedVideos.forEach((video, index) => {
+                const videoCard = document.createElement('div');
+                videoCard.className = 'video-card';
+                videoCard.dataset.tags = video.tags.join(' ');
+                
+                // Add staggered animation
+                videoCard.style.animationDelay = `${index * 0.05}s`;
+                
+                videoCard.className = 'gallery-item';
+                videoCard.innerHTML = `
+                    <div class="gallery-video-container">
+                        <div class="sp-embed-player" data-id="${video.id}">
+                            <iframe 
+                                src="https://go.screenpal.com/player/${video.id}?width=100%&height=100%&ff=1&title=0" 
+                                allowfullscreen 
+                                loading="lazy"
+                                style="border: none;">
+                            </iframe>
+                        </div>
+                    </div>
+                    <div class="gallery-item-content">
+                        <h3>${video.title}</h3>
+                        <p>${video.tags.join(' • ')}</p>
+                    </div>`;
+                
+                videoCard.addEventListener('click', () => {
+                    playVideo(video);
+                });
+                
+                videoGrid.appendChild(videoCard);
+            });
+        }
+
+        // Render pagination
+        function renderPagination(totalVideos) {
+            const totalPages = Math.ceil(totalVideos / videosPerPage);
+            let paginationHTML = '';
+            
+            if (totalPages <= 1) {
+                document.getElementById('pagination').innerHTML = '';
+                return;
+            }
+            
+            // Previous button
+            paginationHTML += `<button class="page-btn" ${currentPage === 1 ? 'disabled' : ''} data-page="${currentPage - 1}">
+                <i class="fas fa-chevron-left"></i> Previous
+            </button>`;
+            
+            // Page numbers
+            for (let i = 1; i <= totalPages; i++) {
+                paginationHTML += `<button class="page-btn ${i === currentPage ? 'active' : ''}" data-page="${i}">${i}</button>`;
+            }
+            
+            // Next button
+            paginationHTML += `<button class="page-btn" ${currentPage === totalPages ? 'disabled' : ''} data-page="${currentPage + 1}">
+                Next <i class="fas fa-chevron-right"></i>
+            </button>`;
+            
+            document.getElementById('pagination').innerHTML = paginationHTML;
+            
+            // Add event listeners to pagination buttons
+            document.querySelectorAll('.page-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const page = parseInt(e.target.dataset.page);
+                    if (page && page !== currentPage) {
+                        currentPage = page;
+                        initVideoGrid();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    }
+                });
+            });
+        }
+
+        // Initialize event listeners
+        function initEventListeners() {
+            // Login form submission
+            if (loginForm) {
+                loginForm.addEventListener('submit', handleLogin);
+            }
+            
+            // Search input
+            if (searchInput) {
+                let searchTimeout;
+                searchInput.addEventListener('input', (e) => {
+                    clearTimeout(searchTimeout);
+                    searchTimeout = setTimeout(() => {
+                        searchQuery = e.target.value;
+                        currentPage = 1;
+                        initVideoGrid();
+                    }, 300);
+                });
+            }
+            
+            // Filter buttons
+            filterButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    // Remove active class from all buttons
+                    filterButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    button.classList.add('active');
+                    activeFilter = button.dataset.filter;
+                    currentPage = 1;
+                    
+                    // Update the video grid
+                    initVideoGrid();
+                });
+            });
+        }
+
+        // Play video in modal
+        function playVideo(video) {
+            // Create or get modal elements
+            let modal = document.getElementById('videoModal');
+            let videoContainer = document.getElementById('videoContainer');
+            
+            // Create modal if it doesn't exist
+            if (!modal) {
+                modal = document.createElement('div');
+                modal.id = 'videoModal';
+                modal.className = 'video-modal';
+                modal.innerHTML = `
+                    <div class="modal-content">
+                        <button class="close-btn" aria-label="Close video">
+                            <i class="fas fa-times"></i>
+                        </button>
+                        <div class="video-container" id="videoContainer">
+                            <div class="video-loading">
+                                <div class="spinner"></div>
+                                <p>Loading video...</p>
+                            </div>
+                        </div>
+                        <div class="video-info">
+                            <h3 id="videoTitle">${video.title}</h3>
+                            <div class="video-meta">
+                                <span class="duration">${video.duration}</span>
+                                <span class="date">${new Date(video.date).toLocaleDateString()}</span>
+                            </div>
+                            <div class="video-tags">
+                                ${video.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                document.body.appendChild(modal);
+                
+                // Close modal handlers
+                const closeModal = () => {
+                    modal.classList.remove('active');
+                    setTimeout(() => {
+                        modal.style.display = 'none';
+                        videoContainer.innerHTML = `
+                            <div class="video-loading">
+                                <div class="spinner"></div>
+                                <p>Loading video...</p>
+                            </div>
+                        `;
+                    }, 300); // Match with CSS transition duration
+                };
+                
+                modal.querySelector('.close-btn').addEventListener('click', closeModal);
+                
+                // Close on Escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && modal.style.display === 'flex') {
+                        closeModal();
+                    }
+                });
+                
+                // Close when clicking outside content
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        closeModal();
+                    }
+                });
+                
+                videoContainer = document.getElementById('videoContainer');
+            } else {
+                // Update video info if modal exists
+                document.getElementById('videoTitle').textContent = video.title;
+                document.querySelector('.video-meta .duration').textContent = video.duration;
+                document.querySelector('.video-meta .date').textContent = new Date(video.date).toLocaleDateString();
+                document.querySelector('.video-tags').innerHTML = video.tags.map(tag => 
+                    `<span class="tag">${tag}</span>`
+                ).join('');
+            }
+            
+            // Show loading state
+            videoContainer.classList.add('loading');
+            
+            // Show the modal with animation
+            modal.style.display = 'flex';
+            setTimeout(() => {
+                modal.classList.add('active');
+                
+                // Small delay before loading video for smoother transition
+                setTimeout(() => {
+                    // Create a temporary div to parse the embed code
+                    const tempDiv = document.createElement('div');
+                    tempDiv.innerHTML = video.embedCode;
+                    const iframe = tempDiv.querySelector('iframe');
+                    
+                    if (iframe) {
+                        // Force HTTPS for security
+                        if (iframe.src.startsWith('http:')) {
+                            iframe.src = iframe.src.replace('http:', 'https:');
+                        }
+                        
+                        // Add loading attribute for better performance
+                        iframe.setAttribute('loading', 'lazy');
+                        
+                        // Replace content with the iframe
+                        videoContainer.innerHTML = '';
+                        videoContainer.appendChild(iframe);
+                        
+                        // Remove loading class when iframe loads
+                        iframe.onload = () => {
+                            videoContainer.classList.remove('loading');
+                        };
+                        
+                        // Fallback in case onload doesn't fire
+                        setTimeout(() => {
+                            videoContainer.classList.remove('loading');
+                        }, 2000);
+                    } else {
+                        // Fallback for non-iframe content
+                        videoContainer.innerHTML = video.embedCode;
+                        videoContainer.classList.remove('loading');
+                    }
+                }, 100);
+            }, 10);
+            
+            // Lock body scroll when modal is open
+            document.body.style.overflow = 'hidden';
+            
+            // Add class to body for modal open state
+            document.body.classList.add('modal-open');
+        }
+
+    // Initialize the page
+    function init() {
+        // Initialize event listeners
+        initEventListeners();
+        
+        // Show archive directly without login
+        checkAuth();
+        
+        // Add smooth scrolling to anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Add animation on scroll
+        const animateOnScroll = () => {
+            const elements = document.querySelectorAll('.animate-on-scroll');
+            elements.forEach(element => {
+                const elementTop = element.getBoundingClientRect().top;
+                const windowHeight = window.innerHeight;
+                if (elementTop < windowHeight - 100) {
+                    element.classList.add('animate');
+                }
+            });
+        };
+        
+        window.addEventListener('scroll', animateOnScroll);
+        animateOnScroll(); // Run once on load
+    }
+
+
+
+        // Add any additional styles here
+        const style = document.createElement('style');
+        style.textContent = `
+            /* Video card styles */
+            .gallery-item {
+                background: rgba(30, 15, 45, 0.8);
+                border-radius: 8px;
+                overflow: hidden;
+                border: 1px solid rgba(191, 0, 255, 0.2);
+                position: relative;
+                opacity: 0;
+                transform: translateY(20px);
+                transition: opacity 0.5s ease, transform 0.5s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+            }
+            
+            .gallery-item:hover {
+                transform: translateY(-5px) !important;
+                box-shadow: 0 10px 20px rgba(191, 0, 255, 0.3);
+                border-color: #BF00FF;
+            }
+            
+            .video-thumbnail {
+                position: relative;
+                padding-top: 56.25%; /* 16:9 Aspect Ratio */
+                overflow: hidden;
+                background: #000;
+                cursor: pointer;
+            }
+            
+            .video-thumbnail img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                transition: transform 0.3s ease;
+            }
+            
+            .gallery-video-container iframe {
+                width: 100%;
+                height: 100%;
+                border: none;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+            
+            .video-card:hover .video-thumbnail img {
+                transform: scale(1.05);
+            }
+            
+            .video-overlay {
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                background: rgba(0, 0, 0, 0.5);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                opacity: 0;
+                transition: all 0.3s ease;
+            }
+            
+            .video-card:hover .video-overlay {
+                opacity: 1;
+                background: rgba(0, 0, 0, 0.7);
+            }
+            
+            .play-btn {
+                width: 60px;
+                height: 60px;
+                background: var(--primary);
+                border-radius: 50%;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                color: white;
+                font-size: 24px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+                border: 2px solid white;
+                box-shadow: 0 0 0 4px rgba(191, 0, 255, 0.3);
+            }
+            
+            .play-btn:hover {
+                transform: scale(1.15);
+                background: #9a00d4;
+                box-shadow: 0 0 0 6px rgba(191, 0, 255, 0.4);
+            }
+            
+            .duration {
+                position: absolute;
+                bottom: 10px;
+                right: 10px;
+                background: rgba(0, 0, 0, 0.7);
+                color: white;
+                padding: 3px 8px;
+                border-radius: 4px;
+                font-size: 0.8em;
+            }
+            
+            .premium-badge {
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                background: linear-gradient(45deg, #BF00FF, #00D4FF);
+                color: black;
+                padding: 3px 8px;
+                border-radius: 4px;
+                font-size: 0.7em;
+                font-weight: bold;
+                text-transform: uppercase;
+            }
+            
+            .video-info {
+                padding: 15px;
+            }
+            
+            .video-title {
+                margin: 0 0 10px 0;
+                font-size: 1.1em;
+                color: white;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            
+            .video-meta {
+                display: flex;
+                justify-content: space-between;
+                color: #888;
+                font-size: 0.85em;
+                margin-bottom: 10px;
+            }
+            
+            .video-meta span {
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            }
+            
+            .video-tags {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 5px;
+                margin-top: 10px;
+            }
+            
+            .tag {
+                background: rgba(191, 0, 255, 0.2);
+                color: #BF00FF;
+                padding: 3px 10px;
+                border-radius: 15px;
+                font-size: 0.75em;
+                white-space: nowrap;
+                transition: all 0.2s ease;
+            }
+            
+            .tag:hover {
+                background: rgba(191, 0, 255, 0.4);
+            }
+            
+            /* Pagination styles */
+            .pagination {
+                display: flex;
+                justify-content: center;
+                margin-top: 30px;
+                gap: 5px;
+            }
+            
+            .page-btn {
+                background: rgba(20, 10, 30, 0.8);
+                border: 1px solid rgba(191, 0, 255, 0.3);
+                color: white;
+                padding: 8px 15px;
+                border-radius: 5px;
+                cursor: pointer;
+                transition: all 0.3s ease;
+            }
+            
+            .page-btn:hover:not(:disabled) {
+                background: rgba(191, 0, 255, 0.2);
+                border-color: #BF00FF;
+            }
+            
+            .page-btn.active {
+                background: #BF00FF;
+                border-color: #BF00FF;
+                color: white;
+            }
+            
+            .page-btn:disabled {
+                opacity: 0.5;
+                cursor: not-allowed;
+            }
+            
+            /* No results message */
+            .no-results {
+                text-align: center;
+                padding: 40px 20px;
+                grid-column: 1 / -1;
+                color: #888;
+                font-size: 1.1em;
+            }
+            
+            .reset-btn:hover {
+                background: #BF00FF;
+                color: #000;
+            }
+            
+            @keyframes pulse {
+                0% { opacity: 0.7; }
+                50% { opacity: 1; }
+                100% { opacity: 0.7; }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Add any additional initialization code here
+        console.log('Realm of Chaos Archive initialized');
+
+        // Initialize the application
+        function initApp() {
+            // Initialize video grid and filters
+            initVideoGrid();
+            
+            // Initialize filters if the function exists
+            if (typeof initFilters === 'function') {
+                initFilters();
+            }
+            
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+            
+            // Add animation to video cards on scroll
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = '1';
+                        entry.target.style.transform = 'translateY(0)';
+                    }
+                });
+            }, { threshold: 0.1 });
+            
+            document.querySelectorAll('.gallery-item').forEach(card => {
+                observer.observe(card);
+            });
+        }
+        
+        // Start the application when DOM is loaded
+        console.log('Starting application...');
+        function startApp() {
+            try {
+                initApp();
+                console.log('Application initialized successfully');
+            } catch (error) {
+                console.error('Error initializing application:', error);
+                const main = document.querySelector('main');
+                if (main) {
+                    main.innerHTML = `
+                        <div class="error-container">
+                            <h2>Oops! Something went wrong</h2>
+                            <p>We're having trouble loading the video archive. Please try refreshing the page.</p>
+                            <button onclick="window.location.reload()" class="reload-btn">
+                                <i class="fas fa-sync-alt"></i> Reload Page
+                            </button>
+                        </div>`;
+                }
+            }
+        }
+
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', startApp);
+        } else {
+            startApp();
+        }
+    </script>
+
+    <footer class="footer">
+        <p>“Realm of Chaos shattered my limits!” — Anonymous Devotee</p>
+        <p>© 2025 Realm of Chaos. Claimed by Goddess Eris.</p>
+    </footer>
+</body>
+</html>

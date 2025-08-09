@@ -1,0 +1,2070 @@
+<!--
+  Realm of Chaos - Main Index Page
+  Last Updated: 2025-08-08
+  Modern responsive design implementation
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Dive into Realm of Chaos for exclusive gooner, sissy, and fetish content. Unleash your desires on Patreon!">
+    <meta name="keywords" content="gooner, sissy, sissy training, feminization, mind-melting PMV, BNWO, fetish, hypnosis, Realm of Chaos, Patreon, chaos, adult content, community">
+    <meta property="og:title" content="ASCENSION | Realm of Chaos">
+    <meta property="og:description" content="Embrace gooner, sissy, and fetish fantasies in the chaotic Realm of Chaos. Join Patreon for mind-melting ecstasy!">
+    <meta property="og:image" content="../assets/images/chaos_logo.png">
+    <meta property="og:url" content="https://your-site.com">
+    <title>ASCENSION | Realm of Chaos</title>
+    <link rel="icon" type="image/png" href="../assets/images/chaos_logo_fav.png" sizes="16x16">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="../assets/css/styles.css">
+    <link rel="stylesheet" href="../assets/css/navigation.css">
+    <link rel="stylesheet" href="../assets/css/pledge.css">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-XXXXXXXXXX');
+    </script>
+    <style>
+        :root {
+            --primary: #BF00FF;
+            --primary-dark: #8a00b3;
+            --dark: #0a0514;
+            --darker: #05020a;
+            --light: #f0e6ff;
+            --gray: #2a1a3d;
+            --glass: rgba(20, 10, 30, 0.8);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            background: var(--darker);
+            color: var(--light);
+            font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Layout */
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        .header {
+            background: rgba(10, 5, 20, 0.95);
+            backdrop-filter: blur(10px);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid var(--primary);
+            padding: 1rem 0;
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 2rem;
+        }
+        
+        .nav-logo {
+            color: var(--primary);
+            font-size: 1.8rem;
+            font-weight: 700;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-family: 'OriginTech', 'Frizon', sans-serif;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: var(--light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary);
+            transform: translateY(-2px);
+        }
+        
+        .cta-button {
+            background: var(--primary);
+            color: white !important;
+            padding: 0.8rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+            display: inline-block;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+        
+        .cta-button:hover {
+            background: transparent;
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(191, 0, 255, 0.3);
+        }
+        
+        /* Mobile Menu Button */
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: rgba(10, 5, 20, 0.98);
+                flex-direction: column;
+                padding: 1rem 0;
+                text-align: center;
+                border-bottom: 1px solid var(--primary);
+            }
+            
+            .nav-menu.active {
+                display: flex;
+            }
+            
+            .nav-link {
+                padding: 0.8rem 0;
+                display: block;
+            }
+            
+            .cta-button {
+                margin: 0.5rem 2rem;
+                text-align: center;
+            }
+        }
+    </style>
+    <script>
+        // Mobile menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navMenu = document.getElementById('navMenu');
+            
+            // Toggle mobile menu
+            if (mobileMenuBtn && navMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    this.setAttribute('aria-expanded', 
+                        this.getAttribute('aria-expanded') === 'true' ? 'false' : 'true'
+                    );
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!e.target.closest('.nav-container') && navMenu.classList.contains('active')) {
+                        navMenu.classList.remove('active');
+                        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                    }
+                });
+                
+                // Close menu when clicking a link
+                document.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navMenu.classList.remove('active');
+                        mobileMenuBtn.setAttribute('aria-expanded', 'false');
+                    });
+                });
+            }
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                if (anchor.getAttribute('href') !== '#') {
+                    anchor.addEventListener('click', function (e) {
+                        e.preventDefault();
+                        const target = document.querySelector(this.getAttribute('href'));
+                        if (target) {
+                            target.scrollIntoView({
+                                behavior: 'smooth',
+                                block: 'start'
+                            });
+                        }
+                    });
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">REALM OF CHAOS</a>
+            <button class="menu-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <a href="index.html" class="nav-link active">Home</a>
+                <a href="gallery-archive.html" class="nav-link">Gallery</a>
+                <a href="about.html" class="nav-link">About</a>
+                <a href="pledge.html" class="nav-link">Membership</a>
+                <a href="#" class="cta-button discord-placeholder">Member Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section id="lust-gate" class="hero-section">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1 class="hero-headline">SUBMIT TO GOONER BLISS. IGNITE CHAOS.</h1>
+                    <p class="hero-subheadline">Enter the neon void where gooners are forged and sissies ascend. Realm of Chaos doesn’t ask—it consumes. Join <span id="devotee-count">215</span> sworn devotees and feed the ritual.</p>
+                    <div class="hero-cta">
+                        <a href="https://www.patreon.com/GoddessEris?utm_source=website&utm_medium=hero" target="_blank" rel="nofollow" class="cta-button">Claim Ecstasy</a>
+                        <a href="gallery-archive.html" class="cta-button secondary">Enter Gallery</a>
+                    </div>
+                </div>
+                <div class="hero-video-container">
+                    <div class="video-wrapper">
+                        <iframe src='https://www.redgifs.com/ifr/personalyellowappaloosa' frameBorder='0' scrolling='no' allowFullScreen></iframe>
+                    </div>
+                    <p class="video-credit"><a href='https://www.redgifs.com/watch/personalyellowappaloosa' target="_blank">via RedGIFs</a></p>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <!-- Membership Preview Cards -->
+        <section id="membership-preview">
+            <div class="container" style="padding: 40px 20px;">
+                <h2 style="text-align:center; margin-bottom: 10px;">PLEDGE LUST: ASCEND IN ECSTASY</h2>
+                <p style="text-align:center; color: rgba(255,255,255,0.85); margin-bottom: 30px;">Choose your fetish path. Unlock gooner, sissy, and chaotic delights. Join now—ecstasy awaits.</p>
+                <div class="pricing-grid">
+                    <!-- Chaos Initiate -->
+                    <div class="tier-card">
+                        <div class="tier-icon"><i class="fas fa-user"></i></div>
+                        <h2>Chaos Initiate</h2>
+                        <div class="tier-price">$5<span class="month-text">/mo</span></div>
+                        <ul class="tier-features">
+                            <li>🎀 Ignite fetish art with your support.</li>
+                            <li>🎀 Access chaos portal.</li>
+                            <li>🎀 Fuel sissy and chaotic content.</li>
+                        </ul>
+                        <a href="https://www.patreon.com/GoddessEris" target="_blank" rel="noopener noreferrer" class="tier-cta-button">Begin Submission</a>
+                        <div class="popular-badge">Newcomer’s Choice</div>
+                    </div>
+
+                    <!-- Lust Devotee -->
+                    <div class="tier-card popular">
+                        <div class="tier-icon"><i class="fas fa-heart"></i></div>
+                        <h2>Lust Devotee</h2>
+                        <div class="tier-price">$15<span class="month-text">/mo</span></div>
+                        <ul class="tier-features">
+                            <li>🎀 Deep dive into gooner chaos.</li>
+                            <li>🎀 Early sissy and fetish releases.</li>
+                            <li>🎀 Join the elite lust cult.</li>
+                            <li>🎀 Shape chaotic art.</li>
+                        </ul>
+                        <a href="https://www.patreon.com/GoddessEris" target="_blank" rel="noopener noreferrer" class="tier-cta-button">Ascend in Lust</a>
+                        <div class="popular-badge">Most Desired</div>
+                    </div>
+
+                    <!-- Chaos Elite -->
+                    <div class="tier-card">
+                        <div class="tier-icon"><i class="fas fa-crown"></i></div>
+                        <h2>Chaos Elite</h2>
+                        <div class="tier-price">$50<span class="month-text">/mo</span></div>
+                        <ul class="tier-features">
+                            <li>🎀 Ultimate devotion, shaping desires.</li>
+                            <li>🎀 Full gooner and sissy access.</li>
+                            <li>🎀 Two 10-15s custom fetish edits.</li>
+                            <li>🎀 Lead the chaotic dominion.</li>
+                        </ul>
+                        <a href="https://www.patreon.com/GoddessEris" target="_blank" rel="noopener noreferrer" class="tier-cta-button">Claim Dominion</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <style>
+            /* Hero Section Styles */
+            .hero-section {
+                background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7)), 
+                            url('../assets/images/hero-bg.jpg') no-repeat center center/cover;
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                padding: 100px 20px 60px;
+                position: relative;
+                overflow: hidden;
+            }
+
+            /* Make RedGIF hero embed larger and responsive */
+            .hero-video-container {
+                width: 100%;
+                max-width: 1400px;
+                margin: 20px auto 0;
+            }
+            .hero-video-container .video-wrapper {
+                position: relative;
+                width: 100%;
+                padding-top: 56.25%; /* 16:9 */
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 10px 30px rgba(191, 0, 255, 0.25);
+            }
+            .hero-video-container .video-wrapper iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: 0;
+            }
+            
+            .hero-content {
+                max-width: 1400px;
+                margin: 0 auto;
+                width: 100%;
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                gap: 40px;
+                align-items: center;
+            }
+            
+            .hero-text {
+                padding: 40px;
+                position: relative;
+                z-index: 2;
+            }
+            
+            .hero-headline {
+                font-family: 'GodOfWar', 'Frizon', sans-serif;
+                font-size: 3.5rem;
+                line-height: 1.1;
+                margin-bottom: 1.5rem;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                background: linear-gradient(45deg, #BF00FF, #FF69B4, #00D4FF);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+                text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+            }
+            
+            .hero-subheadline {
+                font-size: 1.2rem;
+                line-height: 1.6;
+                margin-bottom: 2.5rem;
+                color: rgba(255,255,255,0.9);
+                max-width: 90%;
+            }
+            
+            .cta-button {
+                display: inline-block;
+                padding: 15px 40px;
+                background: var(--primary);
+                color: white;
+                text-decoration: none;
+                border-radius: 50px;
+                font-weight: bold;
+                text-transform: uppercase;
+                letter-spacing: 1px;
+                transition: all 0.3s ease;
+                border: 2px solid transparent;
+                text-align: center;
+            }
+            
+            .cta-button:hover {
+                transform: translateY(-3px);
+                box-shadow: 0 10px 20px rgba(191, 0, 255, 0.3);
+            }
+            
+            .cta-button.secondary {
+                background: transparent;
+                border: 2px solid var(--primary);
+            }
+            
+            .cta-button.secondary:hover {
+                background: rgba(191, 0, 255, 0.1);
+            }
+            
+            .hero-video-container {
+                position: relative;
+                border-radius: 12px;
+                overflow: hidden;
+                box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+                background: rgba(0,0,0,0.3);
+                backdrop-filter: blur(10px);
+            }
+            
+            .video-wrapper {
+                position: relative;
+                padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+                height: 0;
+                overflow: hidden;
+            }
+            
+            .video-wrapper iframe {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                border: none;
+            }
+            
+            .video-credit {
+                text-align: right;
+                padding: 10px 15px;
+                margin: 0;
+                font-size: 0.8rem;
+                color: rgba(255,255,255,0.6);
+            }
+            
+            .video-credit a {
+                color: rgba(255,255,255,0.8);
+                text-decoration: none;
+                transition: color 0.3s ease;
+            }
+            
+            .video-credit a:hover {
+                color: var(--primary);
+            }
+            
+            /* Responsive Styles */
+            @media (max-width: 1200px) {
+                .hero-headline {
+                    font-size: 3rem;
+                }
+                
+                .hero-subheadline {
+                    font-size: 1.1rem;
+                }
+            }
+            
+            @media (max-width: 992px) {
+                .hero-content {
+                    grid-template-columns: 1fr;
+                    text-align: center;
+                    gap: 30px;
+                }
+                
+                .hero-text {
+                    padding: 20px 0;
+                }
+                
+                .hero-subheadline {
+                    margin-left: auto;
+                    margin-right: auto;
+                }
+                
+                .hero-cta {
+                    justify-content: center;
+                }
+                
+                .hero-video-container {
+                    max-width: 800px;
+                    margin: 0 auto;
+                }
+            }
+            
+            @media (max-width: 768px) {
+                .hero-section {
+                    padding: 80px 15px 40px;
+                }
+                
+                .hero-headline {
+                    font-size: 2.2rem;
+                }
+                
+                .hero-subheadline {
+                    font-size: 1rem;
+                }
+                
+                .cta-button {
+                    padding: 12px 25px;
+                    font-size: 0.9rem;
+                    width: 100%;
+                }
+                
+                .hero-cta {
+                    flex-direction: column;
+                    gap: 15px;
+                }
+            }
+            
+            @media (max-width: 480px) {
+                .hero-headline {
+                    font-size: 1.8rem;
+                }
+                
+                .hero-subheadline {
+                    font-size: 0.95rem;
+                }
+                
+                .hero-section {
+                    padding: 60px 10px 30px;
+                }
+            }
+            /* Neon Gradient Text & Sitewide Accents */
+            :root {
+                --pink: #FF69B4;
+                --purple: #BF00FF;
+                --neon-cyan: #00D4FF;
+            }
+            /* Local fonts */
+            @font-face {
+                font-family: 'Frizon';
+                src: url('../assets/fonts/Frizon.ttf') format('truetype');
+                font-weight: 400;
+                font-style: normal;
+                font-display: swap;
+            }
+            @font-face {
+                font-family: 'BebasNeue';
+                src: url('../assets/fonts/BebasNeue-Regular.ttf') format('truetype');
+                font-weight: 400;
+                font-style: normal;
+                font-display: swap;
+            }
+            @font-face {
+                font-family: 'OriginTech';
+                src: url("../assets/fonts/OriginTechPersonalUse-d9xQ - Copy.ttf") format('truetype');
+                font-weight: 400;
+                font-style: normal;
+                font-display: swap;
+            }
+            @font-face {
+                font-family: 'GodOfWar';
+                src: url('../assets/fonts/SuicideSquadFont.ttf') format('truetype');
+                font-weight: 400;
+                font-style: normal;
+                font-display: swap;
+            }
+            /* Base white/gray typography */
+            html, body {
+                color: rgba(163, 243, 255, 0.92); /* neon teal base instead of white */
+                font-family: 'Montserrat', system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, 'Helvetica Neue', Arial, sans-serif;
+            }
+            p, li, small {
+                color: rgba(160, 245, 255, 0.95); /* brighter teal for copy */
+                text-shadow: 0 0 16px rgba(0, 235, 255, 0.9), 0 0 36px rgba(0, 220, 255, 0.8), 0 0 72px rgba(0, 212, 255, 0.6);
+            }
+            .text-soft { color: rgba(220, 222, 228, 0.85); }
+            .text-muted { color: rgba(200, 204, 214, 0.8); }
+            .text-gradient {
+                background: linear-gradient(45deg, var(--purple), var(--pink));
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            .text-gradient-dual {
+                background: linear-gradient(60deg, var(--pink), var(--purple));
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            .text-neon {
+                color: #fff;
+                text-shadow: 0 0 8px rgba(191, 0, 255, 0.5), 0 0 18px rgba(255, 105, 180, 0.35);
+            }
+            /* Apply gradient/neon to common headings/subtext */
+            .section-panel h1, .section-panel h2, .section-panel h3,
+            .gallery-section h1, .gallery-section h2, .gallery-section h3,
+            .glass-panel h1, .glass-panel h2, .glass-panel h3 {
+                font-family: 'Frizon', 'OriginTech', sans-serif;
+                letter-spacing: 1px;
+                background: linear-gradient(45deg, var(--pink), #ff4fd1, #ff6be6); /* pink-focused */
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            .section-subtext, .section-subtitle {
+                color: #B8FBFF; /* brighter neon teal */
+                text-shadow: 0 0 22px rgba(0,212,255,1), 0 0 48px rgba(0,212,255,0.9), 0 0 96px rgba(0,212,255,0.7);
+            }
+            /* Explicit font applications */
+            .nav-logo { font-family: 'OriginTech', 'Frizon', sans-serif; letter-spacing: 1px; }
+            .hero-headline { font-family: 'Frizon', 'OriginTech', sans-serif; }
+            .cta-button { font-family: 'BebasNeue', 'Montserrat', system-ui, sans-serif; }
+
+            /* Membership/Tier headers to pink theme */
+            .tier-card h3, #membership-preview h2 {
+                background: linear-gradient(45deg, var(--pink), #ff4fd1);
+                -webkit-background-clip: text;
+                background-clip: text;
+                -webkit-text-fill-color: transparent;
+            }
+            /* Neon pink description text for contact section */
+            #chaos-whisper .contact-content p {
+                color: #c2fdff; /* max bright teal variant for emphasis */
+                text-shadow: 0 0 24px rgba(0, 245, 255, 1), 0 0 56px rgba(0, 220, 255, 0.95), 0 0 110px rgba(0, 212, 255, 0.8);
+            }
+            /* CTA button font + glow */
+            .cta-button {
+                font-family: 'BebasNeue', 'Montserrat', system-ui, sans-serif;
+                letter-spacing: 0.5px;
+                position: relative;
+                overflow: visible;
+            }
+            /* Liquid smoke glow behind buttons */
+            .cta-button::before {
+                content: '';
+                position: absolute;
+                inset: -8px;
+                background: radial-gradient(100px 60px at 20% 30%, rgba(255,105,180,0.25), transparent 60%),
+                            radial-gradient(120px 80px at 80% 70%, rgba(191,0,255,0.22), transparent 60%),
+                            radial-gradient(90px 60px at 50% 50%, rgba(0,212,255,0.6), transparent 60%),
+                            radial-gradient(180px 120px at 55% 55%, rgba(0,235,255,0.45), transparent 65%);
+                filter: blur(14px);
+                opacity: 0.85;
+                z-index: -1;
+                border-radius: 24px;
+                animation: smoke-drift 9s ease-in-out infinite alternate;
+                pointer-events: none;
+            }
+            /* Liquid smoke glow behind headers */
+            .section-panel h1, .section-panel h2, .glass-panel h2, .hero h1 {
+                position: relative;
+            }
+            .section-panel h1::before, .section-panel h2::before, .glass-panel h2::before, .hero h1::before {
+                content: '';
+                position: absolute;
+                left: 50%;
+                top: 60%;
+                transform: translate(-50%, -50%);
+                width: 120%;
+                height: 160%;
+                background: radial-gradient(160px 100px at 40% 40%, rgba(255,105,180,0.26), transparent 60%),
+                            radial-gradient(220px 140px at 70% 60%, rgba(191,0,255,0.22), transparent 65%),
+                            radial-gradient(220px 140px at 55% 55%, rgba(0,235,255,0.42), transparent 65%);
+                filter: blur(28px);
+                opacity: 0.85;
+                z-index: -1;
+                animation: smoke-drift 12s ease-in-out infinite alternate;
+                pointer-events: none;
+            }
+            @keyframes smoke-drift {
+                0% { transform: translate(-50%, -50%) scale(1); }
+                50% { transform: translate(-48%, -52%) scale(1.05); }
+                100% { transform: translate(-51%, -49%) scale(1.02); }
+            }
+            /* Footer centering and polish */
+            footer, .footer {
+                text-align: center;
+                padding: 30px 15px;
+            }
+            footer p, .footer p {
+                margin: 8px 0;
+            }
+            .footer .footer-social-links {
+                display: flex;
+                justify-content: center;
+                gap: 14px;
+                margin-top: 10px;
+            }
+            .footer .footer-social-links a {
+                display: inline-flex;
+                width: 40px;
+                height: 40px;
+                align-items: center;
+                justify-content: center;
+                border-radius: 50%;
+                background: rgba(191, 0, 255, 0.12);
+                color: #fff;
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+            }
+            .footer .footer-social-links a:hover {
+                transform: translateY(-2px);
+                box-shadow: 0 8px 18px rgba(191, 0, 255, 0.25);
+            }
+            /* Hero Section */
+            .hero {
+                min-height: 100vh;
+                display: flex;
+                align-items: center;
+                background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                            url('assets/images/hero-bg.jpg') no-repeat center center/cover;
+                text-align: center;
+                padding: 100px 20px 60px;
+                position: relative;
+                overflow: hidden;
+            }
+                
+                .hero::before {
+                    content: '';
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    background: radial-gradient(circle at center, transparent 0%, var(--darker) 100%);
+                    z-index: 1;
+                }
+                
+                .hero-content {
+                    position: relative;
+                    z-index: 2;
+                    max-width: 1000px;
+                    margin: 0 auto;
+                    padding: 2rem;
+                    width: 100%;
+                }
+                
+                .hero h1 {
+                    font-size: 3.5rem;
+                    margin-bottom: 1.5rem;
+                    background: linear-gradient(45deg, #BF00FF, #FF00FF);
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                    text-transform: uppercase;
+                    letter-spacing: 2px;
+                    line-height: 1.2;
+                    font-weight: 900;
+                    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+                }
+                
+                .hero p {
+                    font-size: 1.3rem;
+                    margin-bottom: 2rem;
+                    opacity: 0.9;
+                    max-width: 700px;
+                    margin-left: auto;
+                    margin-right: auto;
+                    line-height: 1.7;
+                }
+                
+                .hero-video-container {
+                    max-width: 800px;
+                    margin: 3rem auto 0;
+                    background: rgba(0, 0, 0, 0.5);
+                    border-radius: 12px;
+                    overflow: hidden;
+                    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+                }
+                
+                .cta-group {
+                    display: flex;
+                    gap: 1rem;
+                    justify-content: center;
+                    flex-wrap: wrap;
+                    margin: 2rem 0;
+                }
+                
+                @media (max-width: 768px) {
+                    .hero {
+                        padding: 100px 15px 40px;
+                    }
+                    
+                    .hero h1 {
+                        font-size: 2.5rem;
+                    }
+                    
+                    .hero p {
+                        font-size: 1.1rem;
+                    }
+                    
+                    .cta-group {
+                        flex-direction: column;
+                        gap: 1rem;
+                    }
+                    
+                    .cta-button {
+                        width: 100%;
+                        max-width: 300px;
+                        margin: 0 auto;
+                    }
+                    
+                    .hero-video-container {
+                        margin: 2rem auto 0;
+                    }
+                }
+                
+                @media (max-width: 480px) {
+                    .hero h1 {
+                        font-size: 2rem;
+                    }
+                    
+                    .hero p {
+                        font-size: 1rem;
+                    }
+                }
+            </style>
+        </section>
+
+        <section class="section-panel container fomo-marketing-banners" style="text-align: center;">
+            <div class="fomo-banner new-items-banner">
+                <p class="fomo-text-large"><i class="fas fa-bolt"></i> <span id="new-items-count">7</span> NEW RITUALS UNLEASHED THIS WEEK <i class="fas fa-bolt"></i></p>
+                <p class="fomo-subtext">Members taste it first. The uninitiated only watch the glow.</p>
+                <div class="text-center" style="margin-top: 20px;">
+                    <a href="https://www.patreon.com/GoddessEris?utm_source=website&utm_medium=new_items_banner" target="_blank" rel="nofollow" class="cta-button cta-small">Join the Cult</a>
+                </div>
+            </div>
+
+            <div class="fomo-banner new-release-countdown-container" style="margin-top: 30px;">
+                <p class="fomo-text-large">NEXT CHAOS DROP IN <span id="public-new-release-countdown">00h 00m 00s</span></p>
+                <p class="fomo-subtext">Hesitation is obedience. Devotion is power.</p>
+            </div>
+
+            <div class="fomo-banner sneak-peek-banner" style="margin-top: 30px;">
+                <p class="fomo-text-large">RESTRICTED TRANSMISSION: FOR THE INITIATED ONLY</p>
+                <div class="glitch-sneak-peek">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.redgifs.com/ifr/ellipticalverifiablecoqui" frameborder="0" scrolling="no" allowfullscreen></iframe>
+                    </div>
+                    <p class="video-credit"><a href="https://www.redgifs.com/watch/ellipticalverifiablecoqui" target="_blank">via RedGIFs</a></p>
+                </div>
+                <p class="fomo-subtext">Full corruption behind the gate. Enter or crave forever.</p>
+            </div>
+            <div class="text-center" style="margin-top: 30px;">
+                <a href="https://www.patreon.com/GoddessEris?utm_source=website&utm_medium=sneak_peek" target="_blank" rel="nofollow" class="cta-button cta-small">Unlock the Gate</a>
+            </div>
+        </section>
+
+        <section id="chaos-cult" class="section-panel container" style="text-align: center;">
+            <h2 class="text-center">REALM OF CHAOS: LUST ENGINE OF THE VOID</h2>
+            <p class="text-center section-subtext">NEON SIN. FETISH FIRE. GOONER ASCENSION.</p>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Code crackles. Pulse rises. Under the violet glow, sissy cravings and gooner rituals merge. We don’t post content—we conduct ceremonies. Step in, surrender, and let the algorithms devour what’s left of your resistance.</p>
+                    <a href="https://www.patreon.com/GoddessEris?utm_source=website&utm_medium=about" target="_blank" rel="nofollow" class="action-button" style="display: inline-block; margin-top: 20px;">Discover Your Path</a>
+                </div>
+                <div class="about-images-call-to-action">
+                    <div class="image-with-action">
+                        <h3><span class="highlight-text">Sissy Seduction</span></h3>
+                        <p>Hunger blossoms. The mirror smiles back—obedient, perfect.</p>
+                        <a href="https://www.patreon.com/GoddessEris?utm_source=website&utm_medium=about_sissy" target="_blank" rel="nofollow" class="action-button">Embrace Sissy</a>
+                    </div>
+                    <div class="image-with-action">
+                        <h3><span class="highlight-text">BNWO Bliss</span></h3>
+                        <p>Dark spark. Velvet command. Breathe in the power you beg to serve.</p>
+                        <a href="https://www.patreon.com/GoddessEris?utm_source=website&utm_medium=about_bnwo" target="_blank" rel="nofollow" class="action-button">Feel BNWO</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        
+
+        <section id="fetish-delights" class="section-panel container" style="text-align: center;">
+            <h2 class="text-center">FETISH DELIGHTS: CHAOTIC LUSTS</h2>
+            <p class="text-center section-subtext">Taste Realm of Chaos’s gooner, sissy, and fetish art. Unlock ecstasy on Patreon—pleasure fades fast.</p>
+            <div class="content-samples-grid">
+                <div class="content-sample-card glass-panel lust-card">
+                    <i class="fas fa-image content-sample-icon"></i>
+                    <h3>Sissy Hypno GIFs with Captions</h3>
+                    <p>Mind-melting sissy GIFs with gooner captions and JOI triggers pull you into feminization’s abyss.</p>
+                </div>
+                <div class="content-sample-card glass-panel lust-card">
+                    <i class="fas fa-video content-sample-icon"></i>
+                    <h3>Mind-Melting PMVs</h3>
+                    <p>PMVs pulse with gooner humiliation, leaving you craving chaos.</p>
+                </div>
+                <div class="content-sample-card glass-panel lust-card">
+                    <i class="fas fa-headphones content-sample-icon"></i>
+                    <h3>Sissy Training Audio</h3>
+                    <p>Whispered sissy soundscapes deepen your gooner submission.</p>
+                </div>
+                <div class="content-sample-card glass-panel lust-card">
+                    <i class="fas fa-edit content-sample-icon"></i>
+                    <h3>Custom Fetish Edits</h3>
+                    <p>Personalized gooner or sissy edits crafted for your deepest desires.</p>
+                </div>
+                <div class="content-sample-card glass-panel lust-card">
+                    <i class="fas fa-comment content-sample-icon"></i>
+                    <h3>Str8 Test</h3>
+                    <p>Sultry gooner tests ignite sissy chaos.</p>
+                </div>
+                <div class="content-sample-card glass-panel lust-card">
+                    <i class="fas fa-robot content-sample-icon"></i>
+                    <h3>AI Sissy Trainer</h3>
+                    <p>Coming Soon: AI-driven sissy training to melt your mind.</p>
+                </div>
+            </div>
+            <div class="text-center" style="margin-top: 60px;">
+                <a href="https://www.patreon.com/GoddessEris?utm_source=website&utm_medium=creations" target="_blank" rel="nofollow" class="cta-button">Seize Pleasure</a>
+            </div>
+        </section>
+
+        
+
+        <section id="bespoke-fetish" class="custom-requests-section section-panel">
+            <div class="container glass-panel" style="text-align: center;">
+                <h2>REQUEST YOUR DESIRES</h2>
+                <p>Desire a unique gooner, sissy, or fetish creation? Request your desires.</p>
+                <a href="https://www.patreon.com/GoddessEris?utm_source=website&utm_medium=custom_request" target="_blank" rel="nofollow" class="cta-button">Request Your Desires</a>
+            </div>
+        </section>
+
+        <section id="chaos-whisper" class="contact-section-hero">
+            <div class="contact-content glass-panel" style="text-align: center;">
+                <h2>WHISPER TO CHAOS: EMBRACE TEMPTATION</h2>
+                <p>Feel the lust stir? Confess your gooner, sissy, or fetish desires to the Realm of Chaos. Submit now, or forever crave the touch.</p>
+                <a href="https://www.patreon.com/GoddessEris?utm_source=website&utm_medium=contact" target="_blank" rel="nofollow" class="cta-button">Surrender Now</a>
+                <div style="margin-top: 15px;">
+                    <a href="#" class="cta-button secondary discord-placeholder" aria-label="Join our Discord (coming soon)">Join our Discord — Coming Soon</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>“Realm of Chaos shattered my limits!” — Anonymous Devotee</p>
+        <p>© 2025 Realm of Chaos. Claimed by Goddess Eris.</p>
+        <p>Join the fetish cult now—submit to chaos or crave forever.</p>
+        <p>Share This Chaos:</p>
+        <div class="footer-social-links">
+            <a href="https://twitter.com/intent/tweet?text=Join%20Realm%20of%20Chaos%20for%20gooner%20and%20sissy%20ecstasy!%20https://your-site.com" target="_blank" rel="noopener" class="twitter-icon" aria-label="Share on Twitter"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.patreon.com/GoddessEris?utm_source=website&utm_medium=footer" target="_blank" rel="nofollow" class="patreon-icon" aria-label="Patreon Page"><i class="fab fa-patreon"></i></a>
+            <a href="#" class="discord-icon discord-placeholder" aria-label="Discord (coming soon)"><i class="fab fa-discord"></i></a>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            if (menuToggle && navMenu) {
+                menuToggle.addEventListener('click', () => {
+                    navMenu.classList.toggle('active');
+                });
+                navMenu.querySelectorAll('a').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navMenu.classList.remove('active');
+                    });
+                });
+            }
+
+            const subtitleElement = document.querySelector('.header-subtitle .glitch-target');
+            if (subtitleElement) {
+                const phrases = ['@G0ddessEris', 'gooner', 'sissy', 'mind-melting', 'JOI'];
+                let phraseIndex = 0;
+                let charIndex = 0;
+                const typingSpeed = 100;
+                const erasingSpeed = 50;
+                const delayBeforeErase = 1500;
+                const delayBeforeType = 500;
+
+                function typePhrase() {
+                    const currentPhrase = phrases[phraseIndex];
+                    if (charIndex < currentPhrase.length) {
+                        subtitleElement.textContent = currentPhrase.substring(0, charIndex + 1);
+                        charIndex++;
+                        setTimeout(typePhrase, typingSpeed);
+                    } else {
+                        setTimeout(erasePhrase, delayBeforeErase);
+                    }
+                }
+
+                function erasePhrase() {
+                    const currentPhrase = phrases[phraseIndex];
+                    if (charIndex > 0) {
+                        subtitleElement.textContent = currentPhrase.substring(0, charIndex - 1);
+                        charIndex--;
+                        setTimeout(erasePhrase, erasingSpeed);
+                    } else {
+                        phraseIndex = (phraseIndex + 1) % phrases.length;
+                        setTimeout(typePhrase, delayBeforeType);
+                    }
+                }
+                typePhrase();
+            }
+
+            // Update Lust Devotee members
+            const devoteeCount = document.getElementById('devotee-count');
+            if (devoteeCount) {
+                devoteeCount.textContent = '215'; // Keep this value
+            }
+
+            // Discord placeholder click handler (coming soon)
+            document.querySelectorAll('.discord-placeholder').forEach(el => {
+                el.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    alert('Discord server is being built. Coming soon!');
+                });
+            });
+
+            // Chaos Elite Countdown Ticker - Existing
+            const chaosEliteCountdown = document.querySelector('.tier-card.tier-card-divine .countdown-chaos-elite');
+            if (chaosEliteCountdown) {
+                let targetTimeElite = new Date().getTime() + (5 * 60 * 60 + 22 * 60) * 1000; // 5 hours 22 mins from now
+
+                const updateChaosEliteCountdown = () => {
+                    const now = new Date().getTime();
+                    const distance = targetTimeElite - now;
+
+                    if (distance < 0) {
+                        chaosEliteCountdown.textContent = 'Str7 text Live Now!';
+                        setTimeout(() => {
+                             targetTimeElite = new Date().getTime() + (5 * 60 * 60 + 22 * 60) * 1000; // Reset for next instance
+                             updateChaosEliteCountdown();
+                        }, 5 * 60 * 1000); // Display "Now!" for 5 minutes then reset
+                        return;
+                    }
+
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    chaosEliteCountdown.textContent = `Str7 text in ${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
+                };
+
+                setInterval(updateChaosEliteCountdown, 1000);
+                updateChaosEliteCountdown(); // Initial call
+            }
+
+            // New Release Countdown Timer (Homepage)
+            const publicNewReleaseCountdown = document.getElementById('public-new-release-countdown');
+            if (publicNewReleaseCountdown) {
+                let publicTargetDate = new Date();
+                publicTargetDate.setDate(publicTargetDate.getDate() + 3); // 3 days from now for public
+                publicTargetDate.setHours(publicTargetDate.getHours() + 14); // 14 hours from now
+                publicTargetDate.setMinutes(30);
+                publicTargetDate.setSeconds(0);
+                let publicReleaseTime = publicTargetDate.getTime();
+
+                const updatePublicNewReleaseCountdown = () => {
+                    const now = new Date().getTime();
+                    const distance = publicReleaseTime - now;
+
+                    if (distance < 0) {
+                        publicNewReleaseCountdown.textContent = 'NEW CONTENT JUST DROPPED!';
+                        setTimeout(() => {
+                            publicTargetDate = new Date();
+                            publicTargetDate.setDate(publicTargetDate.getDate() + 3);
+                            publicTargetDate.setHours(publicTargetDate.getHours() + 14);
+                            publicTargetDate.setMinutes(30);
+                            publicTargetDate.setSeconds(0);
+                            publicReleaseTime = publicTargetDate.getTime();
+                            updatePublicNewReleaseCountdown();
+                        }, 5 * 60 * 1000); // Display "JUST DROPPED!" for 5 mins then reset
+                        return;
+                    }
+
+                    const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+                    const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+                    publicNewReleaseCountdown.textContent = `${String(hours).padStart(2, '0')}h ${String(minutes).padStart(2, '0')}m ${String(seconds).padStart(2, '0')}s`;
+                };
+
+                setInterval(updatePublicNewReleaseCountdown, 1000);
+                updatePublicNewReleaseCountdown();
+            }
+
+            // Interactive Sneak Peek Glitch Effect
+            const glitchContainer = document.querySelector('.glitch-sneak-peek');
+            if (glitchContainer) {
+                const glitchImgs = glitchContainer.querySelectorAll('.glitch-img');
+                const intervalTime = 4000; // How often the glitch effect happens (4 seconds)
+                const glitchDuration = 300; // How long the glitch effect lasts (0.3 seconds)
+
+                function triggerGlitch() {
+                    glitchImgs.forEach(img => img.classList.add('active'));
+                    setTimeout(() => {
+                        glitchImgs.forEach(img => img.classList.remove('active'));
+                    }, glitchDuration);
+                }
+
+                setInterval(triggerGlitch, intervalTime);
+                triggerGlitch(); // Initial glitch on load
+            }
+            
+            // Discord placeholder clicks (coming soon/building)
+            document.querySelectorAll('.discord-placeholder').forEach(el => {
+                el.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    alert('Discord server is being built. Coming soon!');
+                });
+            });
+        });
+    </script>
+    <style>
+        /* FOMO Banners (new for both pages, or refined) */
+        .fomo-marketing-banners {
+            margin-top: 80px; /* Space above these banners */
+        }
+
+        .fomo-banner {
+            background-color: rgba(191, 0, 255, 0.15); /* Semi-transparent purple */
+            border: 2px solid #BF00FF;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            margin-top: 50px;
+            box-shadow: 0 0 20px rgba(191, 0, 255, 0.5), 0 0 30px rgba(0, 212, 255, 0.3);
+            animation: pulse-border 2s infinite alternate; /* Animates the border glow */
+            position: relative;
+            overflow: hidden;
+            z-index: 1; /* Ensure banner content is above its blur filter */
+        }
+        .fomo-banner::before {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: -10px;
+            right: -10px;
+            bottom: -10px;
+            border-radius: 12px;
+            background: linear-gradient(45deg, #FF69B4, #BF00FF, #00D4FF);
+            z-index: -1;
+            filter: blur(15px);
+            opacity: 0.3;
+        }
+
+        .fomo-text-large {
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #00D4FF; /* Bright neon blue */
+            text-shadow: 0 0 10px rgba(0, 212, 255, 0.9);
+            margin-bottom: 10px;
+            font-family: 'Cyberpunk', sans-serif;
+            text-transform: uppercase;
+        }
+
+        .fomo-subtext {
+            font-size: 1.1em;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* Keyframe for pulse animation */
+        @keyframes pulse-border {
+            0% { box-shadow: 0 0 10px rgba(191, 0, 255, 0.5), 0 0 15px rgba(0, 212, 255, 0.3); }
+            100% { box-shadow: 0 0 25px rgba(191, 0, 255, 0.8), 0 0 40px rgba(0, 212, 255, 0.6); }
+        }
+
+        .new-items-banner .cta-small {
+            margin-top: 20px;
+        }
+
+        /* Sneak Peek Glitch Styles */
+        .glitch-sneak-peek {
+            position: relative;
+            width: 80%; /* Adjust as needed */
+            max-width: 500px;
+            height: 250px; /* Fixed height for consistency */
+            margin: 30px auto;
+            overflow: hidden;
+            border: 2px solid #FF69B4;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+            background-color: #000; /* Fallback for transparency */
+        }
+
+        .glitch-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0; /* Hidden by default */
+            transition: opacity 0.1s ease-in-out;
+        }
+
+        .glitch-img.base {
+            opacity: 1; /* Base image always visible */
+        }
+
+        .glitch-img.red, .glitch-img.blue {
+            filter: grayscale(100%) brightness(50%) contrast(150%);
+            mix-blend-mode: screen; /* Blends colors for glitch effect */
+            transform: translate(0, 0);
+            transition: transform 0.05s ease-in-out, opacity 0.05s ease-in-out;
+        }
+
+        .glitch-img.active.red {
+            opacity: 1;
+            transform: translate(-5px, 0); /* Slight offset for glitch */
+        }
+        .glitch-img.active.blue {
+            opacity: 1;
+            transform: translate(5px, 0); /* Slight offset for glitch */
+        }
+
+        @keyframes glitch-effect {
+            0% { transform: translate(0); }
+            20% { transform: translate(-2px, 2px); }
+            40% { transform: translate(-2px, -2px); }
+            60% { transform: translate(2px, 2px); }
+            80% { transform: translate(2px, -2px); }
+            100% { transform: translate(0); }
+        }
+        .glitch-img.active.red { animation: glitch-effect 0.3s infinite alternate; }
+        .glitch-img.active.blue { animation: glitch-effect 0.3s infinite alternate reverse; }
+
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .fomo-text-large {
+                font-size: 1.4em;
+            }
+            .fomo-subtext {
+                font-size: 0.9em;
+            }
+            .glitch-sneak-peek {
+                width: 95%;
+                height: 180px;
+            }
+        }
+    </style>
+    <style>
+        /* Modern Gallery Section */
+        .gallery-section {
+            padding: 80px 0;
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2a 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .gallery-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, #bf00ff, transparent);
+            box-shadow: 0 0 10px #bf00ff, 0 0 20px #bf00ff;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            color: #fff;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            text-shadow: 0 0 10px rgba(191, 0, 255, 0.7);
+            font-family: 'Orbitron', sans-serif;
+        }
+
+        .section-subtitle {
+            color: #b3b3cc;
+            font-size: 1.1rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            line-height: 1.6;
+        }
+
+        /* Gallery Filters */
+        .gallery-filters {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 30px;
+        }
+
+        .filter-btn {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(191, 0, 255, 0.3);
+            color: #ddd;
+            padding: 8px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .filter-btn:hover {
+            background: rgba(191, 0, 255, 0.2);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(191, 0, 255, 0.3);
+        }
+
+        .filter-btn.active {
+            background: linear-gradient(45deg, #bf00ff, #00d4ff);
+            color: white;
+            border-color: transparent;
+            font-weight: bold;
+            box-shadow: 0 0 15px rgba(191, 0, 255, 0.5);
+        }
+
+        /* Video Grid */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            padding: 20px;
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+
+        .video-card {
+            background: rgba(20, 15, 30, 0.7);
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            border: 1px solid rgba(191, 0, 255, 0.2);
+            backdrop-filter: blur(10px);
+        }
+
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(191, 0, 255, 0.3);
+            border-color: rgba(191, 0, 255, 0.5);
+        }
+
+        .video-thumbnail {
+            position: relative;
+            padding-top: 56.25%; /* 16:9 Aspect Ratio */
+            overflow: hidden;
+            background: #000;
+        }
+
+        .thumbnail-img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .video-card:hover .thumbnail-img {
+            transform: scale(1.05);
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-card:hover .video-overlay {
+            opacity: 1;
+        }
+
+        .play-btn {
+            width: 60px;
+            height: 60px;
+            background: rgba(191, 0, 255, 0.8);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 24px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(191, 0, 255, 0.5);
+        }
+
+        .play-btn:hover {
+            background: #00d4ff;
+            transform: scale(1.1);
+            box-shadow: 0 0 30px rgba(0, 212, 255, 0.7);
+        }
+
+        .video-duration {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.8);
+            color: white;
+            padding: 3px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: bold;
+        }
+
+        .premium-badge {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: linear-gradient(45deg, #ffd700, #ff8c00);
+            color: #000;
+            font-size: 0.7rem;
+            font-weight: bold;
+            padding: 3px 10px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+        }
+
+        .video-info {
+            padding: 15px;
+        }
+
+        .video-title {
+            color: #fff;
+            font-size: 1rem;
+            margin: 0 0 10px;
+            font-weight: 500;
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            height: 2.8em;
+        }
+
+        .video-meta {
+            display: flex;
+            justify-content: space-between;
+            color: #b3b3cc;
+            font-size: 0.85rem;
+        }
+
+        .video-meta span {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
+        /* Gallery Footer */
+        .gallery-footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 30px 20px;
+            background: rgba(10, 5, 20, 0.5);
+            border-radius: 10px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            border: 1px solid rgba(191, 0, 255, 0.2);
+        }
+
+        .gallery-footer-text {
+            color: #b3b3cc;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+
+        /* Load More Button */
+        .load-more {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .load-more-btn {
+            background: linear-gradient(45deg, #bf00ff, #00d4ff);
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-family: 'Orbitron', sans-serif;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(191, 0, 255, 0.3);
+        }
+
+        .load-more-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(191, 0, 255, 0.5);
+        }
+
+        /* Video Modal */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+
+        .modal-content {
+            position: relative;
+            width: 90%;
+            max-width: 1200px;
+            background: #0a0a1a;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(191, 0, 255, 0.5);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: white;
+            font-size: 30px;
+            font-weight: bold;
+            cursor: pointer;
+            z-index: 2;
+            transition: color 0.3s ease;
+        }
+
+        .close-modal:hover {
+            color: #00d4ff;
+        }
+
+        .video-container {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 1200px) {
+            .video-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+        }
+
+        @media (max-width: 992px) {
+            .section-header h2 {
+                font-size: 2.2rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1rem;
+            }
+            
+            .filter-btn {
+                padding: 6px 15px;
+                font-size: 0.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .gallery-section {
+                padding: 60px 0;
+            }
+            
+            .section-header h2 {
+                font-size: 1.8rem;
+            }
+            
+            .video-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 20px;
+                padding: 10px;
+            }
+            
+            .video-title {
+                font-size: 0.95rem;
+            }
+            
+            .gallery-footer {
+                margin-top: 30px;
+                padding: 20px 15px;
+            }
+            
+            .gallery-footer-text {
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .section-header h2 {
+                font-size: 1.6rem;
+            }
+            
+            .section-subtitle {
+                font-size: 0.95rem;
+            }
+            
+            .gallery-filters {
+                gap: 8px;
+                margin-bottom: 20px;
+            }
+            
+            .filter-btn {
+                padding: 5px 12px;
+                font-size: 0.75rem;
+            }
+            
+            .video-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 15px;
+            }
+            
+            .video-title {
+                font-size: 0.9rem;
+                height: 2.6em;
+            }
+            
+            .video-meta {
+                font-size: 0.8rem;
+            }
+            
+            .play-btn {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+
+        @media (max-width: 400px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .video-title {
+                height: auto;
+                -webkit-line-clamp: 3;
+            }
+        }
+
+        /* Animation for video cards */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .video-card {
+            animation: fadeInUp 0.5s ease-out forwards;
+            opacity: 0;
+            width: 100%;
+            max-width: 560px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 1.5rem;
+        }
+
+        .video-card:nth-child(1) { animation-delay: 0.1s; }
+        .video-card:nth-child(2) { animation-delay: 0.2s; }
+        .video-card:nth-child(3) { animation-delay: 0.3s; }
+        .video-card:nth-child(4) { animation-delay: 0.4s; }
+        .video-card:nth-child(5) { animation-delay: 0.5s; }
+        .video-card:nth-child(6) { animation-delay: 0.6s; }
+
+        .gallery-video-container {
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+        }
+        
+        /* Hide elements with no-js class when JavaScript is enabled */
+        .no-js { display: none; }
+    </style>
+    
+    <script>
+        // Gallery Video Player Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            // Video data - in a real app, this would come from an API
+            const videoData = [
+                {
+                    id: 'cT1hjZn6SNx',
+                    title: 'Gooner PMV #1 - Mind Melt',
+                    category: 'gooner pmv',
+                    duration: '4:20',
+                    views: '12.4K',
+                    date: '2 days ago',
+                    thumbnail: 'assets/images/thumbnails/thumb1.jpg',
+                    premium: false
+                },
+                {
+                    id: 'cT1hjZn6SN4',
+                    title: 'Sissy Training Session #3',
+                    category: 'sissy',
+                    duration: '8:15',
+                    views: '8.7K',
+                    date: '1 week ago',
+                    thumbnail: 'assets/images/thumbnails/thumb2.jpg',
+                    premium: true
+                },
+                {
+                    id: 'cT1hjZn6SNB',
+                    title: 'Fetish Fantasies Vol. 2',
+                    category: 'fetish',
+                    duration: '12:45',
+                    views: '15.2K',
+                    date: '3 days ago',
+                    thumbnail: '../assets/images/thumbnails/thumb3.jpg',
+                    premium: false
+                },
+                {
+                    id: 'dE4fGh5IjKl',
+                    title: 'PMV Collection - Hypnotic Beats',
+                    category: 'pmv',
+                    duration: '6:30',
+                    views: '9.3K',
+                    date: '5 days ago',
+                    thumbnail: '../assets/images/thumbnails/thumb4.jpg',
+                    premium: true
+                },
+                {
+                    id: 'mN8vJ9o0PqR',
+                    title: 'Gooner Session: Edge & Deny',
+                    category: 'gooner',
+                    duration: '10:15',
+                    views: '11.8K',
+                    date: '1 day ago',
+                    thumbnail: '../assets/images/thumbnails/thumb5.jpg',
+                    premium: false
+                },
+                {
+                    id: 'sT5uVwXyZzA',
+                    title: 'Sissy Training: Advanced Techniques',
+                    category: 'sissy fetish',
+                    duration: '7:45',
+                    views: '7.2K',
+                    date: '4 days ago',
+                    thumbnail: '../assets/images/thumbnails/thumb6.jpg',
+                    premium: true
+                },
+                // Additional videos for load more functionality
+                {
+                    id: 'aB2c3d4e5Fg6',
+                    title: 'Hypno Gooner Session',
+                    category: 'gooner pmv',
+                    duration: '9:22',
+                    views: '14.1K',
+                    date: '2 days ago',
+                    thumbnail: '../assets/images/thumbnails/thumb7.jpg',
+                    premium: true
+                },
+                {
+                    id: 'h7I8j9k0Lm1',
+                    title: 'Sissy Transformation Guide',
+                    category: 'sissy',
+                    duration: '15:30',
+                    views: '18.6K',
+                    date: '1 week ago',
+                    thumbnail: '../assets/images/thumbnails/thumb8.jpg',
+                    premium: false
+                }
+            ];
+            
+            // DOM Elements
+            const videoGrid = document.querySelector('.video-grid');
+            const filterButtons = document.querySelectorAll('.filter-btn');
+            const videoModal = document.getElementById('videoModal');
+            const closeModal = document.querySelector('.close-modal');
+            const modalVideo = document.getElementById('modalVideo');
+            const loadMoreBtn = document.querySelector('.load-more-btn');
+            let visibleVideos = 6; // Initial number of videos to show
+            let currentFilter = 'all';
+            
+            // Initialize the gallery
+            function initGallery() {
+                // Clear existing video cards (except the first 6 which are the fallback)
+                const existingVideos = document.querySelectorAll('.video-card');
+                if (existingVideos.length > 0) {
+                    existingVideos.forEach(video => video.remove());
+                }
+                
+                // Render initial videos
+                renderVideos();
+                
+                // Update filter button states
+                updateFilterButtons();
+                
+                // Update load more button visibility
+                updateLoadMoreButton();
+                
+                // Add event listeners
+                addEventListeners();
+            }
+            
+            // Render videos based on current filter and visible count
+            function renderVideos() {
+                const filteredVideos = filterVideos(videoData, currentFilter);
+                const videosToShow = filteredVideos.slice(0, visibleVideos);
+                
+                // Hide all videos first
+                const allVideos = document.querySelectorAll('.video-card');
+                allVideos.forEach(video => video.style.display = 'none');
+                
+                // Show or create video cards
+                videosToShow.forEach((video, index) => {
+                    let videoCard = document.querySelector(`.video-card[data-video-id="${video.id}"]`);
+                    
+                    if (!videoCard) {
+                        videoCard = createVideoCard(video, index);
+                        videoGrid.appendChild(videoCard);
+                    } else {
+                        videoCard.style.display = '';
+                    }
+                });
+                
+                // Show/hide no results message
+                toggleNoResultsMessage(filteredVideos.length === 0);
+            }
+            
+            // Create a video card element
+            function createVideoCard(video, index) {
+                const videoCard = document.createElement('div');
+                videoCard.className = 'video-card';
+                videoCard.setAttribute('data-category', video.category);
+                videoCard.setAttribute('data-video-id', video.id);
+                videoCard.style.animationDelay = `${(index % 6) * 0.1}s`; // Loop animation delays for additional videos
+                
+                videoCard.innerHTML = `
+                    <div class="video-thumbnail">
+                        <img src="${video.thumbnail}" alt="${video.title}" class="thumbnail-img">
+                        <div class="video-overlay">
+                            <button class="play-btn" data-video-id="${video.id}">
+                                <i class="fas fa-play"></i>
+                            </button>
+                            <span class="video-duration">${video.duration}</span>
+                        </div>
+                        ${video.premium ? '<span class="premium-badge">Premium</span>' : ''}
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">${video.title}</h3>
+                        <div class="video-meta">
+                            <span class="views"><i class="far fa-eye"></i> ${video.views}</span>
+                            <span class="date">${video.date}</span>
+                        </div>
+                    </div>
+                `;
+                
+                return videoCard;
+            }
+            
+            // Filter videos by category
+            function filterVideos(videos, category) {
+                if (category === 'all') return videos;
+                return videos.filter(video => video.category.includes(category));
+            }
+            
+            // Update active state of filter buttons
+            function updateFilterButtons() {
+                filterButtons.forEach(button => {
+                    if (button.getAttribute('data-filter') === currentFilter) {
+                        button.classList.add('active');
+                    } else {
+                        button.classList.remove('active');
+                    }
+                });
+            }
+            
+            // Toggle no results message
+            function toggleNoResultsMessage(show) {
+                let noResults = document.querySelector('.no-results');
+                
+                if (show && !noResults) {
+                    noResults = document.createElement('div');
+                    noResults.className = 'no-results text-center';
+                    noResults.innerHTML = `
+                        <p class="no-results-text">No videos found in this category. Try another filter or check back later!</p>
+                    `;
+                    videoGrid.appendChild(noResults);
+                } else if (!show && noResults) {
+                    noResults.remove();
+                }
+            }
+            
+            // Update load more button visibility
+            function updateLoadMoreButton() {
+                if (!loadMoreBtn) return;
+                
+                const filteredVideos = filterVideos(videoData, currentFilter);
+                
+                if (visibleVideos >= filteredVideos.length) {
+                    loadMoreBtn.style.display = 'none';
+                } else {
+                    loadMoreBtn.style.display = 'inline-block';
+                }
+                
+                // Hide load more button if no more videos to load
+                if (filteredVideos.length <= 6) {
+                    loadMoreBtn.style.display = 'none';
+                }
+            }
+            
+            // Play video in modal
+            function playVideo(videoId, title) {
+                // In a real app, you would use the actual video URL or embed code
+                const videoUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&modestbranding=1&rel=0`;
+                
+                // Set video source
+                modalVideo.src = videoUrl;
+                
+                // Show modal
+                videoModal.classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+                
+                // Track video play (analytics)
+                console.log(`Video played: ${title}`);
+                // In a real app: gtag('event', 'play', { 'event_category': 'Video', 'event_label': title });
+            }
+            
+            // Close video modal
+            function closeVideoModal() {
+                videoModal.classList.remove('active');
+                
+                // Pause video when modal is closed
+                if (modalVideo) {
+                    const videoSrc = modalVideo.src;
+                    modalVideo.src = ''; // This stops the video from playing
+                    modalVideo.src = videoSrc; // Reset the source for next time
+                }
+                
+                document.body.style.overflow = ''; // Re-enable scrolling
+            }
+            
+            // Load more videos
+            function loadMoreVideos() {
+                visibleVideos += 6; // Load 6 more videos
+                renderVideos();
+                updateLoadMoreButton();
+            }
+            
+            // Add event listeners
+            function addEventListeners() {
+                // Filter buttons
+                filterButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const filter = button.getAttribute('data-filter');
+                        currentFilter = filter;
+                        visibleVideos = 6; // Reset visible videos count
+                        renderVideos();
+                        updateFilterButtons();
+                        updateLoadMoreButton();
+                        
+                        // Scroll to top of gallery
+                        videoGrid.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                    });
+                });
+                
+                // Play button clicks (using event delegation)
+                document.addEventListener('click', (e) => {
+                    const playButton = e.target.closest('.play-btn');
+                    if (playButton) {
+                        e.preventDefault();
+                        const videoId = playButton.getAttribute('data-video-id');
+                        const videoCard = playButton.closest('.video-card');
+                        const videoTitle = videoCard ? videoCard.querySelector('.video-title')?.textContent : 'Video';
+                        //playVideo(videoId, videoTitle);
+                    }
+                });
+                
+                // Close modal
+                if (closeModal) {
+                    closeModal.addEventListener('click', closeVideoModal);
+                }
+                
+                // Close modal when clicking outside
+                videoModal.addEventListener('click', (e) => {
+                    if (e.target === videoModal) {
+                        closeVideoModal();
+                    }
+                });
+                
+                // Close modal with Escape key
+                document.addEventListener('keydown', (e) => {
+                    if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+                        closeVideoModal();
+                    }
+                });
+                
+                // Load more button
+                if (loadMoreBtn) {
+                    loadMoreBtn.addEventListener('click', loadMoreVideos);
+                }
+            }
+            
+            // Initialize the gallery
+            if (videoGrid) {
+                initGallery();
+            }
+            
+            // Fix View Gallery button
+            const viewGalleryBtn = document.querySelector('.view-gallery-btn');
+            if (viewGalleryBtn) {
+                viewGalleryBtn.href = 'pages/gallery-archive.html';
+                viewGalleryBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.location.href = 'pages/gallery-archive.html';
+                });
+            }
+            
+            // Show elements with no-js class if JavaScript is disabled
+            document.documentElement.classList.remove('no-js');
+        });
+    </script>
+</body>
+</html>

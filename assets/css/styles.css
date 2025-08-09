@@ -1,4 +1,4 @@
-/* Main Styles for Realm of Chaos */
+﻿/* Main Styles for Realm of Chaos */
 
 /* Base Styles */
 :root {
@@ -38,14 +38,14 @@
 /* Local font faces for sitewide usage */
 @font-face {
     font-family: 'Frizon';
-    src: url('../../assets/fonts/Frizon.ttf') format('truetype');
+    src: url(../../assets/fonts/Frizon.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;
 }
 @font-face {
     font-family: 'OriginTech';
-    src: url("../../assets/fonts/OriginTechPersonalUse-d9xQ - Copy.ttf") format('truetype');
+    src: url(../../assets/fonts/OriginTechPersonalUse-d9xQ - Copy.ttf") format('truetype');
     font-weight: normal;
     font-style: normal;
     font-display: swap;

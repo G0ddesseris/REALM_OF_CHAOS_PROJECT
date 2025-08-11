@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Video Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #1a0a2e;
+            color: white;
+            margin: 0;
+            padding: 20px;
+        }
+        .test-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .video-wrapper {
+            background: #000;
+            margin: 20px 0;
+            padding: 10px;
+            border-radius: 8px;
+        }
+        h1, h2 {
+            color: #bf00ff;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Video Embed Test</h1>
+        
+        <h2>Test 1: Direct ScreenPal Embed</h2>
+        <div class="video-wrapper">
+            <div class="sp-embed-player" data-id="cThvXcn6ECT">
+                <iframe width="100%" height="500" style="border:0;" scrolling="no" 
+                    src="https://go.screenpal.com/player/cThvXcn6ECT?width=100%&height=100%&ff=1&title=0" 
+                    allowfullscreen="true">
+                </iframe>
+            </div>
+            <script src="https://go.screenpal.com/player/appearance/cThvXcn6ECT"></script>
+        </div>
+
+        <h2>Test 2: Direct YouTube Embed</h2>
+        <div class="video-wrapper">
+            <iframe width="100%" height="500" 
+                src="https://www.youtube.com/embed/SK1Gm2uFsRc" 
+                title="YouTube Video Player" 
+                frameborder="0" 
+                allowfullscreen>
+            </iframe>
+        </div>
+
+        <h2>Test 3: Dynamic Load</h2>
+        <div id="dynamicLoad" class="video-wrapper">
+            <!-- Will be loaded by JavaScript -->
+        </div>
+        <button onclick="loadVideo()" style="padding: 10px 20px; background: #bf00ff; color: white; border: none; border-radius: 5px; cursor: pointer; margin: 10px 0;">
+            Load Video Dynamically
+        </button>
+    </div>
+
+    <script>
+        function loadVideo() {
+            const container = document.getElementById('dynamicLoad');
+            container.innerHTML = `
+                <div class="sp-embed-player" data-id="cThvXcn6ECT">
+                    <iframe width="100%" height="500" style="border:0;" scrolling="no" 
+                        src="https://go.screenpal.com/player/cThvXcn6ECT?width=100%&height=100%&ff=1&title=0" 
+                        allowfullscreen="true">
+                    </iframe>
+                </div>
+                <script src="https://go.screenpal.com/player/appearance/cThvXcn6ECT"><\/script>
+            `;
+        }
+    </script>
+</body>
+</html>

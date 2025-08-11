@@ -3,29 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Explore the exclusive video gallery of Realm of Chaos - Premium gooner, sissy, and fetish content">
-    <meta name="keywords" content="gooner, sissy, fetish, hypnosis, PMV, adult content, exclusive videos">
-    <title>Video Gallery Archive | Realm of Chaos</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <link rel="stylesheet" href="assets/css/navigation.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="icon" type="image/png" href="assets/images/chaos_logo_fav.png" sizes="16x16">
+    <title>Realm of Chaos - Video Gallery</title>
+    <link rel="icon" type="image/png" href="assets/images/chaos_logo_fav.png">
     <style>
-        /* Page specific styles */
-        .page-title {
-            text-align: center;
-            margin: 2rem 0 1rem;
-            color: var(--primary);
-            font-size: 2.5rem;
-            text-transform: uppercase;
-            letter-spacing: 2px;
+        /* Base styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
-        .page-subtitle {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 1.1rem;
+        /* Fallback font stack */
+        @font-face {
+            font-family: 'Frizon';
+            src: local('Frizon'), 
+                 local('Frizon Regular'), 
+                 local('Frizon-Regular'),
+                 url('https://your-cdn-url.com/fonts/Frizon.woff2') format('woff2'),
+                 url('https://your-cdn-url.com/fonts/Frizon.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+            font-display: swap;
+        }
+        
+        body {
+            font-family: 'Frizon', Arial, sans-serif;
+            line-height: 1.6;
+            background: #0a0514;
+            color: #fff;
         }
         
         .container {
@@ -34,34 +39,558 @@
             padding: 0 20px;
         }
         
+        /* Header styles */
         header {
             background: linear-gradient(135deg, #1a0a2e, #0f0519);
-            padding: 1.5rem 0;
+            padding: 1rem 0;
             box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
         }
         
-        .header-content {
+        .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 0 20px;
         }
         
-        .logo {
+        .nav-logo {
             font-size: 1.8rem;
             font-weight: 700;
-            color: var(--light);
+            color: #fff;
             text-decoration: none;
             font-family: 'Arial Black', sans-serif;
             text-transform: uppercase;
             letter-spacing: 2px;
         }
         
-        .logo span {
-            color: var(--primary);
+        /* Gallery grid - 3 columns on desktop, 2 on tablet, 1 on mobile */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+            padding: 20px 0;
         }
+        
+        .video-card {
+            background: #1a0f2d;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .video-info {
+            padding: 15px;
+        }
+        
+        .video-title {
+            font-size: 1.1rem;
+            margin: 0 0 10px;
+            color: #fff;
+        }
+        
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 30px 0;
+            gap: 15px;
+        }
+        
+        .pagination button {
+            background: #6a3093;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .pagination button:hover:not(:disabled) {
+            background: #8e44ad;
+        }
+        
+        .pagination button:disabled {
+            background: #3a1c4a;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        
+        .page-info {
+            color: #fff;
+            font-size: 1rem;
+            min-width: 100px;
+            text-align: center;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 1024px) {
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pagination {
+                flex-direction: column;
+                gap: 10px;
+                align-items: center;
+            }
+        }
+
+        
+        /* Layout */
+        body { 
+            font-family: Arial, sans-serif; 
+            background: #0a0514; 
+            color: #fff;
+            line-height: 1.6;
+        }
+        
+        header {
+            background: #1a0a2e;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Navigation */
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            color: #bf00ff;
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-decoration: none;
+        }
+        
+        /* Gallery Grid */
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+        
+        .video-card {
+            background: #1a0a2e;
+            border-radius: 8px;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .video-info {
+            padding: 15px;
+        }
+        
+        /* Download button styles */
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #bf00ff, #8a2be2);
+            color: white;
+            padding: 12px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-family: 'Arial Black', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(191, 0, 255, 0.3);
+            margin: 20px 0;
+        }
+        
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(191, 0, 255, 0.4);
+            background: linear-gradient(135deg, #c61bff, #9d4edd);
+        }
+        
+        .download-count {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8em;
+        }
+        
+        /* Video title styles */
+        .video-card h3 {
+            color: #fff;
+            margin: 15px 0 10px;
+            font-size: 1.3rem;
+            text-align: center;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-family: 'Frizon', 'Arial Black', sans-serif;
+            font-weight: 800;
+            text-shadow: 0 0 10px rgba(191, 0, 255, 0.7);
+            padding: 0;
+            position: relative;
+            font-feature-settings: "kern" 1;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        .video-title::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, #bf00ff, transparent);
+            margin: 8px auto 0;
+        }
+        
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            margin: 20px 0;
+            background: rgba(20, 10, 40, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(191, 0, 255, 0.2);
+        }
+        
+        .pagination button {
+            background: linear-gradient(135deg, #bf00ff, #8a2be2);
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-family: 'Frizon', 'Arial Black', Arial, sans-serif;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            min-width: 120px;
+            text-align: center;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        
+        .pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background: #666;
+        }
+        
+        .pagination button:not(:disabled):hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(191, 0, 255, 0.4);
+        }
+        
+        .page-indicator {
+            color: #fff;
+            font-weight: 600;
+            padding: 0 25px;
+            font-family: 'Frizon', 'Arial Black', Arial, sans-serif;
+            font-size: 1.2rem;
+            text-shadow: 0 0 10px rgba(191, 0, 255, 0.7);
+            letter-spacing: 1px;
+        }
+        
+        .pagination button {
+            background: #bf00ff;
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        
+        .pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .page-info {
+            color: #fff;
+            margin: 0 10px;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="nav-container">
+                <a href="index.html" class="nav-logo">REALM OF CHAOS</a>
+                <nav>
+                    <a href="index.html" style="color: #fff; margin-left: 20px; text-decoration: none;">Home</a>
+                    <a href="gallery.html" style="color: #bf00ff; margin-left: 20px; text-decoration: none; font-weight: bold;">Gallery</a>
+                    <a href="about.html" style="color: #fff; margin-left: 20px; text-decoration: none;">About</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <main class="container" style="padding: 40px 0;">
+        <h1 style="color: #bf00ff; text-align: center; margin-bottom: 30px;">Video Gallery</h1>
+        
+        <div class="gallery-grid" id="videoGrid">
+            <!-- Videos will be loaded here -->
+        </div>
+        
+        <div class="pagination">
+            <button id="prevBtn" disabled>Previous</button>
+            <div class="page-info" id="pageInfo">Page 1</div>
+            <button id="nextBtn">Next</button>
+        </div>
+    </main>
+    
+    <footer style="background: #0a0514; color: #fff; text-align: center; padding: 20px; margin-top: 40px;">
+        <p>© 2025 Realm of Chaos. All rights reserved.</p>
+    </footer>
+        
+    <script>
+        // Video data with exact embed codes
+        const videoData = [
+            {
+                id: 'cTjXl6n2nSb',
+                title: 'Goon Time',
+                embedCode: '<div class="sp-embed-player" data-id="cTjXl6n2nSb"><script src="https://go.screenpal.com/player/appearance/cTjXl6n2nSb"></script><iframe width="100%" height="100%" style="border:0;" scrolling="no" src="https://go.screenpal.com/player/cTjXl6n2nSb?width=100%&height=100%&ff=1&title=0" allowfullscreen="true"></iframe></div>',
+                tags: ['gooning', 'sissy', 'hypno']
+            },
+            {
+                id: 'cTjXl6n2nSF',
+                title: 'Tongue Out',
+                embedCode: '<div class="sp-embed-player" data-id="cTjXl6n2nSF"><script src="https://go.screenpal.com/player/appearance/cTjXl6n2nSF"></script><iframe width="100%" height="100%" style="border:0;" scrolling="no" src="https://go.screenpal.com/player/cTjXl6n2nSF?width=100%&height=100%&ff=1&title=0" allowfullscreen="true"></iframe></div>',
+                tags: ['gooning', 'sissy', 'hypno']
+            },
+            {
+                id: 'cTjXl6n2nSq',
+                title: 'Loading your Addiction',
+                embedCode: '<div class="sp-embed-player" data-id="cTjXl6n2nSq"><script src="https://go.screenpal.com/player/appearance/cTjXl6n2nSq"></script><iframe width="100%" height="100%" style="border:0;" scrolling="no" src="https://go.screenpal.com/player/cTjXl6n2nSq?width=100%&height=100%&ff=1&title=0" allowfullscreen="true"></iframe></div>',
+                tags: ['gooning', 'sissy', 'premium']
+            },
+            {
+                id: 'cTjXl6n2nSY',
+                title: 'Loading',
+                embedCode: '<div class="sp-embed-player" data-id="cTjXl6n2nSY"><script src="https://go.screenpal.com/player/appearance/cTjXl6n2nSY"></script><iframe width="100%" height="100%" style="border:0;" scrolling="no" src="https://go.screenpal.com/player/cTjXl6n2nSY?width=100%&height=100%&ff=1&title=0" allowfullscreen="true"></iframe></div>',
+                tags: ['gooning', 'sissy', 'hypno']
+            },
+            {
+                id: 'cTjXl6n2nSr',
+                title: 'Porn Star',
+                embedCode: '<div class="sp-embed-player" data-id="cTjXl6n2nSr"><script src="https://go.screenpal.com/player/appearance/cTjXl6n2nSr"></script><iframe width="100%" height="100%" style="border:0;" scrolling="no" src="https://go.screenpal.com/player/cTjXl6n2nSr?width=100%&height=100%&ff=1&title=0" allowfullscreen="true"></iframe></div>',
+                tags: ['gooning', 'sissy', 'premium']
+            },
+            {
+                id: 'cTjXl6n2nS3',
+                title: 'Goon Tube',
+                embedCode: '<div class="sp-embed-player" data-id="cTjXl6n2nS3"><script src="https://go.screenpal.com/player/appearance/cTjXl6n2nS3"></script><iframe width="100%" height="100%" style="border:0;" scrolling="no" src="https://go.screenpal.com/player/cTjXl6n2nS3?width=100%&height=100%&ff=1&title=0" allowfullscreen="true"></iframe></div>',
+                tags: ['gooning', 'sissy', 'hypno']
+            },
+            {
+                id: 'cTjXl6n2nS0',
+                title: 'Beautiful',
+                embedCode: '<div class="sp-embed-player" data-id="cTjXl6n2nS0"><script src="https://go.screenpal.com/player/appearance/cTjXl6n2nS0"></script><iframe width="100%" height="100%" style="border:0;" scrolling="no" src="https://go.screenpal.com/player/cTjXl6n2nS0?width=100%&height=100%&ff=1&title=0" allowfullscreen="true"></iframe></div>',
+                tags: ['gooning', 'sissy', 'premium']
+            },
+            // Add more videos as needed
+            {
+                id: 'cTiUqinIUgz',
+                title: 'Everyday',
+                embedCode: '<div class="sp-embed-player" data-id="cTiUqinIUgz"><script src="https://go.screenpal.com/player/appearance/cTiUqinIUgz"></script><iframe width="100%" height="100%" style="border:0;" scrolling="no" src="https://go.screenpal.com/player/cTiUqinIUgz?width=100%&height=100%&ff=1&title=0" allowfullscreen="true"></iframe></div>',
+                tags: ['gooning', 'daily', 'motivation']
+            },
+            {
+                id: 'cTirqknIhRy',
+                title: 'Worship Cock Clean',
+                embedCode: '<div class="sp-embed-player" data-id="cTirqknIhRy"><script src="https://go.screenpal.com/player/appearance/cTirqknIhRy"></script><iframe width="100%" height="100%" style="border:0;" scrolling="no" src="https://go.screenpal.com/player/cTirqknIhRy?width=100%&height=100%&ff=1&title=0" allowfullscreen="true"></iframe></div>',
+                tags: ['worship', 'sissy', 'premium']
+            },
+            {
+                id: 'cTiUqinIUgA',
+                title: 'Temptation Desire',
+                embedCode: '<div class="sp-embed-player" data-id="cTiUqinIUgA"><script src="https://go.screenpal.com/player/appearance/cTiUqinIUgA"></script><iframe width="100%" height="100%" style="border:0;" scrolling="no" src="https://go.screenpal.com/player/cTiUqinIUgA?width=100%&height=100%&ff=1&title=0" allowfullscreen="true"></iframe></div>',
+                tags: ['temptation', 'desire', 'premium']
+            },
+            {
+                id: 'cTi1Dsnl0UB',
+                title: 'Femdom Fantasy',
+                embedCode: '<div class="sp-embed-player" data-id="cTi1Dsnl0UB"><script src="https://go.screenpal.com/player/appearance/cTi1Dsnl0UB"></script><iframe width="100%" height="100%" style="border:0;" scrolling="no" src="https://go.screenpal.com/player/cTi1Dsnl0UB?width=100%&height=100%&ff=1&title=0" allowfullscreen="true"></iframe></div>',
+                tags: ['femdom', 'bdsm', 'premium']
+            },
+            {
+                id: 'cThUqxn6C4R',
+                title: 'Gooner Mindset',
+                embedCode: '<div class="sp-embed-player" data-id="cThUqxn6C4R"><script src="https://go.screenpal.com/player/appearance/cThUqxn6C4R"></script><iframe width="100%" height="100%" style="border:0;" scrolling="no" src="https://go.screenpal.com/player/cThUqxn6C4R?width=100%&height=100%&ff=1&title=0" allowfullscreen="true"></iframe></div>',
+                tags: ['gooner', 'mindset', 'training']
+            },
+            {
+                id: 'cT1hjZn6SNt',
+                title: 'PMV: Brainwash',
+                embedCode: '<div class="sp-embed-player" data-id="cT1hjZn6SNt"><script src="https://go.screenpal.com/player/appearance/cT1hjZn6SNt"></script><iframe width="100%" height="100%" style="border:0;" scrolling="no" src="https://go.screenpal.com/player/cT1hjZn6SNt?width=100%&height=100%&ff=1&title=0" allowfullscreen="true"></iframe></div>',
+                tags: ['pmv', 'hypno', 'premium']
+            },
+            {
+                id: 'cT1hjZn6SNl',
+                title: 'PMV: Euphoria',
+                embedCode: '<div class="sp-embed-player" data-id="cT1hjZn6SNl"><script src="https://go.screenpal.com/player/appearance/cT1hjZn6SNl"></script><iframe width="100%" height="100%" style="border:0;" scrolling="no" src="https://go.screenpal.com/player/cT1hjZn6SNl?width=100%&height=100%&ff=1&title=0" allowfullscreen="true"></iframe></div>',
+                tags: ['pmv', 'euphoric', 'premium']
+            },
+            {
+                id: 'cT1hjZn6SNk',
+                title: 'Sissy Fitness Routine',
+                embedCode: '<div class="sp-embed-player" data-id="cT1hjZn6SNk"><script src="https://go.screenpal.com/player/appearance/cT1hjZn6SNk"></script><iframe width="100%" height="100%" style="border:0;" scrolling="no" src="https://go.screenpal.com/player/cT1hjZn6SNk?width=100%&height=100%&ff=1&title=0" allowfullscreen="true"></iframe></div>',
+                tags: ['sissy', 'fitness', 'workout']
+            },
+            {
+                id: 'cT1hjZn6SNj',
+                title: 'Gooner Fundamentals 2',
+                embedCode: '<div class="sp-embed-player" data-id="cT1hjZn6SNj"><script src="https://go.screenpal.com/player/appearance/cT1hjZn6SNj"></script><iframe width="100%" height="100%" style="border:0;" scrolling="no" src="https://go.screenpal.com/player/cT1hjZn6SNj?width=100%&height=100%&ff=1&title=0" allowfullscreen="true"></iframe></div>',
+                tags: ['gooner', 'training', 'basics']
+            }
+        ];
+
+        // Pagination settings - 20 videos per page
+        const VIDEOS_PER_PAGE = 20;
+        let currentPage = 1;
+        
+        // DOM Elements
+        const videoGrid = document.getElementById('videoGrid');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const pageInfo = document.getElementById('pageInfo');
+        
+        // Initialize the gallery
+        function init() {
+            renderVideos();
+            setupEventListeners();
+        }
+        
+        // Set up event listeners
+        function setupEventListeners() {
+            prevBtn.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    renderVideos();
+                }
+            });
+            
+            nextBtn.addEventListener('click', () => {
+                const maxPage = Math.ceil(videoData.length / VIDEOS_PER_PAGE);
+                if (currentPage < maxPage) {
+                    currentPage++;
+                    renderVideos();
+                }
+            });
+        }
+        
+        // Render videos with pagination
+        function renderVideos() {
+            const startIndex = (currentPage - 1) * VIDEOS_PER_PAGE;
+            const endIndex = startIndex + VIDEOS_PER_PAGE;
+            const paginatedVideos = videoData.slice(startIndex, endIndex);
+            
+            // Clear the grid
+            videoGrid.innerHTML = '';
+            
+            if (paginatedVideos.length === 0) {
+                videoGrid.innerHTML = '<p style="color: #fff; text-align: center; grid-column: 1 / -1;">No videos found.</p>';
+                return;
+            }
+            
+            // Create and append video elements
+            paginatedVideos.forEach(video => {
+                const videoElement = document.createElement('div');
+                videoElement.className = 'video-card';
+                
+                // Simplified video card with just title and embed
+                videoElement.innerHTML = `
+                    <div class="video-wrapper">
+                        ${video.embedCode}
+                    </div>
+                    <div class="video-info">
+                        <h3>${video.title}</h3>
+                    </div>
+                `;
+                
+                videoGrid.appendChild(videoElement);
+            });
+            
+            // Update pagination info
+            const maxPage = Math.ceil(videoData.length / VIDEOS_PER_PAGE);
+            pageInfo.textContent = `Page ${currentPage} of ${maxPage}`;
+            prevBtn.disabled = currentPage === 1;
+            nextBtn.disabled = currentPage >= maxPage;
+        }
+        
+        // Initialize the gallery when the page loads
+        document.addEventListener('DOMContentLoaded', init);
+        
+    </script>
+</body>
+</html>
         
         .filter-container {
             display: flex;
@@ -438,7 +967,7 @@
             </button>
             <nav class="nav-menu" id="navMenu">
                 <a href="index.html" class="nav-link">Home</a>
-                <a href="gallery-archive.html" class="nav-link active">Gallery</a>
+                <a href="gallery.html" class="nav-link">Gallery</a>
                 <a href="about.html" class="nav-link">About</a>
                 <a href="pledge.html" class="nav-link">Membership</a>
                 <a href="#" class="cta-button discord-placeholder">Member Login</a>
@@ -450,22 +979,19 @@
     
     <main>
         <div class="container">
-            <div class="page-header">
-                <h1 class="page-title">Video Gallery</h1>
-                <p class="page-subtitle">Browse our collection of premium content. Click on any video to watch in full screen.</p>
-                <div class="terabox-download">
-                    <a href="https://1024terabox.com/s/1EIFVknR57lBEo-nkkGhEXg" class="download-btn" target="_blank">
-                        <i class="fas fa-download"></i> Download Chaos Collection <span class="download-count">8</span>
-                    </a>
-                </div>
+            <div class="download-section">
+                <a href="https://1024terabox.com/s/1EIFVknR57lBEo-nkkGhEXg" class="download-btn" target="_blank">
+                    <i class="fas fa-download"></i> Download Chaos Collection <span class="download-count">8</span>
+                </a>
             </div>
             <div class="gallery-grid" id="videoGrid">
-            <!-- Video cards will be dynamically inserted here -->
-        </div>
-        <div class="pagination" id="pagination">
-            <button id="prevBtn" disabled>Previous</button>
-            <div id="pageNumbers"></div>
-            <button id="nextBtn">Next</button>
+                <!-- Videos will be rendered here -->
+            </div>
+            <div class="pagination">
+                <button id="prevBtn" disabled>Previous</button>
+                <div class="page-info" id="pageInfo">Page 1</div>
+                <button id="nextBtn">Next</button>
+            </div>
         </div>
     </main>
     
@@ -1025,78 +1551,32 @@
             
             // Previous button
             const prevButton = document.createElement('button');
-            prevButton.textContent = 'Â« Previous';
+            prevButton.textContent = '❮ Previous';
             prevButton.disabled = currentPage === 1;
             prevButton.addEventListener('click', () => {
                 if (currentPage > 1) {
                     currentPage--;
                     renderVideos(filteredVideos);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
             });
             paginationContainer.appendChild(prevButton);
             
-            // Page numbers
-            const maxPagesToShow = 5;
-            let startPage = Math.max(1, currentPage - Math.floor(maxPagesToShow / 2));
-            let endPage = Math.min(totalPages, startPage + maxPagesToShow - 1);
-            
-            if (endPage - startPage + 1 < maxPagesToShow) {
-                startPage = Math.max(1, endPage - maxPagesToShow + 1);
-            }
-            
-            if (startPage > 1) {
-                const firstPage = document.createElement('button');
-                firstPage.textContent = '1';
-                firstPage.addEventListener('click', () => {
-                    currentPage = 1;
-                    renderVideos(filteredVideos);
-                });
-                paginationContainer.appendChild(firstPage);
-                
-                if (startPage > 2) {
-                    const ellipsis = document.createElement('span');
-                    ellipsis.textContent = '...';
-                    paginationContainer.appendChild(ellipsis);
-                }
-            }
-            
-            for (let i = startPage; i <= endPage; i++) {
-                const pageButton = document.createElement('button');
-                pageButton.textContent = i;
-                if (i === currentPage) {
-                    pageButton.classList.add('active');
-                }
-                pageButton.addEventListener('click', () => {
-                    currentPage = i;
-                    renderVideos(filteredVideos);
-                });
-                paginationContainer.appendChild(pageButton);
-            }
-            
-            if (endPage < totalPages) {
-                if (endPage < totalPages - 1) {
-                    const ellipsis = document.createElement('span');
-                    ellipsis.textContent = '...';
-                    paginationContainer.appendChild(ellipsis);
-                }
-                
-                const lastPage = document.createElement('button');
-                lastPage.textContent = totalPages;
-                lastPage.addEventListener('click', () => {
-                    currentPage = totalPages;
-                    renderVideos(filteredVideos);
-                });
-                paginationContainer.appendChild(lastPage);
-            }
+            // Current page indicator
+            const pageIndicator = document.createElement('span');
+            pageIndicator.className = 'page-indicator';
+            pageIndicator.textContent = ` ${currentPage} / ${totalPages} `;
+            paginationContainer.appendChild(pageIndicator);
             
             // Next button
             const nextButton = document.createElement('button');
-            nextButton.textContent = 'Next Â»';
+            nextButton.textContent = 'Next ❯';
             nextButton.disabled = currentPage >= totalPages;
             nextButton.addEventListener('click', () => {
                 if (currentPage < totalPages) {
                     currentPage++;
                     renderVideos(filteredVideos);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
             });
             paginationContainer.appendChild(nextButton);
@@ -1104,7 +1584,7 @@
             // Update pagination info
             const startVideo = (currentPage - 1) * VIDEOS_PER_PAGE + 1;
             const endVideo = Math.min(startVideo + VIDEOS_PER_PAGE - 1, totalVideos);
-            paginationInfo.textContent = `Showing ${startVideo}-${endVideo} of ${totalVideos} videos`;
+            paginationInfo.textContent = `Page ${currentPage} of ${totalPages}`;
         }
 
         // Main function to render videos with pagination
@@ -1135,13 +1615,11 @@
                 // Build a unified ScreenPal embed using the global .video-wrapper
                 const iframeSrc = `https://go.screenpal.com/player/${video.id}?ff=1&title=0`;
 
+                // Only show the video title, no tags or other metadata
                 videoElement.innerHTML = `
+                    <h3>${video.title}</h3>
                     <div class="video-wrapper">
                         <iframe src="${iframeSrc}" allowfullscreen="true" loading="lazy"></iframe>
-                    </div>
-                    <h3>${video.title}</h3>
-                    <div class="video-tags">
-                        ${video.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
                     </div>
                 `;
 
@@ -1198,10 +1676,40 @@
             });
         }
         
-        // Initialize the page when DOM is loaded
-        document.addEventListener('DOMContentLoaded', () => {
-            // Initialize the gallery
-            init();
+        // Pagination variables
+        let currentPage = 1;
+        const videosPerPage = 20;
+        
+        // DOM elements
+        const videoGrid = document.getElementById('videoGrid');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const pageInfo = document.getElementById('pageInfo');
+        
+        // Initialize the gallery
+        function init() {
+            renderVideos();
+            updatePagination();
+            
+            // Event listeners for pagination
+            prevBtn.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    renderVideos();
+                    updatePagination();
+                    window.scrollTo(0, 0);
+                }
+            });
+            
+            nextBtn.addEventListener('click', () => {
+                const totalPages = Math.ceil(videoData.length / videosPerPage);
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    renderVideos();
+                    updatePagination();
+                    window.scrollTo(0, 0);
+                }
+            });
             
             // Discord placeholder click handler
             document.querySelectorAll('.discord-placeholder').forEach(el => {
@@ -1210,7 +1718,54 @@
                     alert('Discord server is being built. Coming soon!');
                 });
             });
-        });
+        }
+        
+        // Render videos for current page
+        function renderVideos() {
+            videoGrid.innerHTML = '';
+            
+            // Calculate start and end index for current page
+            const startIndex = (currentPage - 1) * videosPerPage;
+            const endIndex = Math.min(startIndex + videosPerPage, videoData.length);
+            
+            // Get videos for current page
+            const currentVideos = videoData.slice(startIndex, endIndex);
+            
+            // Create video elements
+            currentVideos.forEach(video => {
+                const videoElement = document.createElement('div');
+                videoElement.className = 'video-card';
+                
+                // Create video wrapper with iframe
+                videoElement.innerHTML = `
+                    <h3 class="video-title">${video.title}</h3>
+                    <div class="video-wrapper">
+                        <iframe 
+                            src="https://go.screenpal.com/player/${video.id}?ff=1&title=0" 
+                            allowfullscreen 
+                            style="border: 0; width: 100%; height: 100%;">
+                        </iframe>
+                    </div>
+                `;
+                
+                videoGrid.appendChild(videoElement);
+            });
+        }
+        
+        // Update pagination controls
+        function updatePagination() {
+            const totalPages = Math.ceil(videoData.length / videosPerPage);
+            
+            // Update page info
+            pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+            
+            // Update button states
+            prevBtn.disabled = currentPage === 1;
+            nextBtn.disabled = currentPage === totalPages;
+        }
+        
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', init);
     </script>
     <script src="assets/js/mobile-menu.js"></script>
 </body>

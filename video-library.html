@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantheon Protocol - Video Library</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1a1a2e;
+            --secondary-color: #16213e;
+            --accent-color: #0f3460;
+            --text-color: #e6e6e6;
+            --highlight: #e94560;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--primary-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 20px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        header {
+            text-align: center;
+            padding: 30px 0;
+            border-bottom: 1px solid var(--accent-color);
+            margin-bottom: 30px;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            color: var(--highlight);
+            font-weight: 700;
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 25px;
+            padding: 20px 0;
+        }
+        
+        .video-card {
+            background: var(--secondary-color);
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+        
+        .video-player {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border: none;
+            background: #000;
+        }
+        
+        .video-title {
+            padding: 15px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-align: center;
+            color: var(--text-color);
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .page-btn {
+            background: var(--accent-color);
+            background-clip: padding-box;
+            -webkit-background-clip: padding-box;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            font-family: inherit;
+        }
+        
+        .page-btn:hover {
+            background-color: var(--highlight);
+        }
+        
+        .page-btn.active {
+            background-color: var(--highlight);
+            font-weight: 600;
+        }
+        
+        .page-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background-color: var(--accent-color);
+        }
+        
+        @media (max-width: 768px) {
+            .video-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .container {
+                padding: 0 15px;
+            }
+        }
+    </style>
+</head>
+            --text: #f0f0f0;
+            --text-muted: #b0b0b0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            line-height: 1.6;
+            background: var(--bg-dark);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+            flex: 1;
+        }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1a0a2e, #0f0519);
+            padding: 1.5rem 0;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+            border-bottom: 1px solid rgba(138, 43, 226, 0.2);
+        }
+        
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo a {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+        
+        .logo img {
+            height: 40px;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 1.5rem;
+        }
+        
+        .nav-links a {
+            color: var(--text);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+        
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--primary);
+        }
+        
+        /* Main Content */
+        main {
+            padding: 3rem 0 4rem;
+            flex: 1;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(90deg, #8a2be2, #ff00ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 700;
+        }
+        
+        .page-header p {
+            color: var(--text-muted);
+            max-width: 700px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+        }
+        
+        /* Video Grid */
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+        
+        .video-card {
+            background: rgba(26, 10, 46, 0.7);
+            border-radius: 12px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(138, 43, 226, 0.2);
+        }
+        
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(138, 43, 226, 0.2);
+        }
+        
+        .video-embed {
+            position: relative;
+            padding-bottom: 56.25%; /* 16:9 aspect ratio */
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+        
+        .video-embed iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .video-info {
+            padding: 1.25rem;
+        }
+        
+        .video-info h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+            color: var(--text);
+            font-weight: 600;
+        }
+        
+        .video-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+        
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            padding: 1.5rem 0;
+        }
+        
+        .pagination button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 0.6rem 1.2rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .pagination button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            background: #555;
+        }
+        
+        .pagination button:not(:disabled):hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+        }
+        
+        .page-info {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin: 0 1rem;
+        }
+        
+        /* Footer */
+        footer {
+            background: rgba(10, 5, 20, 0.9);
+            padding: 1.5rem 0;
+            text-align: center;
+            border-top: 1px solid rgba(138, 43, 226, 0.1);
+            margin-top: auto;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .footer-logo {
+            font-weight: 700;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 1.5rem;
+        }
+        
+        .footer-links a {
+            color: var(--text-muted);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .video-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .nav-container {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Video Library</h1>
+            <p>Your collection of curated videos</p>
+        </header>
+        
+        <div id="videoGrid" class="video-grid">
+            <!-- Videos will be dynamically inserted here -->
+        </div>
+        
+        <div class="pagination">
+            <button id="prevPage" class="page-btn">Previous</button>
+            <div id="pageNumbers"></div>
+            <button id="nextPage" class="page-btn">Next</button>
+        </div>
+    </div>
+
+    <script>
+        // Video data - extracted from provided embed codes
+        const videos = [
+            { title: "Goon Time", id: "cTjXl6n2nSb" },
+            { title: "Tongue Out", id: "cTjXl6n2nSF" },
+            { title: "Loading Your Addiction", id: "cTjXl6n2nSq" },
+            { title: "Loading", id: "cTjXl6n2nSY" },
+            { title: "Porn Star", id: "cTjXl6n2nSr" },
+            { title: "Goon Tube", id: "cTjXl6n2nS3" },
+            { title: "Beautiful", id: "cTjXl6n2nS0" },
+            { title: "Temptation Desire", id: "cTiUqinIUgA" },
+            { title: "Your Future", id: "cTiUqinIUgB" },
+            { title: "Everyday", id: "cTiUqinIUgz" },
+            { title: "Give In", id: "cTiUqinIUgg" },
+            { title: "The World of a Gooner", id: "cTiTlRnIqDv" },
+            { title: "Tempted Gloryhole Sissy Slut", id: "cTiTVPnIbx7" },
+            { title: "WBS", id: "cTiZclnIIGs" },
+            { title: "Locked Slut Deserve Cock", id: "cTi0lKnIlhO" },
+            { title: "Breed 2", id: "cTi0nznI6Yt" },
+            { title: "Breed 1", id: "cTi0nDnI6F6" },
+            { title: "Goon Slut Stroke Forever", id: "cTi3blnIQZP" },
+            { title: "Loading Into New Reality", id: "cTi3IDnIjCf" },
+            { title: "Become Her 1", id: "cTi3c5nI1uZ" },
+            { title: "Someone Son", id: "cTi3c5nI1uT" },
+            { title: "Worship Cock Clean", id: "cTirqknIhRy" },
+            { title: "Cuck Dream 1", id: "cTirqknIhR4" },
+            { title: "BNWO Green Match Cut", id: "cTirqknIhRx" },
+            { title: "Give In Surrender Goon Slut", id: "cTiYqknInTa" },
+            { title: "Blacked Alina", id: "cTiXrTnlpKf" },
+            { title: "Welcome Back Pornosexual", id: "cTi1Dsnl0UB" },
+            { title: "Blacked Take Over", id: "cT1hjgn6S93" },
+            { title: "Girlcock 1", id: "cT1hjgn6S90" },
+            { title: "Surrender Your Soul", id: "cT1hjgn6S9Z" },
+            { title: "Time to Shake It", id: "cT1hjZn6SNg" },
+            { title: "Time to!", id: "cT1hjZn6SNA" },
+            { title: "Take Cum", id: "cT1hjZn6SNz" },
+            { title: "Goon to the Max", id: "cT1hjZn6SN4" },
+            { title: "Black Shemale", id: "cT1hjZn6SNv" },
+            { title: "Time to Goon 1", id: "cT1hjZn6SNB" },
+            { title: "Let's Celebrate Pride", id: "cThvXcn6ECt" },
+            { title: "Modern White Girl BBC Confessions", id: "cThvXcn6ECv" },
+            { title: "No Don't Think About Cock", id: "cThvXcn6ECx" },
+            { title: "Happy Pride Month Gooner", id: "cThvXcn6ECT" },
+            { title: "Futa - Male - Female Fuck Train", id: "cThvXcn6EC0" },
+            { title: "The Great Reset - Acceptance", id: "cThvXcn6EC4" },
+            { title: "Eat Sleep Goon Repeat", id: "cThvXcn6EC3" },
+            { title: "Don't Think About It", id: "cThvXcn6ECr" },
+            { title: "Choose Your Sexual Preference", id: "cThvXcn6ECb" },
+            { title: "Nasty Piss Sluts", id: "cThvXcn6ECw" },
+            { title: "And That's How You Became Your Jerk Off Buddy's Sissy Slut", id: "cThvXcn6ECo" },
+            { title: "BBC At The Gloryhole", id: "cThvXcn6ECD" },
+            { title: "Welcome To Paradise", id: "cThvXcn6ECa" },
+            { title: "Goddess Queenie Rewards Caged Sissy", id: "cThvXcn6ECZ" },
+            { title: "Let Desire Consume You", id: "cThUqxn6C4O" },
+            { title: "Cock Calls", id: "cThUqxn6C4m" },
+            { title: "Become My Cock Slave 2", id: "cThUqxn6C4t" },
+            { title: "Melt Your Mind", id: "cThUqxn6C4Z" },
+            { title: "Embrace Your Passion", id: "cThUqxn6C4y" },
+            { title: "A Sissy Serve", id: "cThUqxn6C4N" },
+            { title: "No Longer", id: "cThUqxn6C4s" },
+            { title: "No One Has to Know", id: "cThUqxn6C4v" },
+            { title: "No One Has to Know (2)", id: "cThUqxn6C40" },
+            { title: "Reddit Slut Meets BBC", id: "cThUqxn6C4G" },
+            { title: "Become Her", id: "cThUqxn6C48" },
+            { title: "A Sissy Night Out", id: "cThUqxn6C4r" },
+            { title: "It Felt So Good", id: "cThUqxn6C4M" },
+            { title: "Just Bonding", id: "cThUqxn6C44" },
+            { title: "Just Keep Gooning", id: "cThUqxn6C4E" },
+            { title: "Gooner Smoke Session", id: "cThUqxn6C4U" },
+            { title: "Good Slut", id: "cThUqxn6C4A" },
+            { title: "Go Deeper", id: "cThUqxn6C4d" },
+            { title: "Evolution of a Sissy", id: "cThUqxn6C4T" },
+            { title: "A Return to Eden", id: "cThUqxn6C49" },
+            { title: "Embrace It Cock Slut", id: "cThUqxn6C4g" }
+        ];
+
+        // Pagination variables
+        const videosPerPage = 9;
+        let currentPage = 1;
+        const totalPages = Math.ceil(videos.length / videosPerPage);
+
+        // DOM elements
+        const videoGrid = document.getElementById('videoGrid');
+        const prevBtn = document.getElementById('prevPage');
+        const nextBtn = document.getElementById('nextPage');
+        const pageNumbers = document.getElementById('pageNumbers');
+
+        // Initialize the page
+        function init() {
+            displayVideos();
+            updatePagination();
+            
+            // Event listeners
+            prevBtn.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    displayVideos();
+                    updatePagination();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+            
+            nextBtn.addEventListener('click', () => {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    displayVideos();
+                    updatePagination();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        }
+
+        // Display videos for the current page
+        function displayVideos() {
+            const startIndex = (currentPage - 1) * videosPerPage;
+            const endIndex = startIndex + videosPerPage;
+            const currentVideos = videos.slice(startIndex, endIndex);
+            
+            videoGrid.innerHTML = '';
+            
+            currentVideos.forEach(video => {
+                const videoCard = document.createElement('div');
+                videoCard.className = 'video-card';
+                
+                videoCard.innerHTML = `
+                    <div class="video-player">
+                        <iframe 
+                            width="100%" 
+                            height="100%" 
+                            src="https://go.screenpal.com/player/c${video.id}?width=100%&height=100%&ff=1&title=0" 
+                            frameborder="0" 
+                            allowfullscreen>
+                        </iframe>
+                    </div>
+                    <div class="video-title">${video.title}</div>
+                `;
+                
+                videoGrid.appendChild(videoCard);
+            });
+        }
+
+        // Update pagination controls
+        function updatePagination() {
+            // Update previous button
+            prevBtn.disabled = currentPage === 1;
+            
+            // Update next button
+            nextBtn.disabled = currentPage === totalPages;
+            
+            // Update page numbers
+            pageNumbers.innerHTML = '';
+            
+            const maxVisiblePages = 5;
+            let startPage = Math.max(1, currentPage - Math.floor(maxVisiblePages / 2));
+            let endPage = Math.min(totalPages, startPage + maxVisiblePages - 1);
+            
+            if (endPage - startPage + 1 < maxVisiblePages) {
+                startPage = Math.max(1, endPage - maxVisiblePages + 1);
+            }
+            
+            // First page
+            if (startPage > 1) {
+                const firstPageBtn = document.createElement('button');
+                firstPageBtn.className = 'page-btn' + (1 === currentPage ? ' active' : '');
+                firstPageBtn.textContent = '1';
+                firstPageBtn.addEventListener('click', () => {
+                    currentPage = 1;
+                    displayVideos();
+                    updatePagination();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+                pageNumbers.appendChild(firstPageBtn);
+                
+                if (startPage > 2) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.textContent = '...';
+                    pageNumbers.appendChild(ellipsis);
+                }
+            }
+            
+            // Page numbers
+            for (let i = startPage; i <= endPage; i++) {
+                const pageBtn = document.createElement('button');
+                pageBtn.className = 'page-btn' + (i === currentPage ? ' active' : '');
+                pageBtn.textContent = i;
+                
+                if (i !== currentPage) {
+                    pageBtn.addEventListener('click', () => {
+                        currentPage = i;
+                        displayVideos();
+                        updatePagination();
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                    });
+                }
+                
+                pageNumbers.appendChild(pageBtn);
+            }
+            
+            // Last page
+            if (endPage < totalPages) {
+                if (endPage < totalPages - 1) {
+                    const ellipsis = document.createElement('span');
+                    ellipsis.textContent = '...';
+                    pageNumbers.appendChild(ellipsis);
+                }
+                
+                const lastPageBtn = document.createElement('button');
+                lastPageBtn.className = 'page-btn' + (totalPages === currentPage ? ' active' : '');
+                lastPageBtn.textContent = totalPages;
+                lastPageBtn.addEventListener('click', () => {
+                    currentPage = totalPages;
+                    displayVideos();
+                    updatePagination();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+                pageNumbers.appendChild(lastPageBtn);
+            }
+        }
+
+        // Initialize the page when loaded
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
+<body>
+    <header>
+        <div class="container">
+            <nav class="nav-container">
+                <div class="logo">
+                    <a href="index.html">
+                        <img src="assets/images/chaos_logo.png" alt="Pantheon Protocol Logo">
+                        Pantheon Protocol
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#" class="active">Video Library</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="page-header">
+            <h1>Video Library</h1>
+            <p>Browse our collection of tutorials, demos, and educational content. New videos added regularly.</p>
+        </div>
+        
+        <div id="videoGrid" class="video-grid">
+            <!-- Videos will be dynamically inserted here -->
+        </div>
+        
+        <div class="pagination">
+            <button id="prevPage" disabled>❮ Previous</button>
+            <div class="page-info">Page <span id="currentPage">1</span> of <span id="totalPages">1</span></div>
+            <button id="nextPage" disabled>Next ❯</button>
+        </div>
+    </main>
+    
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-logo">Pantheon Protocol</div>
+            <div class="footer-links">
+                <a href="#">Terms of Service</a>
+                <a href="#">Privacy Policy</a>
+                <a href="contact.html">Contact Us</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Video data - Replace with your actual ScreenPal video data
+        // Format: { id: 'SCREENPAL_VIDEO_ID', title: 'Video Title', date: 'YYYY-MM-DD' }
+        const videoData = [
+            // Example video - replace with your actual video data
+            {
+                id: 'YOUR_VIDEO_ID_1',
+                title: 'Getting Started with Pantheon',
+                date: '2025-08-01'
+            },
+            {
+                id: 'YOUR_VIDEO_ID_2',
+                title: 'Advanced Features Tutorial',
+                date: '2025-08-02'
+            },
+            // Add more videos here
+        ];
+
+        // DOM Elements
+        const videoGrid = document.getElementById('videoGrid');
+        const prevButton = document.getElementById('prevPage');
+        const nextButton = document.getElementById('nextPage');
+        const currentPageEl = document.getElementById('currentPage');
+        const totalPagesEl = document.getElementById('totalPages');
+        
+        // Constants
+        const VIDEOS_PER_PAGE = 9; // 3 columns x 3 rows
+        let currentPage = 1;
+        let filteredVideos = [];
+        
+        // Initialize the page
+        function init() {
+            // Set total pages
+            updatePaginationInfo();
+            
+            // Initial render
+            renderVideos(videoData);
+            setupEventListeners();
+        }
+        
+        // Update pagination information
+        function updatePaginationInfo() {
+            const totalPages = Math.ceil(videoData.length / VIDEOS_PER_PAGE);
+            totalPagesEl.textContent = totalPages || 1;
+        }
+        
+        // Helper function to get paginated videos
+        function getPaginatedVideos(videos, page = 1) {
+            const start = (page - 1) * VIDEOS_PER_PAGE;
+            const end = start + VIDEOS_PER_PAGE;
+            return videos.slice(start, end);
+        }
+        
+        // Main function to render videos with pagination
+        function renderVideos(videos) {
+            // Store filtered videos for pagination
+            filteredVideos = [...videos];
+            const totalVideos = filteredVideos.length;
+            const totalPages = Math.ceil(totalVideos / VIDEOS_PER_PAGE) || 1;
+            
+            // Update current page if out of bounds
+            currentPage = Math.min(Math.max(1, currentPage), totalPages);
+            
+            // Get videos for current page
+            const paginatedVideos = getPaginatedVideos(filteredVideos, currentPage);
+            
+            // Clear the grid
+            videoGrid.innerHTML = '';
+            
+            // If no videos match the filter/search
+            if (paginatedVideos.length === 0) {
+                videoGrid.innerHTML = `
+                    <div class="no-results" style="grid-column: 1 / -1; text-align: center; padding: 3rem 0;">
+                        <h3 style="color: var(--text-muted); margin-bottom: 1rem;">No videos found</h3>
+                        <p style="color: var(--text-muted);">Try adjusting your search or check back later for new content.</p>
+                    </div>`;
+                return;
+            }
+            
+            // Create and append video elements
+            paginatedVideos.forEach(video => {
+                const videoElement = document.createElement('div');
+                videoElement.className = 'video-card';
+                
+                // Format date if available
+                const dateDisplay = video.date ? new Date(video.date).toLocaleDateString('en-US', {
+                    year: 'numeric',
+                    month: 'short',
+                    day: 'numeric'
+                }) : '';
+
+                // Build ScreenPal embed
+                videoElement.innerHTML = `
+                    <div class="video-embed">
+                        <iframe 
+                            src="https://screenpal.com/play/c/${video.id}" 
+                            allowfullscreen 
+                            loading="lazy"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                            title="${video.title}">
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3>${video.title}</h3>
+                        ${dateDisplay ? `<div class="video-meta"><span>${dateDisplay}</span></div>` : ''}
+                    </div>`;
+
+                videoGrid.appendChild(videoElement);
+            });
+            
+            // Update pagination controls
+            updatePaginationControls(totalVideos);
+        }
+        
+        // Update pagination controls
+        function updatePaginationControls(totalVideos) {
+            const totalPages = Math.ceil(totalVideos / VIDEOS_PER_PAGE) || 1;
+            
+            // Update current page display
+            currentPageEl.textContent = currentPage;
+            totalPagesEl.textContent = totalPages;
+            
+            // Update button states
+            prevButton.disabled = currentPage <= 1;
+            nextButton.disabled = currentPage >= totalPages;
+        }
+        
+        // Setup event listeners
+        function setupEventListeners() {
+            // Previous button
+            prevButton.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    renderVideos(filteredVideos);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+            
+            // Next button
+            nextButton.addEventListener('click', () => {
+                const totalPages = Math.ceil(filteredVideos.length / VIDEOS_PER_PAGE);
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    renderVideos(filteredVideos);
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                }
+            });
+        }
+        
+        // Initialize the page when the DOM is loaded
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>

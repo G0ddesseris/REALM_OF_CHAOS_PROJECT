@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Direct Embed Test</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #1a0a2e;
+            color: white;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        .test-container {
+            max-width: 800px;
+            width: 100%;
+            margin: 20px 0;
+        }
+        .video-wrapper {
+            background: #000;
+            margin: 20px 0;
+            padding: 10px;
+            border-radius: 8px;
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+        }
+        .video-embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        h1, h2 {
+            color: #bf00ff;
+            text-align: center;
+        }
+        .code-block {
+            background: #2a1a3d;
+            padding: 15px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 20px 0;
+            font-family: monospace;
+            white-space: pre;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Direct Embed Test</h1>
+        <p>This page tests the exact embed code you provided.</p>
+        
+        <h2>Test 1: Direct ScreenPal Embed</h2>
+        <div class="code-block">
+&lt;div class="sp-embed-player" data-id="cThvXcn6ECT"&gt;
+    &lt;script src="https://go.screenpal.com/player/appearance/cThvXcn6ECT"&gt;&lt;/script&gt;
+    &lt;iframe width="100%" height="100%" style="border:0;" scrolling="no" 
+        src="https://go.screenpal.com/player/cThvXcn6ECT?width=100%&height=100%&ff=1&title=0" 
+        allowfullscreen="true"&gt;
+    &lt;/iframe&gt;
+&lt;/div&gt;
+        </div>
+        
+        <div class="video-wrapper">
+            <div class="sp-embed-player" data-id="cThvXcn6ECT">
+                <script src="https://go.screenpal.com/player/appearance/cThvXcn6ECT"></script>
+                <iframe width="100%" height="100%" style="border:0;" scrolling="no" 
+                    src="https://go.screenpal.com/player/cThvXcn6ECT?width=100%&height=100%&ff=1&title=0" 
+                    allowfullscreen="true" class="video-embed">
+                </iframe>
+            </div>
+        </div>
+        
+        <h2>Test 2: YouTube Control</h2>
+        <div class="video-wrapper">
+            <iframe 
+                src="https://www.youtube.com/embed/SK1Gm2uFsRc" 
+                title="YouTube Video Player" 
+                frameborder="0" 
+                allowfullscreen
+                class="video-embed">
+            </iframe>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pantheon Protocol - Video Library</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #0f0c29;
+            --secondary: #1a1a40;
+            --accent: #4e0eff;
+            --accent2: #ff00ff;
+            --highlight: #ff2d75;
+            --text: rgba(255, 255, 255, 0.9);
+            --glass: rgba(255, 255, 255, 0.1);
+            --glass-border: rgba(255, 255, 255, 0.2);
+            --glass-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+        }
+        
+        * { 
+            box-sizing: border-box; 
+            margin: 0; 
+            padding: 0; 
+        }
+        
+        body { 
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, var(--primary), #302b63, #24243e);
+            background-size: 400% 400%;
+            color: var(--text);
+            line-height: 1.7;
+            padding: 20px;
+            min-height: 100vh;
+            animation: gradientBG 15s ease infinite;
+        }
+        
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .container { 
+            max-width: 1400px; 
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header { 
+            text-align: center; 
+            padding: 40px 0;
+            margin-bottom: 40px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100%;
+            max-width: 800px;
+            height: 100%;
+            background: var(--glass);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid var(--glass-border);
+            z-index: -1;
+            box-shadow: var(--glass-shadow);
+        }
+        
+        h1 { 
+            font-family: 'Montserrat', sans-serif;
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            background: linear-gradient(45deg, var(--accent), var(--accent2), var(--highlight));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 20px rgba(120, 0, 255, 0.3);
+            letter-spacing: 1px;
+        }
+        
+        header p {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .video-card {
+            background: var(--glass);
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: var(--glass-shadow);
+            border: 1px solid var(--glass-border);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .video-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, rgba(120, 0, 255, 0.1), rgba(255, 0, 255, 0.1));
+            z-index: -1;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+        }
+        
+        .video-card:hover::before {
+            opacity: 1;
+        }
+        
+        .video-player {
+            width: 100%;
+            aspect-ratio: 16/9;
+            border: none;
+            background: #000;
+        }
+        
+        .video-title {
+            padding: 20px 15px;
+            text-align: center;
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #fff;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            transition: all 0.3s ease;
+        }
+        
+        .video-card:hover .video-title {
+            background: rgba(0, 0, 0, 0.5);
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 15px;
+            margin: 40px 0;
+            flex-wrap: wrap;
+        }
+        
+        .page-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            min-width: 100px;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+        }
+        
+        .page-btn:not(:disabled):hover {
+            background: linear-gradient(45deg, var(--accent), var(--accent2));
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(78, 14, 255, 0.3);
+            border-color: transparent;
+        }
+        
+        .page-btn:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+        }
+        
+        #pageInfo {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            min-width: 150px;
+            text-align: center;
+        }
+        
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            .video-grid { 
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .container {
+                padding: 10px;
+            }
+            
+            header {
+                padding: 30px 20px;
+                margin-bottom: 20px;
+            }
+            
+            .pagination {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .page-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Video Library</h1>
+            <p>Your collection of curated videos</p>
+        </header>
+        
+        <div id="videoGrid" class="video-grid"></div>
+        
+        <div class="pagination">
+            <button id="prevPage" class="page-btn">Previous</button>
+            <span id="pageInfo">Page 1</span>
+            <button id="nextPage" class="page-btn">Next</button>
+        </div>
+    </div>
+
+    <script>
+        // Video data - first 10 videos for demo
+        const videos = [
+            { title: "Goon Time", id: "cTjXl6n2nSb" },
+            { title: "Tongue Out", id: "cTjXl6n2nSF" },
+            { title: "Loading Your Addiction", id: "cTjXl6n2nSq" },
+            { title: "Loading", id: "cTjXl6n2nSY" },
+            { title: "Porn Star", id: "cTjXl6n2nSr" },
+            { title: "Goon Tube", id: "cTjXl6n2nS3" },
+            { title: "Beautiful", id: "cTjXl6n2nS0" },
+            { title: "Temptation Desire", id: "cTiUqinIUgA" },
+            { title: "Your Future", id: "cTiUqinIUgB" },
+            { title: "Everyday", id: "cTiUqinIUgz" }
+        ];
+
+        let currentPage = 1;
+        const videosPerPage = 6;
+        const totalPages = Math.ceil(videos.length / videosPerPage);
+        
+        const videoGrid = document.getElementById('videoGrid');
+        const prevBtn = document.getElementById('prevPage');
+        const nextBtn = document.getElementById('nextPage');
+        const pageInfo = document.getElementById('pageInfo');
+
+        function displayVideos() {
+            const start = (currentPage - 1) * videosPerPage;
+            const end = start + videosPerPage;
+            const paginatedVideos = videos.slice(start, end);
+            
+            videoGrid.innerHTML = paginatedVideos.map(video => `
+                <div class="video-card">
+                    <iframe 
+                        class="video-player"
+                        src="https://go.screenpal.com/player/c${video.id}?width=100%&height=100%&ff=1&title=0"
+                        allowfullscreen>
+                    </iframe>
+                    <div class="video-title">${video.title}</div>
+                </div>
+            `).join('');
+            
+            pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+            prevBtn.disabled = currentPage === 1;
+            nextBtn.disabled = currentPage === totalPages;
+        }
+
+        prevBtn.addEventListener('click', () => {
+            if (currentPage > 1) {
+                currentPage--;
+                displayVideos();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+
+        nextBtn.addEventListener('click', () => {
+            if (currentPage < totalPages) {
+                currentPage++;
+                displayVideos();
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+        });
+
+        // Initial load
+        displayVideos();
+    </script>
+</body>
+</html>

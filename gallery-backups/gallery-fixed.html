@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore the Realm of Chaos video collection - Exclusive fetish, sissy, and gooner content">
+    <title>GALLERY | Realm of Chaos</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/chaos_logo_fav.png" sizes="16x16">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Main Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/navigation.css">
+    
+    <style>
+        :root {
+            --primary: #BF00FF;
+            --primary-dark: #8a00b3;
+            --dark: #0a0514;
+            --darker: #05020a;
+            --light: #f0e6ff;
+            --gray: #2a1a3d;
+            --glass: rgba(20, 10, 30, 0.8);
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0a0a1a 0%, #1a0a2a 100%);
+            color: #fff;
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .main-content {
+            flex: 1;
+            padding-top: 120px;
+            padding-bottom: 60px;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 0 20px;
+        }
+        
+        .page-header h1 {
+            font-family: 'Orbitron', sans-serif;
+            font-size: 4rem;
+            color: #fff;
+            text-shadow: 0 0 10px rgba(191, 0, 255, 0.7);
+            margin-bottom: 20px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            background: linear-gradient(45deg, #bf00ff, #ff00ff, #ff2d75);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .page-header p {
+            font-size: 1.2rem;
+            color: #b8a2d1;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+        
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            padding: 0 20px;
+            margin: 40px auto;
+            max-width: 1400px;
+            width: 100%;
+            min-height: 50vh;
+        }
+        
+        .video-card {
+            background: #1a0a2e;
+            border-radius: 10px;
+            overflow: hidden;
+            border: 1px solid rgba(191, 0, 255, 0.2);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.2);
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px 0 rgba(191, 0, 255, 0.3);
+        }
+        
+        .video-title {
+            margin: 0;
+            padding: 15px 20px;
+            background: rgba(0, 0, 0, 0.3);
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            border-bottom: 1px solid rgba(191, 0, 255, 0.2);
+        }
+        
+        .video-player {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            background: #000;
+            flex-grow: 1;
+        }
+        
+        .video-player iframe,
+        .video-player object,
+        .video-player embed {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .page-btn {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 10px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+        }
+        
+        .page-btn:hover:not(:disabled) {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .page-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        #pageInfo {
+            background: rgba(191, 0, 255, 0.1);
+            padding: 10px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 992px) {
+            .video-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                padding: 0 20px;
+                gap: 20px;
+            }
+            
+            .page-header h1 {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .page-header h1 {
+                font-size: 2.5rem;
+            }
+            
+            .page-header p {
+                font-size: 1rem;
+            }
+            
+            .video-grid {
+                grid-template-columns: 1fr;
+                padding: 0 15px;
+                gap: 25px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .pagination {
+                flex-direction: column;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header with Navigation -->
+    <header class="header">
+        <div class="container nav-container">
+            <a href="index.html" class="nav-logo">REALM OF CHAOS</a>
+            <button class="menu-toggle" id="mobileMenuBtn" aria-label="Toggle navigation menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <nav class="nav-menu" id="navMenu">
+                <ul class="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="gallery.html" class="active">Gallery</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="pledge.html" class="cta-button">Join the Chaos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <div class="page-header">
+            <h1>CHAOTIC VISIONS</h1>
+            <p>Dive into our exclusive collection of mind-bending, reality-warping visual experiences. Each piece is a portal to another dimension.</p>
+        </div>
+        
+        <div id="videoGrid" class="video-grid">
+            <!-- Videos will be dynamically inserted here -->
+        </div>
+        
+        <div class="pagination">
+            <button id="prevPage" class="page-btn">Previous</button>
+            <div id="pageInfo">Page 1</div>
+            <button id="nextPage" class="page-btn">Next</button>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <p>"In chaos, we find our true selves." — Anonymous Devotee</p>
+        <p>© 2025 Realm of Chaos. All rights reserved to the Void.</p>
+    </footer>
+
+    <script>
+        // Video data - using the provided embed code
+        const videos = [
+            { 
+                title: "Goon Time (ScreenPal)",
+                type: 'screenpal',
+                id: 'cTjXl6n2nSb'
+            },
+            {
+                title: "YouTube Test",
+                type: 'youtube',
+                id: 'SK1Gm2uFsRc',
+                embedCode: '<iframe width="100%" height="100%" src="https://www.youtube.com/embed/SK1Gm2uFsRc?si=ZdLM7bVYGkqN_pvM" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>'
+            }
+        ];
+        
+        // This function creates a video card
+        function createVideoCard(video) {
+            const card = document.createElement('div');
+            card.className = 'video-card';
+            
+            // Add the title
+            const title = document.createElement('h3');
+            title.className = 'video-title';
+            title.textContent = video.title;
+            
+            // Create video container
+            const playerContainer = document.createElement('div');
+            playerContainer.className = 'video-player';
+            
+            // Handle different video types
+            if (video.type === 'screenpal') {
+                // For ScreenPal, create the player container and iframe
+                const screenpalDiv = document.createElement('div');
+                screenpalDiv.className = 'sp-embed-player';
+                screenpalDiv.setAttribute('data-id', video.id);
+                
+                const iframe = document.createElement('iframe');
+                iframe.width = '100%';
+                iframe.height = '100%';
+                iframe.style.border = '0';
+                iframe.scrolling = 'no';
+                iframe.src = `https://go.screenpal.com/player/c${video.id}?width=100%&height=100%&ff=1&title=0`;
+                iframe.allowFullscreen = true;
+                
+                // Add the iframe to the container
+                screenpalDiv.appendChild(iframe);
+                playerContainer.appendChild(screenpalDiv);
+                
+                // Add the ScreenPal script
+                const script = document.createElement('script');
+                script.src = `https://go.screenpal.com/player/appearance/${video.id}`;
+                script.async = true;
+                document.body.appendChild(script);
+            } else if (video.type === 'youtube') {
+                // For YouTube, use the provided embed code
+                playerContainer.innerHTML = video.embedCode;
+            }
+            
+            // Assemble everything
+            card.appendChild(title);
+            card.appendChild(playerContainer);
+            
+            return card;
+        }
+
+        // Pagination variables
+        const videosPerPage = 9;
+        let currentPage = 1;
+        const totalPages = Math.ceil(videos.length / videosPerPage);
+
+        // DOM elements
+        const videoGrid = document.getElementById('videoGrid');
+        const prevBtn = document.getElementById('prevPage');
+        const nextBtn = document.getElementById('nextPage');
+        const pageInfo = document.getElementById('pageInfo');
+
+        // Initialize the page
+        function init() {
+            displayVideos();
+            updatePagination();
+            
+            // Event listeners
+            prevBtn.addEventListener('click', () => {
+                if (currentPage > 1) {
+                    currentPage--;
+                    displayVideos();
+                    updatePagination();
+                }
+            });
+            
+            nextBtn.addEventListener('click', () => {
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    displayVideos();
+                    updatePagination();
+                }
+            });
+        }
+
+        // Display videos for the current page
+        function displayVideos() {
+            const startIndex = (currentPage - 1) * videosPerPage;
+            const endIndex = startIndex + videosPerPage;
+            const currentVideos = videos.slice(startIndex, endIndex);
+            
+            videoGrid.innerHTML = '';
+            
+            currentVideos.forEach(video => {
+                // Create and append the video card
+                const videoCard = createVideoCard(video);
+                videoGrid.appendChild(videoCard);
+            });
+        }
+
+        // Update pagination controls
+        function updatePagination() {
+            // Update previous button
+            prevBtn.disabled = currentPage === 1;
+            
+            // Update next button
+            nextBtn.disabled = currentPage === totalPages;
+            
+            // Update page info
+            pageInfo.textContent = `Page ${currentPage} of ${totalPages}`;
+            
+            // Hide pagination if only one page
+            document.querySelector('.pagination').style.display = 
+                totalPages <= 1 ? 'none' : 'flex';
+        }
+
+        // Initialize the page when loaded
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+    
+    <!-- Mobile Menu Script -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+            const navMenu = document.getElementById('navMenu');
+            
+            if (mobileMenuBtn && navMenu) {
+                mobileMenuBtn.addEventListener('click', function() {
+                    navMenu.classList.toggle('active');
+                    mobileMenuBtn.classList.toggle('active');
+                });
+            }
+        });
+    </script>
+</body>
+</html>
